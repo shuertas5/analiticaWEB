@@ -1,0 +1,190 @@
+link(rel="shortcut icon" href="#")
+link(rel="stylesheet", href="/css/bootstrap.min.css")
+div(class="container")
+    div(class="row")
+        div(class="caja_titulo")
+            span Hoja Analitica ...
+            span(id="hoja_analitica" style="margin-left: 7px;font-weight: bold") #{hoja}
+            span(id="titulo_hoja" style="margin-left: 7px;font-weight: bold;") #{titulo_hoja}
+    div(class="row")
+        div(class="col-xs-4 col-sm-2 col-md-2 col-lg-2 treu_control")
+            p(class="etiqueta") Num. Compo. 
+            select(class="form-select" name="NUM_COMPO" id="NUM_COMPO" value=num_compo disabled=disabled_campos onchange="cambio_select();repintar_select();")
+                -i = 0
+                while (i<=45)
+                    option(value=i selected= num_compo == i) #{i}
+                    - i++
+        div(class="col-xs-3 col-sm-2 col-md-2 col-lg-2 treu_control")
+            p(class="etiqueta") Num. Linea 
+            treungc-combodlgnum(name="NUM_LINEA" id="NUM_LINEA" titulo_id="TITU_LINEA" formato="###" disabled=""+disabled_clave value=linea ondropdown="dropdown_linea("+hoja+");" ondatachange="cambio_linea("+hoja+");")
+        div(class="col-xs-6 col-sm-6 col-md-6 col-lg-6 treu_control")
+            p(id="TITU_LINEA" class="repon_titulo")
+div(class="d-flex flex-column" style="margin-top: 10px;") 
+    div(class="container" style="height: calc(100vh - 333px);overflow-y: auto;margin-bottom: 15px;")
+        form(id="my_form" method='POST' action="/manten_totales_detalle")
+            div(class="table-responsive")
+                table(class="table table-striped" style="overflow-y:hidden;")
+                    thead(class="thead-dark")
+                        div(class="row")
+                            tr
+                                th(style="min-width: 3cm;") Componentes
+                                th(style="min-width: 24cm;") Detalle del Total
+                                th(style="min-width: 4cm;") Borrar
+                    tbody(id="cuerpo_lineas")
+                    -var i = 0
+                    each n in rows
+                        - i++
+                        tr(class="filasx")
+                            td Componente #{i}
+                                td 
+                                    div(class='row')
+                                        div(class='col-xs-2 col-sm-2 col-md-2 col-lg-2 treu_control')
+                                            p(class='etiqueta') Coeficiente 
+                                            treungc-numer(name="COEF"+i id="COEF"+i formato='#,####' disabled=""+disabled_campos value=n.coef)
+                                        div(class='col-xs-2 col-sm-2 col-md-2 col-lg-2 treu_control') 
+                                            p(class='etiqueta') +/-
+                                            select(class='form-select' name="MAS_MENOS"+i id="MAS_MENOS"+i disabled=disabled_campos value=n.mas_menos)
+                                                option(value='M' selected= n.mas_menos == 'M') +
+                                                option(value='m' selected= n.mas_menos == 'm') -
+                                        div(class='col-xs-2 col-sm-2 col-md-2 col-lg-2 treu_control')
+                                            p(class='etiqueta') Hoja
+                                            treungc-combodlgnum(name="HOJA"+i id="HOJA"+i formato='##' disabled=""+disabled_campos value=n.hojas ondropdown='dropdown_hoja_ref('+i+');' ondatachange='cambio_hoja_ref('+i+');')
+                                        div(class='col-xs-2 col-sm-2 col-md-2 col-lg-2 treu_control')
+                                            p(class='etiqueta') Linea
+                                            treungc-combodlgnum(name='LINEA'+i id='LINEA'+i titulo_id='TITU_LINEA'+i formato='###' disabled=""+disabled_campos value=n.lineas  ondropdown='dropdown_linea_ref('+i+');' ondatachange='cambio_linea_ref('+i+');')
+                                        div(class='col-xs-4 col-sm-4 col-md-4 col-lg-4 treu_control')
+                                            p(id='TITU_LINEA'+i class='repon_titulo')
+                                td 
+                                    input(class='etiqueta_checkradio' type='checkbox' id='BORRAR'+i name='BORRAR'+i disabled=disabled_campos value='' onclick='click_borrar('+i+');')
+            button(id="submit" class="btn btn-md btn-primary btn-block" style="display: none;" onclick="ajax_submit('#my_form', 'temporal');")
+            input(type="hidden" name='num_compo' id='num_compo')
+            input(type="hidden" name='hoja' id='hoja' value=hoja)
+            input(type="hidden" name='linea' id='linea' value=hoja)
+            input(type="hidden" name="opcion" value=opcion)
+    div(class="mt-auto" class="botonera")
+        div(class="row")
+            div(class="col-xs-4 col-sm-3 col-md-3 col-lg-3")
+                button(class="btn btn-md btn-block" style=""+color_boton onclick="click_mandar();$('#submit').click();") #{titulo_boton}
+            div(class="col-xs-4 col-sm-3 col-md-3 col-lg-3")
+                button(id="cancel" class="btn btn-md btn-secondary btn-block" onclick="$('#accion_cancelar')[0].click();") Cancelar
+    a(style="display: none" href="/manten_totales?hoja="+hoja id="accion_cancelar" data-link)
+script.
+    function cambio_linea(hoja) {
+        cambio_lineas_inicio(hoja,$('#NUM_LINEA').attr('id'),$('#NUM_LINEA').attr('titulo_id'));
+    }
+    function dropdown_linea(hoja) {
+        seleccion_lineas_inicio(hoja,$('#NUM_LINEA').attr('id'),$('#NUM_LINEA').attr('titulo_id'));
+    }
+    function cambio_select() {
+        var puses_coef = [];
+        var puses_hojas = [];
+        var puses_lineas = [];
+        var puses_mas_menosM = [];
+        var puses_mas_menosm = [];
+        var puses_borrar = [];
+        for (var i=1; i<=45; i++) {
+            if ($('#COEF'+i).val()!=undefined) {
+                puses_coef.push($('#COEF'+i).val());
+            }
+            else {
+                puses_coef.push(0);
+            }
+            if ($('#HOJA'+i).val()!=undefined) {
+                puses_hojas.push($('#HOJA'+i).val());
+            }
+            else {
+                puses_hojas.push(0);
+            }
+            if ($('#LINEA'+i).val()!=undefined) {
+                puses_lineas.push($('#LINEA'+i).val());
+            }
+            else {
+                puses_lineas.push(0);
+            }
+            if ($('#MAS_MENOS'+i).val()!=undefined) {
+                if ($('#MAS_MENOS'+i).val() == 'M') {
+                    puses_mas_menosM.push('selected');
+                    puses_mas_menosm.push('');
+                }
+                else {
+                    puses_mas_menosM.push('');
+                    puses_mas_menosm.push('selected');
+                }
+             }
+            else {
+                puses_mas_menosM.push('selected');
+                puses_mas_menosm.push('');
+            }
+            if ($('#BORRAR'+i).is(':checked')) {
+                puses_borrar.push('checked');
+            }
+            else {
+                puses_borrar.push('');
+            }
+        }
+        var e = document.getElementById("NUM_COMPO");
+        var num = e.options[e.selectedIndex].value;
+        var tabla="";
+        for (var i=1; i<=num; i++) {
+            tabla+="<tr class='filasx'><td>"+"Componente "+i+"</td><td><div class='row'><div class='col-xs-2 col-sm-2 col-md-2 col-lg-2 treu_control'><p class='etiqueta'>Coeficiente</p><treungc-numer name='COEF"+i+"' id='COEF"+i+"' formato='#,####' value='"+puses_coef[i-1]+"'></treungc-numer></div>"+
+            "<div class='col-xs-2 col-sm-2 col-md-2 col-lg-2 treu_control'><p class='etiqueta'>+/-</p><select class='form-select' name='MAS_MENOS"+i+"' id='MAS_MENOS"+i+"'><option value='M' "+puses_mas_menosM[i-1]+">+</option><option value='m' "+puses_mas_menosm[i-1]+">-</option></select></div>"+
+            "<div class='col-xs-2 col-sm-2 col-md-2 col-lg-2 treu_control'><p class='etiqueta'>Hoja</p><treungc-combodlgnum name='HOJA"+i+"' id='HOJA"+i+"' formato='##' value='"+puses_hojas[i-1]+"' ondropdown='dropdown_hoja_ref("+i+");' ondatachange='cambio_hoja_ref("+i+");'></treungc-combodlgnum></div>"+
+            "<div class='col-xs-2 col-sm-2 col-md-2 col-lg-2 treu_control'><p class='etiqueta'>Linea</p><treungc-combodlgnum name='LINEA"+i+"' id='LINEA"+i+"' titulo_id='TITU_LINEA"+i+"' formato='###' value='"+puses_lineas[i-1]+"'  ondropdown='dropdown_linea_ref("+i+");' ondatachange='cambio_linea_ref("+i+");'></treungc-combodlgnum></div>"+
+            "<div class='col-xs-4 col-sm-4 col-md-4 col-lg-4 treu_control'><p id='TITU_LINEA"+i+"' class='repon_titulo'></p></div></td>"+
+            "<td><input class='etiqueta_checkradio' type='checkbox' id='BORRAR"+i+"' name='BORRAR"+i+"' "+puses_borrar[i-1]+" onclick='click_borrar("+i+");'/>"+
+            "</td>"
+            "</tr>"
+        }
+        $('.filasx').remove();
+        $('#cuerpo_lineas').html(tabla);       
+    }
+    function repintar_select() {
+        var e = document.getElementById("NUM_COMPO");
+        var num = e.options[e.selectedIndex].value;
+        for (var i=1; i<=num; i++) {
+            var x = document.getElementById("BORRAR"+i);
+            if (x.checked==true) {
+                click_borrar(i);
+            }
+        }
+    }
+    function click_mandar() {
+        $('#num_compo').val($('#NUM_COMPO').val());
+        $('#linea').val($('#NUM_LINEA').val());
+    }
+    function preprocesar_pagina() {
+    }
+    function cambio_linea_ref(i) {
+        cambio_lineas_inicio($('#HOJA'+i).val(),$('#LINEA'+i).attr('id'),$('#LINEA'+i).attr('titulo_id'));
+    }
+    function dropdown_linea_ref(i) {
+        seleccion_lineas_inicio($('#HOJA'+i).val(),$('#LINEA'+i).attr('id'),$('#LINEA'+i).attr('titulo_id'));
+    }
+    function cambio_hoja_ref(i) {
+        cambio_hojas_inicio($('#HOJA'+i).attr('id'),null);
+        cambio_linea_ref(i);
+    }
+    function dropdown_hoja_ref(i) {
+        seleccion_hojas_inicio($('#HOJA'+i).attr('id'),null);
+    }
+    function click_borrar(i){
+        if ($('#BORRAR' + i).is(":checked")==true) {
+            $('#HOJA'+i).prop('disabled',true);
+            $('#LINEA'+i).prop('disabled',true);
+            $('#COEF'+i).prop('disabled',true);
+            $('#MAS_MENOS'+i).prop('disabled',true);
+        }
+        else {
+            $('#HOJA'+i).prop('disabled',false);
+            $('#LINEA'+i).prop('disabled',false);
+            $('#COEF'+i).prop('disabled',false);
+            $('#MAS_MENOS'+i).prop('disabled',false);
+        }
+    }
+    
+    window.onload = function(e) {
+        const nodes = document.getElementsByTagName("PRI_IMA");
+        if (nodes.length==0) {
+            window.location="./frontend/index0.html";
+        }
+    }

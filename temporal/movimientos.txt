@@ -1,0 +1,7 @@
+"6075";"A9";"factura";"Consumo diesel";1264.43;"D";05/12/2021
+"6670";"B9";"factura22";"Consumo gasolinal";144.31;"D";06/05/2021
+"9608";"S9";"PLUSV.332";"Minusvalia";16402.18;"H";13/09/2022
+"6005";"X9";"cuota";"alquiler Murcia";300.70;"D";15/10/2021
+"7607";"K9";"X0021";"Factura Taller";64.88;"H";25/02/2022
+"7406";"T9";"B09A1";"Factura Almacen";261.10;"H";22/04/2022
+"8608";"B9";"PLUSV.";"Plusvalia";6402.18;"D";25/11/2022

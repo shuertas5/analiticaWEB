@@ -1,0 +1,55 @@
+link(rel="shortcut icon" href="#")
+link(rel="stylesheet", href="/css/bootstrap.min.css")
+label(style="margin-top: 10px;") Cargar Ficheros de Importacion Analitica
+div(class="container")
+    form(id="my_form" name="fichero" method="post" enctype="multipart/form-data" action="/cargar_importacion_analitica")
+        div(class="row")
+            div(class="divider py-1 bg-secondary")
+        div(class="row" style="margin-top: 15px;")
+            div(class="col-xs-5 col-sm-4 col-md-4 col-lg-4 treu_control")
+                p(class="etiqueta") Formato Ficheros 
+                select(class="form-select" name="FORMATO_FICHEROS" id="FORMATO_FICHEROS" value=tipoformato)
+                    option(value="1" selected= tipoformato == '1') Formato UTF-8
+                    option(value="2" selected= tipoformato == '2') Formato ANSI
+        div(class="row" style="margin-top: 15px;")
+            div(class="col-xs-5 col-sm-4 col-md-4 col-lg-4")
+                input(type='hidden' name="oculto" value="o")
+                button(class="btn btn-md btn-block" style=""+color_boton onclick="$('#submit').click();") #{titulo_boton}
+            input(id="submit" class="btn btn-md btn-primary btn-block" style="display: none;" onclick="ajax_submit('#my_form', 'temporal');")
+    a(style="display: none" href="" id="accion_cancelar" onclick="visual_panta();" data-link)
+div(class="d-flex flex-column") 
+    div(class="container" style="height: calc(100vh - 235px);overflow-y: auto;margin-bottom: 10px;")
+        div(class="table-responsive")
+            div(id='pantalla_cargar_importacion_analitica' style="width: 100%; height: 100%;font-size: 0.95em; font-family: 'Courier New', Courier, monospace;")
+script. 
+    function visual_panta() {
+        getFileFromServer("./temporal/retorno.html", async function (text) {
+            refresh_div(text); 
+        });
+    }
+    function refresh_div(tex) {
+
+        var url;
+
+        url = "/cargar_importacion_analitica";
+
+        $.ajax({
+            type: 'GET',
+            url: url,
+            async: true,
+            success: function (response) {
+                $('#pantalla_cargar_importacion_analitica').html(tex);
+            },
+            error: function (xhr, status, err) {
+            }
+        });
+
+        return true;
+    }
+        
+    window.onload = function(e) {
+        const nodes = document.getElementsByTagName("PRI_IMA");
+        if (nodes.length==0) {
+            window.location="./frontend/index0.html";
+        }
+    }

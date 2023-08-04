@@ -1,0 +1,60 @@
+link(rel="shortcut icon" href="#")
+link(rel="stylesheet", href="/css/bootstrap.min.css")
+div(class="container")
+    form(id="my_form" name="fichero" method="POST" enctype="multipart/form-data" action="/consulta_presupuesto")
+        div(class="row")
+            div(class="col-xs-6 col-sm-3 col-md-3 col-lg-3 treu_control")
+                p(class="etiqueta") Mes a Visualizar 
+                select(class="form-select" name="MES" id="MES" onchange ="$('#submit')[0].click();visual_panta();")
+                    -i = 1
+                    while i <= 12
+                        option(value=i selected= i == 12) #{meses[i-1]}
+                        -i++
+            div(class="col-xs-4 col-sm-2 col-md-2 col-lg-2")
+                p(class="etiqueta") Hoja Analitica 
+                treungc-combodlgnum(id="hoja" name="HOJA" titulo_id="TITU_HOJA" formato="##" ondropdown="seleccion_hojas_inicio(this.id,this.titulo_id);" ondatachange="cambio_hojas_inicio(this.id,this.titulo_id);$('#submit')[0].click();visual_panta();" value=hoja)
+            div(class="col-xs-4 col-sm-4 col-md-4 col-lg-4")
+                p(id="TITU_HOJA" class="repon_titulo")
+            div(class="col-xs-4 col-sm-3 col-md-3 col-lg-3" style="margin-top: 25px;")
+                button(id="cancel" class="btn btn-md btn-secondary btn-block" onclick="$('#accion_salir')[0].click();") Cerrar Pantalla
+            div(class="divider py-1 bg-secondary")
+                input(id="submit" type="submit" class="btn btn-md btn-primary btn-block" style="display: none;" onclick="ajax_submit('#my_form', 'temporal');")
+    a(style="display: none" href="/principal" id="accion_salir" onclick="apagar_panta();" data-link)
+div(class="d-flex flex-column") 
+    div(class="container" style="height: calc(100vh - 233px);overflow-y: auto;margin-bottom: 10px;")
+        div(class="table-responsive")
+            div(id='pantalla_consulta_presupuesto' style="width: 100%; height: 100%;font-size: 0.95em; font-family: 'Courier New', Courier, monospace;")
+script. 
+    function visual_panta() {
+        agrandar_pantalla();
+        getFileFromServer("./temporal/retorno.html", async function (text) {
+            refresh_div(text); 
+        });
+    }
+    function refresh_div(tex) {
+
+        var url = "/consulta_presupuesto";
+
+        $.ajax({
+            type: 'GET',
+            url: url,
+            async: true,
+            success: function (response) {
+                $('#pantalla_consulta_presupuesto').html(tex);
+            },
+            error: function (xhr, status, err) {
+            }
+        });
+
+        return true;
+    }
+    function apagar_panta() {
+        restaurar_pantalla();
+    }
+        
+    window.onload = function(e) {
+        const nodes = document.getElementsByTagName("PRI_IMA");
+        if (nodes.length==0) {
+            window.location="./frontend/index0.html";
+        }
+    }

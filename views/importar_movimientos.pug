@@ -1,0 +1,36 @@
+link(rel="shortcut icon" href="#")
+link(rel="stylesheet", href="/css/bootstrap.min.css")
+label(style="margin-top: 10px;") Seleccione Fichero de Movimientos del Diario
+div(class="container")
+    form(id="my_form" name="fichero" method="post" enctype="multipart/form-data" action="/importar_movimientos")
+        div(class="row")
+            div(class="divider py-1 bg-secondary")
+        div(class="row")
+            div(class="col-xs-4 col-sm-2 col-md-2 col-lg-2" style="margin-top: 8px;")
+                p(class="etiqueta") Origen de Diario 
+                treungc-combodlg(id="origen" name="ORIGEN_DIARIO" titulo_id="TITU_ORIGEN" maxlength="2" formato="uppercase" ondropdown="seleccion_origenes_diario_inicio(this.id,this.titulo_id);" ondatachange="cambio_origenes_diario_inicio(this.id,this.titulo_id);")
+            div(class="col-xs-4 col-sm-4 col-md-4 col-lg-4" style="margin-top: 8px;")
+                p(id="TITU_ORIGEN" class="repon_titulo")
+            input(type="file" name="get_fichero" id="if_fichero_subir" size="250" style="margin-top: 15px;")
+            br
+            div(class="row" style="margin-top: 15px;")
+                div(class="col-xs-4 col-sm-3 col-md-3 col-lg-3")
+                    button(class="btn btn-md btn-block" style=""+color_boton onclick="$('#submit').click();") #{titulo_boton}
+                div(class="col-xs-4 col-sm-3 col-md-3 col-lg-3")
+                    button(type="button" class="btn btn-md btn-block" style=""+color_formato onclick="visua_formato();") Formato
+            input(id="submit" class="btn btn-md btn-primary btn-block" style="display: none;" onclick="ajax_submit_fichero('#my_form', 'temporal');")
+    a(style="display: none" href="/importar_movimientos?mensaje=si" id="accion_cancelar" data-link)
+div(class="col-xs-4 col-sm-6 col-md-6 col-lg-6" style="margin-top: 8px;")
+    label(style=""+mensa_style) Fichero Copiado en el Servidor
+script. 
+    function visua_formato() {
+        $('#formato_movimientos').modal({ backdrop: 'static', keyboard: false });
+        $("#formato_movimientos").modal('show');
+    }
+    
+    window.onload = function(e) {
+        const nodes = document.getElementsByTagName("PRI_IMA");
+        if (nodes.length==0) {
+            window.location="./frontend/index0.html";
+        }
+    }

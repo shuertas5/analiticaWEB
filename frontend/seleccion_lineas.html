@@ -1,0 +1,144 @@
+<!-- Modal -->
+<div class="modal fade" id="seleccion_lineas_pan" tabindex="-1" role="dialog"
+    aria-labelledby="seleccion_lineas_ModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document" id="dialo">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="seleccion_lineas_ModalLabel">Seleccion de Lineas Analíticas</h5>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div style="height: 40px;font-size: 0.85em;margin-top: 15px;">
+                <span style="margin-left: 7px;">Hoja Analitica ...</span>
+                <span id="hoja_analiticaxx" style="margin-left: 7px;font-weight: bold;color: red;"></span>
+                <span id="titulo_hojaxx" style="margin-left: 7px;font-weight: bold;color: red;"></span>
+            </div>
+            <div class="modal-body, seleccion" style="height: 35vh;overflow-y: auto;">
+                <ul class="list-group" id="lista_seleccion_lineas">
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="seleccion_lineas_boton" class="btn btn-primary" data-bs-dismiss="modal"
+                    onclick="seleccionado_lineas();">Seleccionar</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+    var sele = false;
+
+    function seleccionado_lineas() {
+        sele = true;
+    }
+
+    async function cambio_lineas_inicio(hoja, objetoId, titulo_id) {
+
+        var url = "/seleccion_lineas?hoja=" + hoja;
+
+        $.ajax({
+            type: 'GET',
+            url: url,
+            async: false,
+            success: function (response) {
+                var salida = "";
+                response.forEach(element => {
+                    if (element.linea == $('#' + objetoId).val()) {
+                        salida = element.titulo;
+                    }
+                });
+                $('#' + titulo_id).text(salida);
+            },
+            error: function (xhr, status, err) {
+            }
+        });
+
+        return true;
+
+    }
+
+    async function seleccion_lineas_inicio(hoja, objetoId, titulo_id) {
+
+        sele = false;
+
+        var url = "/seleccion_lineas?hoja=" + hoja;
+
+        var titulo;
+
+        var parametros = JSON.stringify({ hoja: hoja });
+        await utilidades('get_hoja_primary', parametros).then(reto => {
+            if (reto.ret == true) {
+                titulo = reto.titulo;
+            }
+        });
+
+        return new Promise(function (resolve, reject) {
+            $.ajax({
+                type: 'GET',
+                url: url,
+                async: false,
+                success: function (response) {
+
+                    var relacion = "";
+                    var active = "active";
+                    var estilo;
+                    var estilo_num;
+
+                    response.forEach(element => {
+
+                        if (element.intensa == true) {
+                            estilo = "color: blue;font-weight: bold;";
+                            estilo_num = "color: blue;font-weight: bold;";
+                        }
+                        else if (element.invisible == true) {
+                            estilo = "color: gray;";
+                            estilo_num = "color: gray;font-weight: bold;";
+                        }
+                        else {
+                            estilo = "";
+                            estilo_num = "font-weight: bold;";
+                        }
+
+                        relacion += "<li class='list-group-item " + active + "' style='cursor: default;'>" + "<label style='" + estilo_num + "'>" + form("###", element.linea, "H") + "</label>&nbsp;&nbsp;<label style='" + estilo + "'>" + element.titulo + "</label><span style='display: none;'>" + element.linea + "</span></li>";
+                        active = "";
+                    });
+
+                    $('#hoja_analiticaxx').html('<label>' + hoja + '</label>');
+                    $('#titulo_hojaxx').html('<label>' + titulo + '</label>');
+
+                    $("#lista_seleccion_lineas").html(relacion);
+                    $('#seleccion_lineas_pan').modal({ backdrop: 'static', keyboard: false });
+                    $("#seleccion_lineas_pan").modal('show');
+                    $('#seleccion_lineas_pan').one('hidden.bs.modal', function (e) {
+                        if (sele == true) {
+                            var seleccionado = $('#seleccion_lineas_pan').find('.active').find('span').text();
+                            $('#' + objetoId).val(seleccionado);
+                        }
+                    });
+                },
+                error: function (xhr, status, err) {
+                }
+            });
+        });
+    }
+
+    $('#seleccion_lineas_pan .list-group').on('click', 'li', function (e) {
+
+        e.preventDefault()
+        $that = $(this);
+        $that.parent().find('li').removeClass('active');
+        $that.addClass('active');
+
+    });
+
+    $('#seleccion_lineas_pan .list-group').on('dblclick', 'li', function (e) {
+
+        e.preventDefault()
+        $that = $(this);
+        $('#seleccion_lineas_boton').click();
+
+    });
+
+</script>

@@ -1,0 +1,93 @@
+link(rel="shortcut icon" href="#")
+link(rel="stylesheet", href="/css/bootstrap.min.css")
+label(style="margin-top: 10px;") Duplicado de Hoja Analitica
+div(class="d-flex flex-column") 
+    div(class="container")
+        form(id="my_form" method='POST' action="/duplicado_hoja_analitica")
+            div(class="row" style='margin-bottom: 10px;')
+                div(class="divider py-1 bg-secondary")
+            div(class="row")
+                div(class="col-xs-4 col-sm-2 col-md-2 col-lg-2 treu_control")
+                    p(class="etiqueta") Hoja Origen 
+                    treungc-combodlgnum(id="HOJA_ORIGEN" name="HOJA_ORIGEN" titulo_id="TITU_HOJA_ORIGEN" formato="##" value=hoja_origen ondropdown="dropdown_hoja_origen();" ondatachange="cambio_hoja_origen();")
+                div(class="col-xs-6 col-sm-6 col-md-6 col-lg-6 treu_control")
+                    p(id="TITU_HOJA_ORIGEN" class="repon_titulo")
+            div(class="row")
+                div(class="col-xs-4 col-sm-2 col-md-2 col-lg-2 treu_control")
+                    p(class="etiqueta") Hoja Destino 
+                    treungc-combodlgnum(id="HOJA_DESTINO" name="HOJA_DESTINO" titulo_id="TITU_HOJA_DESTINO" formato="##" value=hoja_destino ondropdown="dropdown_hoja_destino();" ondatachange="cambio_hoja_destino();")
+                div(class="col-xs-6 col-sm-6 col-md-6 col-lg-6 treu_control")
+                    p(id="TITU_HOJA_DESTINO" class="repon_titulo")
+            div(class="row caja_control")
+                div(class="col-xs-6 col-sm-5 col-md-5 col-lg-5")
+                    input(class="etiqueta_checkradio" type="checkbox" id="COPIA_CON_CIFRAS" name="COPIA_CON_CIFRAS" value=""+con_cifras checked=con_cifras)
+                    label(class="etiqueta_lab_checkradio" for="COPIA_CON_CIFRAS") Copia con Cifras
+            button(id="submit" class="btn btn-md btn-primary btn-block" style="display: none;" onclick="ajax_submit('#my_form', 'temporal');")
+        div(class="row" style='margin-bottom: 15px;margin-top: 20px;')
+            div(class="divider py-1 bg-secondary")
+    div(class="d-flex flex-column") 
+        div(class="container" style=";height: calc(100vh - 487px);overflow-y: auto;margin-bottom: 10px;")
+            div(class="table-responsive")
+                div(id='pantalla_duplicado_hoja_analitica' style="width: 100%; height: 100%;font-size: 0.95em; font-family: 'Courier New', Courier, monospace;")
+div(class="mt-auto" class="botonera")
+    div(class="row")
+        div(class="col-xs-4 col-sm-3 col-md-3 col-lg-3")
+            button(id="mandar" class="btn btn-md btn-block" style=""+color_boton onclick="iniciar_ejecucion();") #{titulo_boton}
+        div(class="col-xs-4 col-sm-3 col-md-3 col-lg-3")
+            button(id="cancel" class="btn btn-md btn-secondary btn-block" onclick="$('#accion_cancelar2')[0].click();") Cancelar
+    a(style="display: none" href="" id="accion_cancelar" data-link)
+    a(style="display: none" href="/principal" id="accion_cancelar2" data-link)
+script.
+    function cambio_hoja_origen() {
+        cambio_hojas_inicio($('#HOJA_ORIGEN').attr('id'),$('#HOJA_ORIGEN').attr('titulo_id'));
+    }
+    function dropdown_hoja_origen() {
+        seleccion_hojas_inicio($('#HOJA_ORIGEN').attr('id'),null);
+    }
+    function cambio_hoja_destino() {
+        cambio_hojas_inicio($('#HOJA_DESTINO').attr('id'),$('#HOJA_DESTINO').attr('titulo_id'));
+    }
+    function dropdown_hoja_destino() {
+        seleccion_hojas_inicio($('#HOJA_DESTINO').attr('id'),null);
+    }
+    function iniciar_ejecucion() {
+        $('#submit').click();
+        var ele = $("#mensajes_error").find('.erri');
+        if (ele.length == 0) {
+            iniciar_impresion();
+        }
+        visual_panta();
+    }
+    function iniciar_impresion() {
+    }
+    function visual_panta() {
+        getFileFromServer("./temporal/retorno.html", async function (text) {
+            refresh_div(text); 
+        });
+    }
+    function refresh_div(tex) {
+
+        var url;
+
+        url = "/duplicado_hoja_analitica";
+
+        $.ajax({
+            type: 'GET',
+            url: url,
+            async: true,
+            success: function (response) {
+                $('#pantalla_duplicado_hoja_analitica').html(tex);
+            },
+            error: function (xhr, status, err) {
+            }
+        });
+
+        return true;
+    }
+     
+    window.onload = function(e) {
+        const nodes = document.getElementsByTagName("PRI_IMA");
+        if (nodes.length==0) {
+            window.location="./frontend/index0.html";
+        }
+    }

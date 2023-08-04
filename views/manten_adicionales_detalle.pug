@@ -1,0 +1,67 @@
+link(rel="shortcut icon" href="#")
+link(rel="stylesheet", href="/css/bootstrap.min.css")
+div(class="d-flex flex-column") 
+    div(class="container")
+        div(class="row")
+            div(class="caja_titulo")
+                span Adicional ...
+                span(id="tipo_adicional" style="margin-left: 7px;font-weight: bold;color: "+color_titulo+";font-size: 1.1em;") #{titulo_tipo}
+    div(class="container" style="height: calc(100vh - 243px);overflow-y: auto;margin-bottom: 10px;")
+        form(id="my_form" method='POST' action="/manten_adicionales_detalle")
+            div(class="row")
+                div(class="col-xs-3 col-sm-2 col-md-2 col-lg-2 treu_control")
+                    p(class="etiqueta") Num. Indice 
+                    treungc-numer(name="INDICE" formato="###.###" disabled="true" value=campos.indice)
+            div(class="row")
+                div(class="col-xs-5 col-sm-3 col-md-3 col-lg-3 treu_control")
+                    p(class="etiqueta") Campo Orden 
+                    treungc-texto(name="ORDEN" maxlength="10" disabled=""+disabled_campos value=""+campos.orden )
+            div(class="row")
+                div(class="col-xs-8 col-sm-6 col-md-6 col-lg-6 treu_control")
+                    p(class="etiqueta") Titulo Adicional Coste 
+                    treungc-texto(name="TITULO_ADICIONAL" formato="uppercase" maxlength="30" disabled=""+disabled_campos value=""+campos.titulo )
+            div(class="row")
+                div(class="col-xs-4 col-sm-2 col-md-2 col-lg-2 treu_control")
+                    p(class="etiqueta") Hoja 
+                    treungc-combodlgnum(id="HOJA" name="HOJA" formato="##" disabled=""+disabled_campos value=campos.hoja ondropdown="dropdown_hoja();" ondatachange="cambio_hoja();")
+                div(class="col-xs-4 col-sm-2 col-md-2 col-lg-2 treu_control")
+                    p(class="etiqueta") Linea 
+                    treungc-combodlgnum(id="LINEA" name="LINEA" formato="###" titulo_id="TITU_LINEA" disabled=""+disabled_campos value=campos.linea ondropdown="dropdown_linea();" ondatachange="cambio_linea();")
+                div(class="col-xs-6 col-sm-6 col-md-6 col-lg-6 treu_control")
+                    p(id="TITU_LINEA" class="repon_titulo")
+            div(class="row caja_control")
+                div(class="col-xs-6 col-sm-5 col-md-5 col-lg-5")
+                    input(class="etiqueta_checkradio" type="checkbox" id="BLANCA" name="BLANCA" value=campos.blanca disabled=disabled_campos checked=campos.blanca)
+                    label(class="etiqueta_lab_checkradio" for="BLANCA") Linea en Blanco
+            button(id="submit" class="btn btn-md btn-primary btn-block" style="display: none;" onclick="ajax_submit('#my_form', 'temporal');")
+            input(type="hidden" value=""+opcion name='opcion')
+            input(type="hidden" value=""+tipo_adicional name='tipo_adicional')
+            input(type="hidden" value=""+ordenacion name='ordenacion')
+    div(class="mt-auto" class="botonera")
+        div(class="row")
+            div(class="col-xs-4 col-sm-3 col-md-3 col-lg-3")
+                button(class="btn btn-md btn-block" style=""+color_boton onclick="$('#submit').click();") #{titulo_boton}
+            div(class="col-xs-4 col-sm-3 col-md-3 col-lg-3")
+                button(id="cancel" class="btn btn-md btn-secondary btn-block" onclick="$('#accion_cancelar')[0].click();") Cancelar
+    a(style="display: none" href="/manten_adicionales?tipo_adicional="+tipo_adicional+"&ordenacion="+ordenacion id="accion_cancelar" data-link)
+script.
+    function cambio_linea() {
+        cambio_lineas_inicio($('#HOJA').val(),$('#LINEA').attr('id'),$('#LINEA').attr('titulo_id'));
+    }
+    function dropdown_linea() {
+        seleccion_lineas_inicio($('#HOJA').val(),$('#LINEA').attr('id'),$('#LINEA').attr('titulo_id'));
+    }
+    function cambio_hoja() {
+        cambio_hojas_inicio($('#HOJA').attr('id'),null);
+        cambio_linea();
+    }
+    function dropdown_hoja() {
+        seleccion_hojas_inicio($('#HOJA').attr('id'),null);
+    }
+        
+    window.onload = function(e) {
+        const nodes = document.getElementsByTagName("PRI_IMA");
+        if (nodes.length==0) {
+            window.location="./frontend/index0.html";
+        }
+    }

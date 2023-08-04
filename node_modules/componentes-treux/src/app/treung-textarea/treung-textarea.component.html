@@ -1,0 +1,4 @@
+<textarea #obj class="form-control" autocomplete="off" [cols]="this.cols" [rows]="this.rows" [disabled]="this.disabled"
+    (keydown)="onKeyDownTreuTextArea($event)" (paste)="onPasteTreuTextArea($event)"
+    (cut)="onCutTreuTextArea($event)" (focusout)="onFocusLostTreuTextArea($event)"
+    (focusin)="onFocusGainTreuTextArea($event)">{{this.value}}</textarea>

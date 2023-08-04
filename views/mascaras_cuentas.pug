@@ -1,0 +1,72 @@
+link(rel="shortcut icon" href="#")
+link(rel="stylesheet", href="/css/bootstrap.min.css")
+div(class="container")
+    div(class="row")
+        div(class="col-xs-4 col-sm-2 col-md-2 col-lg-2 treu_control")
+            p(class="etiqueta") Num. Máscaras 
+            select(class="form-select" name="NUM_MASCARAS" id="NUM_MASCARAS" value=num_mascaras onchange="cambio_select();")
+                -i = 0
+                while (i<=15)
+                    option(value=i selected= num_mascaras == i) #{i}
+                    - i++
+div(class="d-flex flex-column" style="margin-top: 10px;") 
+    div(class="container" style="height: calc(100vh - 275px);overflow-y: auto;margin-bottom: 15px;")
+        form(id="my_form" method='POST' action="/mascaras_cuentas")
+            div(class="table-responsive")
+                table(class="table table-striped" style="overflow-y:hidden;")
+                    thead(class="thead-dark")
+                        div(class="row")
+                            tr
+                                th(style="min-width: 3cm;") Máscara
+                                th(style="min-width: 9cm;") Cuenta Máscara
+                    tbody(id="cuerpo_lineas")
+                    -var index = 0
+                    each n in rows
+                        - index++
+                        tr(class="filasx")
+                            td Mascara #{index}
+                            td 
+                                div(class="row")
+                                    div(class="col-xs-12 col-sm-12 col-md-12 col-lg-12 treu_control")
+                                        treungc-texto(name="MASCARA"+index id="MASCARA"+index formato="uppercase" maxlength="20" value=n)
+            button(id="submit" class="btn btn-md btn-primary btn-block" style="display: none;" onclick="ajax_submit('#my_form', 'temporal');")
+            input(type="hidden" name='num_compo' id='num_compo')
+    div(class="mt-auto" class="botonera")
+        div(class="row")
+            div(class="col-xs-4 col-sm-3 col-md-3 col-lg-3")
+                button(class="btn btn-md btn-block" style=""+color_boton onclick="click_mandar();$('#submit').click();") #{titulo_boton}
+            div(class="col-xs-4 col-sm-3 col-md-3 col-lg-3")
+                button(id="cancel" class="btn btn-md btn-secondary btn-block" onclick="$('#accion_cancelar')[0].click();") Cancelar
+    a(style="display: none" href="/principal" id="accion_cancelar" data-link)
+script. 
+    function cambio_select() {
+        var puses = [];
+        for (var i=1; i<=15; i++) {
+            if ($('#MASCARA'+i).val()!=undefined) {
+                puses.push($('#MASCARA'+i).val());
+            }
+            else {
+                puses.push("");
+           }
+        }
+        var e = document.getElementById("NUM_MASCARAS");
+        var num = e.options[e.selectedIndex].value;
+        var tabla="";
+        for (var i=1; i<=num; i++) {
+            tabla+="<tr class='filasx'><td>"+"Mascara "+i+"</td><td><div class='row'><div class='col-xs-12 col-sm-12 col-md-12 col-lg-12 treu_control'><treungc-texto name='MASCARA"+i+"' id='MASCARA"+i+"' formato='uppercase' maxlength='20' value='"+puses[i-1]+"'></treungc-texto></div></div></td></tr>"
+        }
+        $('.filasx').remove();
+        $('#cuerpo_lineas').html(tabla);       
+    }
+    function click_mandar() {
+        $('#num_compo').val($('#NUM_MASCARAS').val());
+    }
+    function preprocesar_pagina() {
+    }
+    
+    window.onload = function(e) {
+        const nodes = document.getElementsByTagName("PRI_IMA");
+        if (nodes.length==0) {
+            window.location="./frontend/index0.html";
+        }
+    }

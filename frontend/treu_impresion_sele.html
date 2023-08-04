@@ -1,0 +1,259 @@
+<link rel="stylesheet" href="/static/css/index.css">
+<div class="modal fade" id="treu_impresion_seleccion_salida" tabindex="-1" role="dialog"
+    aria-labelledby="treu_seleccion_impresion_salida_ModalLabel" aria-hidden="true">
+    <input type="hidden" id="treu_impresion_encargo_trabajo">
+    <input type="hidden" id="treu_impresion_encargo_trabajo_data">
+    <input type="hidden" id="treu_impresion_opcion_a_fichero">
+    <input type="hidden" id="treu_impresion_opcion_a_fichero_pdf">
+    <input type="hidden" id="treu_impresion_opcion_a_previsualizacion">
+    <input type="hidden" id="treu_impresion_opcion_a_previsualizacion_pdf">
+    <input type="hidden" id="treu_impresion_retorno_previs">
+    <div class="modal-dialog modal-lg" role="document" id="dialo">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="treu_seleccion_impresion_salida_ModalLabel">Seleccionar Salida de la
+                    Impresion</h5>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body" style="height: 55vh;overflow-y: auto;">
+
+                <div class="form-check"
+                    style="margin-top: 20px;margin-left: 60px;margin-bottom: 15px;font-size: 1.2em;">
+                    <input class="form-check-input" type="radio" name="seleccion_impresora" id="sele_impresora"
+                        value="impre" onchange="dinamica_sele_impre();" checked="checked" />
+                    <label class="form-check-label" for="sele_impresora">
+                        Salida a Impresora
+                    </label>
+                </div>
+                <div class="form-check" style="margin-left: 60px;margin-bottom: 15px;font-size: 1.2em;">
+                    <input class="form-check-input" type="radio" name="seleccion_impresora" id="sele_previsualizacion"
+                        onchange="dinamica_sele_impre();" value="previs">
+                    <label class="form-check-label" for="sele_previsualizacion">
+                        Previsualizacion
+                    </label>
+                </div>
+                <div class="form-check" style="margin-left: 60px;margin-bottom: 35px;font-size: 1.2em;">
+                    <input class="form-check-input" type="radio" name="seleccion_impresora" id="sele_fichero"
+                        onchange="dinamica_sele_impre();" value="fichero">
+                    <label class="form-check-label" for="sele_fichero">
+                        Salida a Fichero
+                    </label>
+                </div>
+
+                <div style="margin: 0 20px 10px 20px;">
+                    <div class="mb-2">
+                        <div class="col-lg-12">
+                            <button style="width: 100%;" id="treu_sele_impresion" class="btn clase_boton_modificacion"
+                                name="treu_sele_impresion" onclick="treu_iniciar_impresion_impre();">
+                                Imprimir Documento
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        <div style="margin: 0 0px 10px 20px;">
+                            <div class="mb-2">
+                                <div class="col-lg-12">
+                                    <button style="width: 100%;" id="previs_acrobat"
+                                        class="btn clase_boton_modificacion" name="previs_acrobat"
+                                        onclick="treu_iniciar_salida_previsualizacion_pdf();">Previsualizacion
+                                        con Acrobat
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        <div style="margin: 0 20px 10px 0px;">
+                            <div class="mb-2">
+                                <div class="col-lg-12">
+                                    <button style="width: 100%;" id="previs_salida" class="btn clase_boton_modificacion"
+                                        name="previs_salida" onclick="treu_iniciar_salida_previsualizacion();">
+                                        Previsualizacion en Texto
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        <div style="margin: 0 0px 10px 20px;">
+                            <div class="mb-2">
+                                <div class="col-lg-12">
+                                    <button style="width: 100%;" id="salida_fichero"
+                                        class="btn clase_boton_modificacion" name="salida_fichero"
+                                        onclick="treu_iniciar_salida_fichero();">Salida
+                                        Fichero
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        <div style="margin: 0 20px 10px 0px;">
+                            <div class="mb-2">
+                                <div class="col-lg-12">
+                                    <button style="width: 100%;" id="cancelar_impresion" class="btn btn-secondary"
+                                        name="cancelar_impresion" onclick="cancelar_sele_impresion()"
+                                        data-bs-dismiss="modal">Cancelar Impresion
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a style="display: none;" id="enlace_previsualizacion" href="" data-link></a>
+    <a style="display: none;" id="enlace_retorno" href="" data-link></a>
+</div>
+<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="../frontend/static/js/print.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../frontend/static/css/print.min.css">
+<script src="../treu/lista_de_campos_rutinas.js"></script>
+<script src="../frontend/static/js/treu_impresion_bifurcaciones.js"></script>
+<script>
+
+    function dinamica_sele_impre() {
+        if ($('.modal-body').find("input[type='radio'][name='seleccion_impresora']:checked").val() == 'impre') {
+            $('#treu_sele_impresion').prop("disabled", false);
+            $('#previs_acrobat').prop("disabled", true);
+            $('#previs_salida').prop("disabled", true);
+            $('#salida_fichero').prop("disabled", true);
+        }
+        if ($('.modal-body').find("input[type='radio'][name='seleccion_impresora']:checked").val() == 'previs') {
+            $('#treu_sele_impresion').prop("disabled", true);
+            $('#previs_acrobat').prop("disabled", false);
+            $('#previs_salida').prop("disabled", false);
+            $('#salida_fichero').prop("disabled", true);
+        }
+        if ($('.modal-body').find("input[type='radio'][name='seleccion_impresora']:checked").val() == 'fichero') {
+            $('#treu_sele_impresion').prop("disabled", true);
+            $('#previs_acrobat').prop("disabled", true);
+            $('#previs_salida').prop("disabled", true);
+            $('#salida_fichero').prop("disabled", false);
+        }
+    }
+
+    dinamica_sele_impre();
+
+    function treu_iniciar_impresion_impre() {
+        $('#treu_impresion_opcion_a_fichero').val(0);
+        $('#treu_impresion_opcion_a_fichero_pdf').val(0);
+        $('#treu_impresion_opcion_a_previsualizacion').val(0);
+        $('#treu_impresion_opcion_a_previsualizacion_pdf').val(0);
+        $('#treu_impresion_seleccion_salida').modal('hide');
+        treu_impresion_bifurcaciones();
+    }
+
+    function treu_iniciar_salida_fichero() {
+        $('#treu_impresion_opcion_a_fichero').val(1);
+        $('#treu_impresion_opcion_a_fichero_pdf').val(1);
+        $('#treu_impresion_opcion_a_previsualizacion').val(0);
+        $('#treu_impresion_opcion_a_previsualizacion_pdf').val(0);
+        $('#treu_impresion_seleccion_salida').modal('hide');
+        treu_impresion_a_fichero_onshow();
+        $('#mensa_error').text('');
+        $('#mensa_error').hide();
+        $('#treu_impresion_a_fichero').modal({ backdrop: 'static', keyboard: false });
+        $("#treu_impresion_a_fichero").modal('show');
+    }
+
+    function treu_iniciar_salida_previsualizacion_pdf() {
+        $('#treu_impresion_opcion_a_fichero').val(0);
+        $('#treu_impresion_opcion_a_fichero_pdf').val(0);
+        $('#treu_impresion_opcion_a_previsualizacion').val(0);
+        $('#treu_impresion_opcion_a_previsualizacion_pdf').val(1);
+        $('#treu_impresion_seleccion_salida').modal('hide');
+        treu_impresion_bifurcaciones();
+    }
+
+    function treu_iniciar_salida_previsualizacion() {
+        $('#treu_impresion_opcion_a_fichero').val(0);
+        $('#treu_impresion_opcion_a_fichero_pdf').val(0);
+        $('#treu_impresion_opcion_a_previsualizacion').val(1);
+        $('#treu_impresion_opcion_a_previsualizacion_pdf').val(0);
+        $('#treu_impresion_seleccion_salida').modal('hide');
+        treu_impresion_bifurcaciones();
+    }
+
+    function treu_iniciar_impresion_sele() {
+        $('#treu_impresion_seleccion_salida').modal({ backdrop: 'static', keyboard: false });
+        $("#treu_impresion_seleccion_salida").modal('show');
+    }
+
+    function treu_impresion_bifurca(destino) {
+
+        var xhttp;
+
+        xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var afichero = $('#treu_impresion_opcion_a_fichero').val();
+                var afichero_pdf = $('#treu_impresion_opcion_a_fichero_pdf').val();
+                var aprevis = $('#treu_impresion_opcion_a_previsualizacion').val();
+                var aprevis_pdf = $('#treu_impresion_opcion_a_previsualizacion_pdf').val();
+                var filename = $('#treu_impresion_opcion_a_fichero_filename').val();
+                if (aprevis == 1 || aprevis_pdf == 1) {
+                    if (this.responseText=='vacio') {
+                        $('#enlace_retorno').prop('href', $('#treu_impresion_retorno_previs').val());
+                        $('#enlace_retorno')[0].click();
+                        return;
+                    }
+                    var url;
+                    if (aprevis == 1) {
+                        url = '/treu_impresion_final?id_fichero=./temporal/UsuarioTreu/ListadoTexto.txt&aprevis=1&aprevis_pdf=0';
+                    }
+                    if (aprevis_pdf == 1) {
+                        url = '/treu_impresion_final?id_fichero=./temporal/UsuarioTreu/ListadoTexto.pdf&aprevis=0&aprevis_pdf=1';
+                    }
+                    $('#enlace_previsualizacion').prop('href', url);
+                    $('#enlace_previsualizacion')[0].click();
+                } else if (afichero == 1 || afichero_pdf == 1) {
+                    var link = document.createElement("a");
+                    link.download = filename;
+                    if (afichero == 1) {
+                        link.href = "./temporal/UsuarioTreu/ListadoTexto.txt";
+                    }
+                    else if (afichero_pdf == 1) {
+                        link.href = "./temporal/UsuarioTreu/ListadoTexto.pdf";
+                    }
+                    link.target = "_blank";
+                    link.click();
+                    link.remove();
+                } else {
+                    printJS({ printable: '../temporal/UsuarioTreu/ListadoTexto.pdf', type: 'pdf', showModal: true });
+                    $('#enlace_retorno').prop('href', $('#treu_impresion_retorno_previs').val());
+                    $('#enlace_retorno')[0].click();
+                }
+            }
+        };
+        var lista = new Array();
+        lista_campos_add_campos_standard(lista);
+        var params = "data_impre=" + paso_espacios_web(lista_campos_escribir_campos(lista));
+        if ($('#treu_impresion_encargo_trabajo_data').val() != '') {
+            params += "&data=" + paso_espacios_web($('#treu_impresion_encargo_trabajo_data').val());
+        }
+        params += '&opcion=imprimir';
+        xhttp.open("POST", destino, false);
+        xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhttp.send(params);
+    }
+
+    function treu_impresion_onshow() {
+        $('#sele_impresora').prop('checked', true);
+        dinamica_sele_impre();
+    }
+
+    function cancelar_sele_impresion() {
+        $('#enlace_retorno').prop('href', $('#treu_impresion_retorno_previs').val());
+        $('#enlace_retorno')[0].click();
+    }
+
+</script>

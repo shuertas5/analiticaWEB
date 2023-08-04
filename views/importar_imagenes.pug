@@ -1,0 +1,63 @@
+link(rel="shortcut icon" href="#")
+link(rel="stylesheet", href="/css/bootstrap.min.css")
+label(style="margin-top: 10px;") Seleccione Fichero de Imagen
+div(class="container")
+    form(id="my_form" method="POST" enctype="multipart/form-data" action="/importar_imagenes")
+        div(class="row")
+            div(class="divider py-1 bg-secondary")
+        br
+        input(type="file" name="get_fichero" id="if_fichero_subir" size="50" accept="image/*")
+        br
+        div(class="row" style="margin-top: 15px;")
+            div(class="col-xs-4 col-sm-3 col-md-3 col-lg-3")
+                button(class="btn btn-md btn-block" style=""+color_boton onclick="$('#submit').click();") #{titulo_boton}
+        input(id="submit" class="btn btn-md btn-primary btn-block" style="display: none;" onclick="ajax_submit_fichero('#my_form', 'temporal');")
+div(class="d-flex flex-column" style="margin-top: 15px;") 
+    div(class="container" style="height: calc(100vh - 295px);overflow-y: auto;margin-bottom: 10px;")
+        div(class="table-responsive")
+            table(class="table table-striped")
+                thead(class="thead-dark")
+                    tr
+                        th Acciones
+                        th Nombre Fichero
+                        th Fecha Creaci&oacute;n
+                        th Tama&ntilde;o
+                tbody
+                each n in rows
+                   tr 
+                        td 
+                            a(href="/importar_imagenes?opcion=bajarimagen&fichero="+n.file_enco onclick="downloadURI('"+n.file+"','"+n.file+"')" data-link) 
+                                img(src="./img/download.svg" class="icono_table" alt="Bajar Imagen" title="Bajar Imagen "+n.file)
+                            a(href="/importar_imagenes?opcion=eliminar&fichero="+n.file_enco onclick="confirmacion_borrar(this);" data-link)
+                                img(src="./img/delete.svg" class="icono_table" alt="Eliminar" title="Eliminar "+n.file)
+                        td= n.file
+                        td(style="text-align: right;")= n.dateCreated 
+                        td(style="text-align: right;")= n.sizeFile 
+    a(style="display: none" href="/importar_imagenes" id="accion_cancelar" data-link)
+script. 
+    function downloadURI(uri, name) {
+        var answer = window.confirm("¿Descargar la Imagen?");
+        if (answer) {
+            var link = document.createElement("a");
+            link.download = name;
+            link.href = "./img_cliente/"+uri;
+            link.target = "_blank";
+            link.click();
+            link.remove();
+        }
+    }
+    function confirmacion_borrar(t) {
+        var answer = window.confirm("¿Borrar la Imagen?");
+        if (answer) {
+        }
+        else {
+            t.href = "";
+        }
+    }
+    
+    window.onload = function(e) {
+        const nodes = document.getElementsByTagName("PRI_IMA");
+        if (nodes.length==0) {
+            window.location="./frontend/index0.html";
+        }
+    }

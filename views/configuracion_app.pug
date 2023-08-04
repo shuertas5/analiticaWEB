@@ -1,0 +1,47 @@
+link(rel="shortcut icon" href="#")
+link(rel="stylesheet", href="/css/bootstrap.min.css")
+div(class="d-flex flex-column") 
+    div(class="container" style="height: calc(100vh - 195px);overflow-y: auto;margin-bottom: 10px;")
+        form(id="my_form" method='POST' action="/configuracion_app")
+            div(class="row")
+                div(class="col-xs-10 col-sm-6 col-md-6 col-lg-6 treu_control")
+                    p(class="etiqueta") Escudo de la Portada 
+                    select(class="form-select" name="ESCUDO_PORTADA" id="ESCUDO_PORTADA" disabled=disabled_campos value=campos.escudo_portada)
+                        each escudo in campos.escudos
+                            option(value=escudo selected= escudo == campos.escudo_portada) #{escudo}
+            div(class="row")
+                div(class="col-xs-5 col-sm-2 col-md-2 col-lg-2 treu_control")
+                    p(class="etiqueta") Ancho Escudo Portada (%) 
+                    treungc-numer(name="ANCHO_ESCUDO_PORTADA" formato="###" value=campos.ancho_escudo_portada)
+                div(class="col-xs-5 col-sm-2 col-md-2 col-lg-2 treu_control")
+                    p(class="etiqueta") Alto Escudo Portada (%) 
+                    treungc-numer(name="ALTO_ESCUDO_PORTADA" formato="###" value=campos.alto_escudo_portada)
+            div(class="row")
+                div(class="col-xs-10 col-sm-6 col-md-6 col-lg-6 treu_control")
+                    p(class="etiqueta") Escudo de la Pantalla 
+                    select(class="form-select" name="ESCUDO_PANTALLA" id="ESCUDO_PANTALLA" disabled=disabled_campos value=campos.escudo_pantalla)
+                        each escudo in campos.escudos
+                            option(value=escudo selected= escudo == campos.escudo_pantalla) #{escudo}
+            div(class="row")
+                div(class="col-xs-5 col-sm-2 col-md-2 col-lg-2 treu_control")
+                    p(class="etiqueta") Ancho Escudo Pantalla (%) 
+                    treungc-numer(name="ANCHO_ESCUDO_PANTALLA" formato="###" value=campos.ancho_escudo_pantalla)
+                div(class="col-xs-5 col-sm-2 col-md-2 col-lg-2 treu_control")
+                    p(class="etiqueta") Alto Escudo Pantalla (%) 
+                    treungc-numer(name="ALTO_ESCUDO_PANTALLA" formato="###" value=campos.alto_escudo_pantalla)
+            button(id="submit" class="btn btn-md btn-primary btn-block" style="display: none;" onclick="ajax_submit('#my_form', 'temporal');")
+    div(class="mt-auto" class="botonera")
+        div(class="row")
+            div(class="col-xs-4 col-sm-3 col-md-3 col-lg-3")
+                button(id="mandar" class="btn btn-md btn-block" style=""+color_boton onclick="$('#submit').click();") #{titulo_boton}
+            div(class="col-xs-4 col-sm-3 col-md-3 col-lg-3")
+                button(id="cancel" class="btn btn-md btn-secondary btn-block" onclick="$('#accion_cancelar')[0].click();") Cancelar
+    a(style="display: none" href="/" id="accion_cancelar" data-link)
+script. 
+    
+    window.onload = function(e) {
+        const nodes = document.getElementsByTagName("PRI_IMA");
+        if (nodes.length==0) {
+            window.location="./frontend/index0.html";
+        }
+    }

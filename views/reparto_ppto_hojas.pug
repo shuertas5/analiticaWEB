@@ -1,0 +1,44 @@
+link(rel="shortcut icon" href="#")
+link(rel="stylesheet", href="/css/bootstrap.min.css")
+div(class="container")
+    div(class="alta")
+        img(src="/img/mas.svg" class="icono_table" alt="Alta" title="Alta")
+        label
+            a(href="/reparto_ppto_hojas_detalle?opcion=alta" style="font-weight: bold;" data-link) Alta Reparto Hoja Presupuesto
+div(class="d-flex flex-column") 
+    div(class="container" style="height: calc(100vh - 195px);overflow-y: auto;margin-bottom: 10px;")
+        div(class="table-responsive")
+            table(class="table table-striped table_size_3")
+                thead(class="thead-dark")
+                    tr
+                        th Opciones
+                        th Hoja
+                        th Titulo Hoja Analitica
+                        th Reparto 01
+                        th Reparto 02
+                        th Reparto 03
+                        th Reparto 04
+                tbody
+                each n in rows
+                   tr 
+                        td 
+                            a(href="/reparto_ppto_hojas_detalle?opcion=consulta&hoja="+n.hoja data-link) 
+                                img(src="./img/ver.svg" class="icono_table" alt="Consulta" title="Consulta")
+                            a(href="/reparto_ppto_hojas_detalle?opcion=modificacion&hoja="+n.hoja data-link)
+                                img(src="./img/edit.svg" class="icono_table" alt="Editar" title="Editar")
+                            a(href="/reparto_ppto_hojas_detalle?opcion=baja&hoja="+n.hoja data-link)
+                                img(src="./img/delete.svg" class="icono_table" alt="Baja" title="Baja")
+                        td= n.hoja
+                        td= n.titulo_hoja 
+                        td(style="text-align: right;")= n.reparto01
+                        td(style="text-align: right;")= n.reparto02
+                        td(style="text-align: right;")= n.reparto03
+                        td(style="text-align: right;")= n.reparto04
+script. 
+    
+    window.onload = function(e) {
+        const nodes = document.getElementsByTagName("PRI_IMA");
+        if (nodes.length==0) {
+            window.location="./frontend/index0.html";
+        }
+    }

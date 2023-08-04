@@ -1,0 +1,45 @@
+link(rel="shortcut icon" href="#")
+link(rel="stylesheet" href="/css/bootstrap.min.css")
+div(class="d-flex flex-column") 
+    div(class="container")
+        div(class="row")
+            div(class="caja_titulo")
+                span Hoja Analitica ...
+                span(id="hoja_analitica" style="margin-left: 7px;font-weight: bold") #{hoja}
+                span(id="titulo_hoja" style="margin-left: 7px;font-weight: bold;") #{titulo_hoja}
+        form(id="my_form" method='POST' action="/manten_notas_ppto_detalle")
+            div(class="container" style="height: calc(100vh - 243px);overflow-y: auto;margin-bottom: 10px;")
+                div(class="row")
+                    div(class="col-xs-3 col-sm-2 col-md-2 col-lg-2 treu_control")
+                        p(class="etiqueta") Num. Linea 
+                        treungc-combodlgnum(name="LINEA" id="LINEA" formato="###" titulo_id='TITU_LINEA' disabled=""+disabled_clave value=""+campos.linea ondropdown="dropdown_linea();" ondatachange="cambio_linea();")
+                    div(class="col-xs-6 col-sm-6 col-md-6 col-lg-6 treu_control")
+                        p(id="TITU_LINEA" class="repon_titulo")
+                div(class="row")
+                    div(class="col-xs-8 col-sm-6 col-md-6 col-lg-6 treu_control")
+                        p(class="etiqueta") Nota al Presupuesto 
+                        treungc-texto(name="NOTA" maxlength="30" disabled=""+disabled_campos value=""+campos.nota)
+                button(id="submit" class="btn btn-md btn-primary btn-block" style="display: none;" onclick="ajax_submit('#my_form', 'temporal');")
+                input(type="hidden" name="HOJA" id="HOJA" value=hoja)
+                input(type="hidden" name="opcion" value=opcion)
+    div(class="mt-auto" class="botonera")
+        div(class="row")
+            div(class="col-xs-4 col-sm-3 col-md-3 col-lg-3")
+                button(class="btn btn-md btn-block" style=""+color_boton onclick="$('#submit').click();") #{titulo_boton}
+            div(class="col-xs-4 col-sm-3 col-md-3 col-lg-3")
+                button(id="cancel" class="btn btn-md btn-secondary btn-block" onclick="$('#accion_cancelar')[0].click();") Cancelar
+    a(style="display: none" href="/manten_notas_ppto?hoja="+hoja id="accion_cancelar" data-link)
+script.
+    function cambio_linea() {
+        cambio_lineas_inicio($('#HOJA').val(),$('#LINEA').attr('id'),$('#LINEA').attr('titulo_id'));
+    }
+    function dropdown_linea() {
+        seleccion_lineas_inicio($('#HOJA').val(),$('#LINEA').attr('id'),$('#LINEA').attr('titulo_id'));
+    }
+        
+    window.onload = function(e) {
+        const nodes = document.getElementsByTagName("PRI_IMA");
+        if (nodes.length==0) {
+            window.location="./frontend/index0.html";
+        }
+    }

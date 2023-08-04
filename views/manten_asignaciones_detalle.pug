@@ -1,0 +1,57 @@
+link(rel="shortcut icon" href="#")
+link(rel="stylesheet", href="/css/bootstrap.min.css")
+div(class="d-flex flex-column") 
+    div(class="container" style="height: calc(100vh - 195px);overflow-y: auto;margin-bottom: 10px;")
+        form(id="my_form" method='POST' action="/manten_asignaciones_detalle")
+            div(class="row")
+                div(class="col-xs-4 col-sm-4 col-md-4 col-lg-4 treu_control")
+                    p(class="etiqueta") Cuenta 
+                    treungc-texto(name="CUENTA" maxlength="20" formato="uppercase"  disabled=""+disabled_clave value=campos.cuenta)
+                div(class="col-xs-5 col-sm-3 col-md-3 col-lg-3 treu_control")
+                    p(class="etiqueta") SubCuenta 
+                    treungc-texto(name="SUBCUENTA" maxlength="10" formato="uppercase" disabled=""+disabled_clave value=""+campos.subcuenta )
+            div(class="row")
+                div(class="col-xs-8 col-sm-6 col-md-6 col-lg-6 treu_control")
+                    p(class="etiqueta") Titulo Cuenta/Subcuenta 
+                    treungc-texto(name="TITULO_CUENTA" formato="uppercase" maxlength="30" disabled=""+disabled_campos value=""+campos.titulo )
+            div(class="row")
+                div(class="col-xs-4 col-sm-2 col-md-2 col-lg-2 treu_control")
+                    p(class="etiqueta") Hoja 
+                    treungc-combodlgnum(id="HOJA" name="HOJA" formato="##" disabled=""+disabled_campos value=campos.hoja ondropdown="dropdown_hoja();" ondatachange="cambio_hoja();")
+                div(class="col-xs-4 col-sm-2 col-md-2 col-lg-2 treu_control")
+                    p(class="etiqueta") Linea 
+                    treungc-combodlgnum(id="LINEA" name="LINEA" formato="###" titulo_id="TITU_LINEA" disabled=""+disabled_campos value=campos.linea ondropdown="dropdown_linea();" ondatachange="cambio_linea();")
+                div(class="col-xs-6 col-sm-6 col-md-6 col-lg-6 treu_control")
+                    p(id="TITU_LINEA" class="repon_titulo")
+            button(id="submit" class="btn btn-md btn-primary btn-block" style="display: none;" onclick="ajax_submit('#my_form', 'temporal');")
+            input(type="hidden" value=""+opcion name='opcion')
+            input(type="hidden" value=""+ordenacion name='ordenacion')
+            input(type="hidden" value=""+buscar_cuenta name='buscar_cuenta')
+    div(class="mt-auto" class="botonera")
+        div(class="row")
+            div(class="col-xs-4 col-sm-3 col-md-3 col-lg-3")
+                button(class="btn btn-md btn-block" style=""+color_boton onclick="$('#submit').click();") #{titulo_boton}
+            div(class="col-xs-4 col-sm-3 col-md-3 col-lg-3")
+                button(id="cancel" class="btn btn-md btn-secondary btn-block" onclick="$('#accion_cancelar')[0].click();") Cancelar
+    a(style="display: none" href="/manten_asignaciones?ordenacion="+ordenacion+"&buscar_cuenta="+buscar_cuenta id="accion_cancelar" data-link)
+script.
+    function cambio_linea() {
+        cambio_lineas_inicio($('#HOJA').val(),$('#LINEA').attr('id'),$('#LINEA').attr('titulo_id'));
+    }
+    function dropdown_linea() {
+        seleccion_lineas_inicio($('#HOJA').val(),$('#LINEA').attr('id'),$('#LINEA').attr('titulo_id'));
+    }
+    function cambio_hoja() {
+        cambio_hojas_inicio($('#HOJA').attr('id'),null);
+        cambio_linea();
+    }
+    function dropdown_hoja() {
+        seleccion_hojas_inicio($('#HOJA').attr('id'),null);
+    }
+        
+    window.onload = function(e) {
+        const nodes = document.getElementsByTagName("PRI_IMA");
+        if (nodes.length==0) {
+            window.location="./frontend/index0.html";
+        }
+    }

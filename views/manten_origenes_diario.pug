@@ -1,0 +1,36 @@
+link(rel="shortcut icon" href="#")
+link(rel="stylesheet", href="/css/bootstrap.min.css")
+div(class="container")
+    div(class="alta")
+        img(src="/img/mas.svg" class="icono_table" alt="Alta" title="Alta")
+        label
+            a(href="/manten_origenes_diario_detalle?opcion=alta" style="font-weight: bold;" data-link) Alta de Origenes de Diario
+div(class="d-flex flex-column") 
+    div(class="container" style="height: calc(100vh - 195px);overflow-y: auto;margin-bottom: 10px;")
+        div(class="table-responsive")
+            table(class="table table-striped")
+                thead(class="thead-dark")
+                    tr
+                        th Opciones
+                        th Clave Origen
+                        th Titulo Origen de Diario
+                tbody
+                each n in rows
+                    tr 
+                        td
+                            a(href="/manten_origenes_diario_detalle?opcion=consulta&clave_origen="+n.clave_origen data-link) 
+                                img(src="./img/ver.svg" class="icono_table" alt="Consulta" title="Consulta")
+                            a(href="/manten_origenes_diario_detalle?opcion=modificacion&clave_origen="+n.clave_origen data-link)
+                                img(src="./img/edit.svg" class="icono_table" alt="Editar" title="Editar")
+                            a(href="/manten_origenes_diario_detalle?opcion=baja&clave_origen="+n.clave_origen data-link)
+                                img(src="./img/delete.svg" class="icono_table" alt="Baja" title="Baja")
+                        td= n.clave_origen
+                        td= n.titulo
+script. 
+    
+    window.onload = function(e) {
+        const nodes = document.getElementsByTagName("PRI_IMA");
+        if (nodes.length==0) {
+            window.location="./frontend/index0.html";
+        }
+    }

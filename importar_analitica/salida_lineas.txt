@@ -1,0 +1,1062 @@
+1;10;"PERSONAL DE DIRECCION";1;false;false;true;true;1;160;false;false;false;true;"";0;false;true;false;false
+1;20;"PERSONAL DE ADMINISTRACION";1;false;false;true;true;1;160;false;false;false;true;"";0;false;true;false;false
+1;30;"PERSONAL PREJUBILADO";1;false;false;true;true;1;160;false;false;false;true;"";0;false;true;false;false
+1;40;"IMPUESTOS";1;false;false;true;true;1;160;false;false;false;true;"";0;false;true;false;false
+1;50;"PRIMAS DE SEGUROS";1;false;false;true;true;1;160;false;false;false;true;"";0;false;true;false;false
+1;60;"OFICINAS Y SERVICIOS ADMRVOS.";1;false;false;true;true;1;160;false;false;false;true;"";0;false;true;false;false
+1;70;"TRANSPORTES Y DESPLAZAMIENTOS";1;false;false;true;true;1;160;false;false;false;true;"";0;false;true;false;false
+1;80;"SUMINISTROS DE ESCRITORIO";1;false;false;true;true;1;160;false;false;false;true;"";0;false;true;false;false
+1;90;"FRANQUEO, VALIJA Y MENSAJERIA";1;false;false;true;true;1;160;false;false;false;true;"";0;false;true;false;false
+1;100;"MISIONES Y RECEPCIONES";1;false;false;true;true;1;160;false;false;false;true;"";0;false;true;false;false
+1;110;"PUBLICIDAD (OBSEQ.,LLAVEROS..)";1;false;false;true;true;1;160;false;false;false;true;"";0;false;true;false;false
+1;120;"JURIDICOS Y SERV. PROFESIONAL.";1;false;false;true;true;1;160;false;false;false;true;"";0;false;true;false;false
+1;130;"SERV.DE CALIDAD Y MEDIOAMBIEN.";1;false;false;true;true;1;160;false;false;false;true;"";0;false;true;false;false
+1;140;"SUSCRIPCIONES Y DOCUMENTACION";1;false;false;true;true;1;160;false;false;false;true;"";0;false;true;false;false
+1;150;"OTROS GASTOS DIVERSOS";1;false;false;true;true;1;160;false;false;false;true;"";0;false;true;false;false
+1;160;"TOTAL GASTOS GENERALES";2;true;false;true;true;1;160;true;false;false;true;"";0;false;true;false;false
+1;170;"";1;false;true;true;true;1;180;false;false;false;true;"";0;false;true;false;false
+1;180;"RATIOS";1;false;false;true;true;1;180;false;false;false;false;"";0;false;true;false;false
+1;190;"";1;false;true;true;true;1;180;false;false;false;false;"";0;false;true;false;false
+1;200;"CAPITAL Y RESERVAS";1;false;false;true;true;1;180;false;false;false;false;"";0;false;true;false;false
+1;210;"";1;false;true;true;true;1;180;false;false;false;false;"";0;false;true;false;false
+1;220;"FACTURACION CTRA. ALICANTE";8;true;false;true;true;1;220;true;false;false;true;"";0;false;true;false;false
+1;230;"";1;false;true;true;true;1;180;false;false;false;false;"";0;false;true;false;false
+1;240;"RESULTADO NETO CTRA. ALICANTE";13;true;false;true;true;1;220;true;false;false;true;"";0;false;true;false;false
+1;250;"";1;false;true;true;true;1;180;false;false;false;false;"";0;false;true;false;false
+1;260;"PLANTILLA TOTAL";1;false;false;false;true;1;180;false;true;false;false;"";0;false;true;false;false
+1;270;"";1;false;true;true;true;1;180;false;false;false;false;"";0;false;true;false;false
+1;280;"FACTURACION POR PERSONA";1;false;false;true;true;1;180;false;true;false;false;"";0;false;true;false;false
+1;290;"";1;false;true;true;true;1;180;false;false;false;false;"";0;false;true;false;false
+1;300;"GASTOS ESTRUCTURA / FACTURACIO";3;false;false;true;true;1;220;true;false;false;true;"";0;false;true;false;false
+1;310;"";1;false;true;true;true;1;180;false;false;false;false;"";0;false;true;false;false
+1;320;"RESULTADO / CAPITAL+RESERVAS";1;false;false;true;true;1;180;false;false;false;false;"";0;false;true;false;false
+2;10;"PERSONAL DE BASE";1;false;false;true;true;2;110;false;false;false;true;"";0;false;true;false;false
+2;20;"ALQUILERES";1;false;false;true;true;2;110;false;false;false;true;"";0;false;true;false;false
+2;30;"ENTRETENIMIENTO Y REPARACIONES";1;false;false;true;true;2;110;false;false;false;true;"";0;false;true;false;false
+2;40;"SERVICIOS -LUZ-AGUA-BASURA";1;false;false;true;true;2;110;false;false;false;true;"";0;false;true;false;false
+2;50;"LIMPIEZA Y CONSUMO";1;false;false;true;true;2;110;false;false;false;true;"";0;false;true;false;false
+2;60;"TRANSPORTES Y DESPLAZAMIENTOS";1;false;false;true;true;2;110;false;false;false;true;"";0;false;true;false;false
+2;70;"VEHICULOS DE SERVICIO";1;false;false;true;true;2;110;false;false;false;true;"";0;false;true;false;false
+2;80;"TELEFONOS";1;false;false;true;true;2;110;false;false;false;true;"";0;false;true;false;false
+2;90;"OTROS GASTOS DIVERSOS";1;false;false;true;true;2;110;false;false;false;true;"";0;false;true;false;false
+2;100;"AMORTIZACIONES";1;false;false;true;true;2;110;false;false;false;true;"";0;false;true;false;false
+2;110;"TOTAL GASTOS DE BASE";2;true;false;true;true;2;110;true;false;false;true;"";0;false;true;false;false
+3;10;"VENTA DE VEHICULOS";1;false;false;true;true;3;550;false;false;false;true;"";0;false;true;false;false
+3;20;"VENTA DE VEHICULOS POR AGENTES";1;false;false;true;true;3;550;false;false;false;true;"";0;false;true;false;false
+3;30;"PRIMAS PROMOCIONALES";1;false;false;true;true;3;550;false;false;false;true;"";0;false;true;false;false
+3;40;"INGRESOS DE VENTAS";2;true;false;true;true;3;550;true;false;false;true;"";0;false;true;false;false
+3;50;"COSTO DE LOS VEHICULOS";1;false;false;true;true;3;550;false;false;false;true;"";0;false;true;false;false
+3;60;"PORTES Y TRASIEGOS";1;false;false;true;true;3;550;false;false;false;true;"";0;false;true;false;false
+3;70;"P.A.P. Y PREENTREGAS ACC-TIPO";1;false;false;true;true;3;550;false;false;false;true;"";0;false;true;false;false
+3;80;"ACCESORIOS VN Y REACONDICIONA.";1;false;false;true;true;3;550;false;false;false;true;"";0;false;true;false;false
+3;100;"SOBREVALORACION VO";1;false;false;true;true;3;550;false;false;false;true;"";0;false;true;false;false
+3;110;"DESCUENTOS";1;false;false;true;true;3;550;false;false;false;true;"";0;false;true;false;false
+3;120;"COSTO DE LA VENTA";2;true;false;true;true;3;550;true;false;false;true;"";0;false;true;false;false
+3;130;"MARGEN DE LA VENTA";3;true;false;true;true;3;550;true;false;false;true;"";0;false;true;false;false
+3;140;"COMISIONES A VENDEDORES";1;false;false;true;true;3;550;false;false;false;true;"";0;false;true;false;false
+3;150;"COMISIONES A COLABORADORES";1;false;false;true;true;3;550;false;false;false;true;"";0;false;true;false;false
+3;160;"COMISIONES A AGENTES";1;false;false;true;true;3;550;false;false;false;true;"";0;false;true;false;false
+3;170;"GASTOS DE VIAJE Y REPRESENTAC.";1;false;false;true;true;3;550;false;false;false;true;"";0;false;true;false;false
+3;180;"PUBLICIDAD DIRECTA Y PROMOCION";1;false;false;true;true;3;550;false;false;false;true;"";0;false;true;false;false
+3;190;"GASTOS VARIABLES";2;true;false;true;true;3;550;true;false;false;true;"";0;false;true;false;false
+3;200;"SUELDOS";1;false;false;true;true;3;550;false;false;false;true;"";0;false;true;false;false
+3;210;"SEGUROS SOCIALES";1;false;false;true;true;3;550;false;false;false;true;"";0;false;true;false;false
+3;220;"FORMACION DE PERSONAL";1;false;false;true;true;3;550;false;false;false;true;"";0;false;true;false;false
+3;230;"GASTOS DIVERSOS";1;false;false;true;true;3;550;false;false;false;true;"";0;false;true;false;false
+3;240;"GASTOS FIJOS";4;true;false;true;true;3;550;true;false;false;true;"";0;false;true;false;false
+3;250;"MARGEN";5;true;false;true;true;3;550;true;false;false;true;"";0;false;true;false;false
+3;260;"MARGEN EN VENTA A CONCESIONAR.";1;false;false;true;true;3;550;false;false;false;true;"";0;false;true;false;false
+3;270;"RAPPELES POR COMPRAS";1;false;false;true;true;3;550;false;false;false;true;"";0;false;true;false;false
+3;280;"RAPPELES POR VENTAS";1;false;false;true;true;3;550;false;false;false;true;"";0;false;true;false;false
+3;290;"RAPPEL CUALITATIVO";1;false;false;true;true;3;550;false;false;false;true;"";0;false;true;false;false
+3;300;"INGRESOS ATIPICOS: GESTORIAS";1;false;false;true;true;3;550;false;false;false;true;"";0;false;true;false;false
+3;310;"INGRESOS ATIPICOS: FINANCIERAS";1;false;false;true;true;3;550;false;false;false;true;"";0;false;true;false;false
+3;320;"INGRESOS ATIPICOS:SUPERGARANT.";1;false;false;true;true;3;550;false;false;false;true;"";0;false;true;false;false
+3;330;"INGRESOS ATIPICOS:SEGUROS";1;false;false;true;true;3;550;false;false;false;true;"";0;false;true;false;false
+3;340;"INGRESOS COMERCIALES RENTING";1;false;false;true;true;3;550;false;false;false;true;"";0;false;true;false;false
+3;350;"INGRESOS COLABORACION RENTING";1;false;false;true;true;3;550;false;false;false;true;"";0;false;true;false;false
+3;360;"RECUPERACION DE GASTOS";1;false;false;true;true;3;550;false;false;false;true;"";0;false;true;false;false
+3;370;"COMISIONES VENTAS OTRAS EMPRE.";1;false;false;true;true;3;550;false;false;false;true;"";0;false;true;false;false
+3;374;"INGRESOS OPERAC.BUY-BACK";1;false;false;true;true;3;550;false;false;false;true;"";0;false;true;false;false
+3;376;"PROVISION BUY-BACK";1;false;false;true;true;3;550;false;false;false;true;"";0;false;true;false;false
+3;380;"TOTAL INGRESOS ATIPICOS";5;true;false;true;true;3;550;true;false;false;true;"";0;false;true;false;false
+3;390;"MARGEN ANTES DE REPARTO GTOS.";6;true;false;true;true;3;550;true;false;false;true;"";0;false;true;false;false
+3;400;"20% GASTOS DE BASE";3;false;false;true;true;3;550;true;false;false;true;"";0;false;true;false;false
+3;410;"20% GASTOS GENERALES";3;false;false;true;true;3;550;true;false;false;true;"";0;false;true;false;false
+3;420;"MARGEN NETO";7;true;false;true;true;3;550;true;false;false;true;"";0;false;true;false;false
+3;430;"EXISTENCIAS NUM.";1;false;false;false;true;3;560;false;true;false;false;"";0;false;true;false;false
+3;440;"EXISTENCIAS PTAS";1;false;false;true;true;3;560;false;true;false;false;"";0;false;true;false;false
+3;450;"VEHICULOS VENDIDOS";1;false;false;false;true;3;450;false;true;false;true;"";0;false;true;false;false
+3;455;"VEH. AUTOMATRICULADOS";1;false;false;false;true;3;450;false;true;false;true;"";0;false;true;false;false
+3;460;"VENDIDOS A CONCESION";1;false;false;false;true;3;450;false;true;false;true;"";0;false;true;false;false
+3;470;"VENDIDOS POR CTA OTRAS EMPRESA";1;false;false;false;true;3;450;false;true;false;true;"";0;false;true;false;false
+3;480;"VEHICULOS COMPRADOS";1;false;false;false;true;3;450;false;true;false;true;"";0;false;true;false;false
+3;490;"MATRICULACIONES: ACUMULADO";1;false;false;false;true;3;450;false;true;false;true;"";0;false;true;false;false
+3;500;"FINANCIERAS: ACUMULADO";1;false;false;false;true;3;450;false;true;false;true;"";0;false;true;false;false
+3;510;"EUROS FINANCIADOS";1;false;false;true;true;3;550;false;true;false;true;"";0;false;true;false;false
+3;520;"SUPERGARANTIAS: ACUMULADO";1;false;false;false;true;3;450;false;true;false;true;"";0;false;true;false;false
+3;530;"SEGUROS: ACUMULADO";1;false;false;false;true;3;450;false;true;false;true;"";0;false;true;false;false
+3;540;"DIAS DE VENTA EN STOCK";1;false;false;false;true;3;560;false;true;false;false;"";0;true;true;false;false
+3;550;"SUMA DE VENTAS";2;false;false;true;true;3;550;true;false;true;true;"";0;false;true;false;false
+3;560;"REFERENCIA **NO USAR**";1;false;false;true;true;3;560;false;false;true;false;"";0;false;true;false;false
+4;10;"VENTA DE VEHICULOS";1;false;false;true;true;4;590;false;false;false;true;"";0;false;true;false;false
+4;20;"VENTA DE COMPLEMENTOS";1;false;false;true;true;4;590;false;false;false;true;"";0;false;true;false;false
+4;30;"VENTA DE VEHICULOS POR AGENTES";1;false;false;true;true;4;590;false;false;false;true;"";0;false;true;false;false
+4;40;"PRIMAS PROMOCIONALES";1;false;false;true;true;4;590;false;false;false;true;"";0;false;true;false;false
+4;50;"INGRESOS DE VENTAS";2;true;false;true;true;4;590;true;false;false;true;"";0;false;true;false;false
+4;60;"COSTO DE LOS VEHICULOS";1;false;false;true;true;4;590;false;false;false;true;"";0;false;true;false;false
+4;70;"COSTO DE COMPLEMENTOS";1;false;false;true;true;4;590;false;false;false;true;"";0;false;true;false;false
+4;80;"PORTES Y TRASIEGOS";1;false;false;true;true;4;590;false;false;false;true;"";0;false;true;false;false
+4;90;"P.A.P. Y PREENTREGAS ACC-TIPO";1;false;false;true;true;4;590;false;false;false;true;"";0;false;true;false;false
+4;100;"ACCESORIOS VN Y REACONDICIONA.";1;false;false;true;true;4;590;false;false;false;true;"";0;false;true;false;false
+4;120;"SOBREVALORACION VO";1;false;false;true;true;4;590;false;false;false;true;"";0;false;true;false;false
+4;130;"DESCUENTOS";1;false;false;true;true;4;590;false;false;false;true;"";0;false;true;false;false
+4;140;"COSTO DE LA VENTA";2;true;false;true;true;4;590;true;false;false;true;"";0;false;true;false;false
+4;150;"MARGEN DE LA VENTA";3;true;false;true;true;4;590;true;false;false;true;"";0;false;true;false;false
+4;160;"COMISIONES A VENDEDORES";1;false;false;true;true;4;590;false;false;false;true;"";0;false;true;false;false
+4;170;"COMISIONES A COLABORADORES";1;false;false;true;true;4;590;false;false;false;true;"";0;false;true;false;false
+4;180;"COMISIONES A AGENTES";1;false;false;true;true;4;590;false;false;false;true;"";0;false;true;false;false
+4;190;"GASTOS DE VIAJE Y REPRESENTAC.";1;false;false;true;true;4;590;false;false;false;true;"";0;false;true;false;false
+4;200;"PUBLICIDAD DIRECTA Y PROMOCION";1;false;false;true;true;4;590;false;false;false;true;"";0;false;true;false;false
+4;210;"GASTOS VARIABLES";2;true;false;true;true;4;590;true;false;false;true;"";0;false;true;false;false
+4;220;"SUELDOS";1;false;false;true;true;4;590;false;false;false;true;"";0;false;true;false;false
+4;230;"SEGUROS SOCIALES";1;false;false;true;true;4;590;false;false;false;true;"";0;false;true;false;false
+4;240;"VEHICULOS DE SERVICIO";1;false;false;true;true;4;590;false;false;false;true;"";0;false;true;false;false
+4;250;"FORMACION DE PERSONAL";1;false;false;true;true;4;590;false;false;false;true;"";0;false;true;false;false
+4;260;"GASTOS DIVERSOS";1;false;false;true;true;4;590;false;false;false;true;"";0;false;true;false;false
+4;270;"GASTOS FIJOS";4;true;false;true;true;4;590;true;false;false;true;"";0;false;true;false;false
+4;280;"MARGEN";5;true;false;true;true;4;590;true;false;false;true;"";0;false;true;false;false
+4;290;"MARGEN EN VENTA A CONCESIONAR.";1;false;false;true;true;4;590;false;false;false;true;"";0;false;true;false;false
+4;300;"RAPPELES POR COMPRAS";1;false;false;true;true;4;590;false;false;false;true;"";0;false;true;false;false
+4;310;"RAPPELES POR VENTAS";1;false;false;true;true;4;590;false;false;false;true;"";0;false;true;false;false
+4;320;"RAPPEL CUALITATIVO";1;false;false;true;true;4;590;false;false;false;true;"";0;false;true;false;false
+4;330;"INGRESOS ATIPICOS: GESTORIAS";1;false;false;true;true;4;590;false;false;false;true;"";0;false;true;false;false
+4;340;"INGRESOS ATIPICOS: FINANCIERAS";1;false;false;true;true;4;590;false;false;false;true;"";0;false;true;false;false
+4;350;"INGRESOS ATIPICOS: SEGUROS";1;false;false;true;true;4;590;false;false;false;true;"";0;false;true;false;false
+4;360;"INGRESOS ATIPICOS: SUPERGARAN.";1;false;false;true;true;4;590;false;false;false;true;"";0;false;true;false;false
+4;370;"INGRESOS COMERCIALES RENTING";1;false;false;true;true;4;590;false;false;false;true;"";0;false;true;false;false
+4;380;"INGRESOS COLABORACION RENTING";1;false;false;true;true;4;590;false;false;false;true;"";0;false;true;false;false
+4;390;"RECUPERACION DE GASTOS";1;false;false;true;true;4;590;false;false;false;true;"";0;false;true;false;false
+4;400;"COMISIONES VENTAS OTRAS EMPRE.";1;false;false;true;true;4;590;false;false;false;true;"";0;false;true;false;false
+4;404;"INGRESOS OPERAC. BUY-BACK";1;false;false;true;true;4;590;false;false;false;true;"";0;false;true;false;false
+4;406;"PROVISION BUY-BACK";1;false;false;true;true;4;590;false;false;false;true;"";0;false;true;false;false
+4;410;"TOTAL INGRESOS ATIPICOS";5;true;false;true;true;4;590;true;false;false;true;"";0;false;true;false;false
+4;420;"MARGEN ANTES DE REPARTO GTOS.";6;true;false;true;true;4;590;true;false;false;true;"";0;false;true;false;false
+4;430;"10% GASTOS DE BASE";3;false;false;true;true;4;590;true;false;false;true;"";0;false;true;false;false
+4;440;"10% GASTOS GENERALES";3;false;false;true;true;4;590;true;false;false;true;"";0;false;true;false;false
+4;450;"MARGEN NETO";7;true;false;true;true;4;590;true;false;false;true;"";0;false;true;false;false
+4;460;"EXISTENCIAS NUM.";1;false;false;false;true;4;600;false;true;false;false;"";0;false;true;false;false
+4;470;"EXISTENCIAS PTAS";1;false;false;true;true;4;600;false;true;false;false;"";0;false;true;false;false
+4;480;"VEHICULOS VENDIDOS";1;false;false;false;true;4;480;false;true;false;true;"";0;false;true;false;false
+4;485;"VEH. AUTOMATRICULADOS";1;false;false;false;true;4;480;false;true;false;true;"";0;false;true;false;false
+4;490;"VENDIDOS A CONCESION";1;false;false;false;true;4;480;false;true;false;true;"";0;false;true;false;false
+4;500;"VENDIDOS POR CTA OTRAS EMPRESA";1;false;false;false;true;4;480;false;true;false;true;"";0;false;true;false;false
+4;510;"VEHICULOS COMPRADOS";1;false;false;false;true;4;480;false;true;false;true;"";0;false;true;false;false
+4;520;"DIAS DE VENTA EN STOCK";1;false;false;false;true;4;600;false;true;false;false;"";0;false;true;false;false
+4;530;"MATRICULACIONES: ACUMULADO";1;false;false;false;true;4;480;false;true;false;true;"";0;false;true;false;false
+4;540;"FINANCIERAS: ACUMULADO";1;false;false;false;true;4;480;false;true;false;true;"";0;false;true;false;false
+4;550;"SUPERGARANTIAS: ACUMULADO";1;false;false;false;true;4;480;false;true;false;true;"";0;false;true;false;false
+4;560;"SEGUROS: ACUMULADO";1;false;false;false;true;4;480;false;true;false;true;"";0;false;true;false;false
+4;570;"EUROS COMPROMETIDOS BUY-BACK";1;false;false;true;true;4;590;false;true;false;false;"";0;false;true;false;false
+4;580;"GARANTIAS FABRICA";1;false;false;true;true;4;590;false;true;false;true;"";0;false;true;false;false
+4;590;"SUMA DE VENTAS";2;false;false;true;true;4;590;true;false;true;true;"";0;false;true;false;false
+4;600;"REFERENCIA **NO USAR**";1;false;false;true;true;4;600;false;false;true;false;"";0;false;true;false;false
+5;10;"VENTA DIRECTA DE VEHICULOS";1;false;false;true;true;5;30;false;false;false;true;"";0;false;true;false;false
+5;20;"VENTAS A DESGUACES";1;false;false;true;true;5;30;false;false;false;true;"";0;false;true;false;false
+5;30;"TOTAL VENTAS";2;true;false;true;true;5;30;true;false;false;true;"";0;false;true;false;false
+5;40;"COSTO DE LOS VEHICULOS";1;false;false;true;true;5;30;false;false;false;true;"";0;false;true;false;false
+5;50;"PROVISION RECOMPRA APLICADA";1;false;false;true;true;5;30;false;false;false;true;"";0;false;true;false;false
+5;60;"PORTES Y GASOLINA";1;false;false;true;true;5;30;false;false;false;true;"";0;false;true;false;false
+5;70;"REACONDICIONAMIENTOS";1;false;false;true;true;5;30;false;false;false;true;"";0;false;true;false;false
+5;80;"GARANTIA DE USADOS";1;false;false;true;true;5;30;false;false;false;true;"";0;false;true;false;false
+5;90;"OBSEQUIOS";1;false;false;true;true;5;30;false;false;false;true;"";0;false;true;false;false
+5;100;"IMPUESTOS DIRECTOS";1;false;false;true;true;5;30;false;false;false;true;"";0;false;true;false;false
+5;110;"GESTORIAS";1;false;false;true;true;5;30;false;false;false;true;"";0;false;true;false;false
+5;120;"TOTAL COSTOS";2;true;false;true;true;5;30;true;false;false;true;"";0;false;true;false;false
+5;130;"MARGEN DIRECTO DE LA VENTA";3;true;false;true;true;5;30;true;false;false;true;"";0;false;true;false;false
+5;140;"COMISIONES A VENDEDORES";1;false;false;true;true;5;30;false;false;false;true;"";0;false;true;false;false
+5;150;"COMISIONES A COLABORADORES";1;false;false;true;true;5;30;false;false;false;true;"";0;false;true;false;false
+5;160;"PUBLICIDAD Y PROMOCION";1;false;false;true;true;5;30;false;false;false;true;"";0;false;true;false;false
+5;170;"GASTOS DE VIAJE";1;false;false;true;true;5;30;false;false;false;true;"";0;false;true;false;false
+5;180;"DEPRECIACION DEL STOCK";1;false;false;true;true;5;30;false;false;false;true;"";0;false;true;false;false
+5;190;"GASTOS VARIABLES";2;true;false;true;true;5;30;true;false;false;true;"";0;false;true;false;false
+5;200;"SUELDOS";1;false;false;true;true;5;30;false;false;false;true;"";0;false;true;false;false
+5;210;"SEGURIDAD SOCIAL";1;false;false;true;true;5;30;false;false;false;true;"";0;false;true;false;false
+5;220;"GASTOS DIVERSOS";1;false;false;true;true;5;30;false;false;false;true;"";0;false;true;false;false
+5;230;"GASTOS FIJOS";2;true;false;true;true;5;30;true;false;false;true;"";0;false;true;false;false
+5;240;"MARGEN";4;true;false;true;true;5;30;true;false;false;true;"";0;false;true;false;false
+5;250;"CESION DE V.N. (POR CAMBIO)";1;false;false;true;true;5;30;false;false;false;true;"";0;false;true;false;false
+5;260;"RAPPEL V.O.";1;false;false;true;true;5;30;false;false;false;true;"";0;false;true;false;false
+5;270;"INGRESOS ATIPICOS: FINANCIERAS";1;false;false;true;true;5;30;false;false;false;true;"";0;false;true;false;false
+5;280;"INGRESOS ATIPICOS: SEG.Y GEST.";1;false;false;true;true;5;30;false;false;false;true;"";0;false;true;false;false
+5;290;"INGRESOS ATIPICOS: USACAR";1;false;false;true;true;5;30;false;false;false;true;"";0;false;true;false;false
+5;300;"INTERESES STOCK USACAR";1;false;false;true;true;5;30;false;false;false;true;"";0;false;true;false;false
+5;310;"INGRESOS ATIPICOS: COMISIONES";1;false;false;true;true;5;30;false;false;false;true;"";0;false;true;false;false
+5;320;"TOTAL INGRESOS ATIPICOS";2;true;false;true;true;5;30;true;false;false;true;"";0;false;true;false;false
+5;330;"MARGEN ANTES DE REPARTO GASTOS";5;true;false;true;true;5;30;true;false;false;true;"";0;false;true;false;false
+5;340;"10% GASTOS DE BASE";3;false;false;true;true;5;30;true;false;false;true;"";0;false;true;false;false
+5;350;"10% GASTOS GENERALES";3;false;false;true;true;5;30;true;false;false;true;"";0;false;true;false;false
+5;360;"MARGEN NETO FINAL";6;true;false;true;true;5;30;true;false;false;true;"";0;false;true;false;false
+5;370;"EXISTENCIAS EN STOCK NUM.";1;false;false;false;true;5;480;false;true;false;false;"";0;false;true;false;false
+5;380;"EXISTENCIAS EN STOCK EUROS";1;false;false;true;true;5;480;false;true;false;false;"";0;false;true;false;false
+5;390;"VEHICULOS VENDIDOS USADOS";1;false;false;false;true;5;480;false;true;false;true;"";0;false;true;false;false
+5;400;"VENTAS RENTACARES + RENTING R";1;false;false;false;true;5;480;false;true;false;true;"";0;false;true;false;false
+5;410;"VENTAS RENTING FICT+CL";1;false;false;false;true;5;480;false;true;false;true;"";0;false;true;false;false
+5;420;"VEHICULOS COMPRADOS";1;false;false;false;true;5;480;false;true;false;true;"";0;false;true;false;false
+5;430;"VENTAS A DESGUACES NUM.";1;false;false;false;true;5;480;false;true;false;true;"";0;false;true;false;false
+5;440;"DIAS DE VENTA EN STOCK";1;false;false;false;true;5;480;false;true;false;false;"";0;true;true;false;false
+5;450;"FINANCIACIONES NUM.";1;false;false;false;true;5;480;false;true;false;true;"";0;false;true;false;false
+5;460;"EUROS FINANCIADOS";1;false;false;true;true;5;30;false;true;false;true;"";0;false;true;false;false
+5;470;"SEGUROS NUM.";1;false;false;false;true;5;480;false;true;false;true;"";0;false;true;false;false
+5;480;"REFERENCIA **NO USAR**";1;false;false;true;true;5;480;false;false;true;false;"";0;false;true;false;false
+6;10;"VENTA DIRECTA DE VEHICULOS";1;false;false;true;true;6;30;false;false;false;true;"";0;false;true;false;false
+6;20;"VENTAS POR OTROS CANALES";1;false;false;true;true;6;30;false;false;false;true;"";0;false;true;false;false
+6;30;"TOTAL VENTAS";2;true;false;true;true;6;30;true;false;false;true;"";0;false;true;false;false
+6;40;"COSTO DE USADOS";1;false;false;true;true;6;30;false;false;false;true;"";0;false;true;false;false
+6;50;"PORTES Y TRASIEGOS";1;false;false;true;true;6;30;false;false;false;true;"";0;false;true;false;false
+6;60;"REACONDICIONAMIENTOS";1;false;false;true;true;6;30;false;false;false;true;"";0;false;true;false;false
+6;70;"GARANTIA DE POST-ENTREGA";1;false;false;true;true;6;30;false;false;false;true;"";0;false;true;false;false
+6;80;"GASTOS DE GESTORIAS";1;false;false;true;true;6;30;false;false;false;true;"";0;false;true;false;false
+6;90;"OBSEQUIOS";1;false;false;true;true;6;30;false;false;false;true;"";0;false;true;false;false
+6;100;"IMPUESTOS MUNICIPALES";1;false;false;true;true;6;30;false;false;false;true;"";0;false;true;false;false
+6;110;"SOBREVALORACION VO";1;false;false;true;true;6;30;false;false;false;true;"";0;false;true;false;false
+6;120;"APLICACION PROVISION BUY-BACK";1;false;false;true;true;6;30;false;false;false;true;"";0;false;true;false;false
+6;130;"TOTAL COSTOS";2;true;false;true;true;6;30;true;false;false;true;"";0;false;true;false;false
+6;140;"MARGEN DIRECTO DE LA VENTA";3;true;false;true;true;6;30;true;false;false;true;"";0;false;true;false;false
+6;150;"COMISIONES A VENDEDORES";1;false;false;true;true;6;30;false;false;false;true;"";0;false;true;false;false
+6;160;"COMISIONES A COLABORADORES";1;false;false;true;true;6;30;false;false;false;true;"";0;false;true;false;false
+6;170;"GASTOS DE VIAJE";1;false;false;true;true;6;30;false;false;false;true;"";0;false;true;false;false
+6;180;"PUBLICIDAD Y PROMOCION";1;false;false;true;true;6;30;false;false;false;true;"";0;false;true;false;false
+6;190;"DEPRECIACION DEL STOCK";1;false;false;true;true;6;30;false;false;false;true;"";0;false;true;false;false
+6;200;"GASTOS VARIABLES";2;true;false;true;true;6;30;true;false;false;true;"";0;false;true;false;false
+6;210;"SUELDOS";1;false;false;true;true;6;30;false;false;false;true;"";0;false;true;false;false
+6;220;"SEGURIDAD SOCIAL";1;false;false;true;true;6;30;false;false;false;true;"";0;false;true;false;false
+6;230;"VEHICULOS DE SERVICIO";1;false;false;true;true;6;30;false;false;false;true;"";0;false;true;false;false
+6;240;"GASTOS DIVERSOS";1;false;false;true;true;6;30;false;false;false;true;"";0;false;true;false;false
+6;250;"GASTOS FIJOS";2;true;false;true;true;6;30;true;false;false;true;"";0;false;true;false;false
+6;260;"MARGEN";4;true;false;true;true;6;30;true;false;false;true;"";0;false;true;false;false
+6;270;"CESION DE VN";1;false;false;true;true;6;30;false;false;false;true;"";0;false;true;false;false
+6;280;"INGRESOS ATIPICOS: FINANCIERAS";1;false;false;true;true;6;30;false;false;false;true;"";0;false;true;false;false
+6;290;"INGRESOS ATIPICOS: SEG.Y GEST.";1;false;false;true;true;6;30;false;false;false;true;"";0;false;true;false;false
+6;300;"INGRESOS ATIPICOS: RENTACARES";1;false;false;true;true;6;30;false;false;false;true;"";0;false;true;false;false
+6;310;"INGRESOS ATIPICOS: COMISIONES";1;false;false;true;true;6;30;false;false;false;true;"";0;false;true;false;false
+6;320;"TOTAL INGRESOS ATIPICOS";2;true;false;true;true;6;30;true;false;false;true;"";0;false;true;false;false
+6;330;"MARGEN ANTES DE REPARTO GASTOS";5;true;false;true;true;6;30;true;false;false;true;"";0;false;true;false;false
+6;340;"0% GASTOS DE BASE";3;false;false;true;true;6;30;true;false;false;true;"";0;false;true;false;false
+6;350;"0% GASTOS GENERALES";3;false;false;true;true;6;30;true;false;false;true;"";0;false;true;false;false
+6;360;"MARGEN NETO FINAL";6;true;false;true;true;6;30;true;false;false;true;"";0;false;true;false;false
+6;370;"EXISTENCIAS EN STOCK NUM.";1;false;false;false;true;6;480;false;true;false;false;"";0;false;true;false;false
+6;380;"EXISTENCIAS EN STOCK EUROS";1;false;false;true;true;6;480;false;true;false;false;"";0;false;true;false;false
+6;390;"VEHICULOS VENDIDOS";1;false;false;false;true;6;390;false;true;false;true;"";0;false;true;false;false
+6;400;"VENTAS RENTACARES + RENTING R";1;false;false;false;true;6;390;false;true;false;true;"";0;false;true;false;false
+6;410;"VENTAS RENTING FICT+CL";1;false;false;false;true;6;390;false;true;false;true;"";0;false;true;false;false
+6;420;"VEHICULOS COMPRADOS";1;false;false;false;true;6;390;false;true;false;true;"";0;false;true;false;false
+6;430;"VENTAS A DESGUACES NUM.";1;false;false;false;true;6;390;false;true;false;true;"";0;false;true;false;false
+6;440;"DIAS DE VENTA EN STOCK";1;false;false;false;true;6;480;false;true;false;false;"";0;true;true;false;false
+6;450;"FINANCIACIONES NUM.";1;false;false;false;true;6;390;false;true;false;true;"";0;false;true;false;false
+6;460;"EUROS FINANCIADOS";1;false;false;true;true;6;30;false;true;false;true;"";0;false;true;false;false
+6;470;"SEGUROS NUM.";1;false;false;false;true;6;390;false;true;false;true;"";0;false;true;false;false
+6;480;"REFERENCIA **NO USAR**";1;false;false;true;true;6;480;false;false;true;false;"";0;false;true;false;false
+7;10;"VENTA DE MANO DE OBRA CLIENTES";1;false;false;true;true;7;60;false;false;false;true;"";0;false;true;false;false
+7;20;"VENTA DE MANO DE OBRA INTERNA";1;false;false;true;true;7;60;false;false;false;true;"";0;false;true;false;false
+7;30;"VENTA DE MANO DE OBRA GARANTIA";1;false;false;true;true;7;60;false;false;false;true;"";0;false;true;false;false
+7;40;"VENTA DE REVISIONES,PAP Y 24H";1;false;false;true;true;7;60;false;false;false;true;"";0;false;true;false;false
+7;50;"VENTA DE TRABAJOS DE TERCEROS";1;false;false;true;true;7;60;false;false;false;true;"";0;false;true;false;false
+7;60;"VENTA DE MANO OBRA";2;true;false;true;true;7;60;true;false;false;true;"";0;false;true;false;false
+7;70;"REMUNERACIONES FIJAS";1;false;false;true;true;7;60;false;false;false;true;"";0;false;true;false;false
+7;80;"REMUNERACIONES EVENTUALES";1;false;false;true;true;7;60;false;false;false;true;"";0;false;true;false;false
+7;90;"HORAS EXTRAS";1;false;false;true;true;7;60;false;false;false;true;"";0;false;true;false;false
+7;100;"SEGUROS SOCIALES";1;false;false;true;true;7;60;false;false;false;true;"";0;false;true;false;false
+7;110;"DESCUENTOS EN MANO DE OBRA";1;false;false;true;true;7;60;false;false;false;true;"";0;false;true;false;false
+7;120;"COMPRA DE TRABAJOS DE TERCEROS";1;false;false;true;true;7;60;false;false;false;true;"";0;false;true;false;false
+7;130;"COSTO DE LA MANO DE OBRA";2;true;false;true;true;7;60;true;false;false;true;"";0;false;true;false;false
+7;140;"MARGEN DE LA MANO DE OBRA";3;true;false;true;true;7;60;true;false;false;true;"";0;false;true;false;false
+7;150;"VENTA DE MATERIAL CLIENTES";1;false;false;true;true;7;180;false;false;false;true;"";0;false;true;false;false
+7;160;"VENTA DE MATERIALES INTERNOS";1;false;false;true;true;7;180;false;false;false;true;"";0;false;true;false;false
+7;170;"VENTA DE MATERIALES GARANTIA";1;false;false;true;true;7;180;false;false;false;true;"";0;false;true;false;false
+7;180;"VENTA DE MATERIALES";2;true;false;true;true;7;180;true;false;false;true;"";0;false;true;false;false
+7;190;"COMPRA DE MATERIALES";1;false;false;true;true;7;180;false;false;false;true;"";0;false;true;false;false
+7;200;"PAGO A ALMACEN";1;false;false;true;true;7;180;false;false;false;true;"";0;false;true;false;false
+7;210;"DESCUENTOS EN MATERIALES";1;false;false;true;true;7;180;false;false;false;true;"";0;false;true;false;false
+7;220;"COSTO DE LOS MATERIALES";2;true;false;true;true;7;180;true;false;false;true;"";0;false;true;false;false
+7;230;"MARGEN DE LOS MATERIALES";3;true;false;true;true;7;180;true;false;false;true;"";0;false;true;false;false
+7;240;"ELEMENTOS DE CONSUMO";1;false;false;true;true;7;510;false;false;false;true;"";0;false;true;false;false
+7;250;"MANT.SISTEMAS GESTION TALLER";1;false;false;true;true;7;510;false;false;false;true;"";0;false;true;false;false
+7;260;"COMPRA PEQUEÑA HERRAMIENTA";1;false;false;true;true;7;510;false;false;false;true;"";0;false;true;false;false
+7;270;"FORMACION DE PERSONAL";1;false;false;true;true;7;510;false;false;false;true;"";0;false;true;false;false
+7;280;"VEHICULOS DE SERVICIO";1;false;false;true;true;7;510;false;false;false;true;"";0;false;true;false;false
+7;290;"GASTOS VEHICULOS SUSTITUTIVOS";1;false;false;true;true;7;510;false;false;false;true;"";0;false;true;false;false
+7;300;"PUBLICIDAD";1;false;false;true;true;7;510;false;false;false;true;"";0;false;true;false;false
+7;310;"GASTOS DIVERSOS";1;false;false;true;true;7;510;false;false;false;true;"";0;false;true;false;false
+7;320;"GASTOS FIJOS";4;true;false;true;true;7;510;true;false;false;true;"";0;false;true;false;false
+7;330;"MARGEN";5;true;false;true;true;7;510;true;false;false;true;"";0;false;true;false;false
+7;340;"RAPPEL CUALITATIVO";1;false;false;true;true;7;510;false;false;false;true;"";0;false;true;false;false
+7;350;"INGRESOS VEHIC. SUSTITUTIVOS";1;false;false;true;true;7;510;false;false;false;true;"";0;false;true;false;false
+7;360;"INGRESOS ATIPICOS";1;false;false;true;true;7;510;false;false;false;true;"";0;false;true;false;false
+7;370;"DIF. EN GARANTIAS NO ACEPTADAS";1;false;false;true;true;7;510;false;false;false;true;"";0;false;true;false;false
+7;380;"TOTAL INGRESOS ATIPICOS";5;true;false;true;true;7;510;true;false;false;true;"";0;false;true;false;false
+7;390;"MARGEN ANTES DE REPARTO GTOS.";6;true;false;true;true;7;510;true;false;false;true;"";0;false;true;false;false
+7;400;"20% GASTOS DE BASE";3;false;false;true;true;7;510;true;false;false;true;"";0;false;true;false;false
+7;410;"20% GASTOS GENERALES";3;false;false;true;true;7;510;true;false;false;true;"";0;false;true;false;false
+7;420;"MARGEN NETO";7;true;false;true;true;7;510;true;false;false;true;"";0;false;true;false;false
+7;430;"NUM. REPARACIONES";1;false;false;false;true;7;520;false;true;false;true;"";0;false;true;false;false
+7;440;"ABSENTISMOS";1;false;false;false;true;7;520;false;true;false;false;"";0;true;true;false;false
+7;450;"PARO";1;false;false;false;true;7;520;false;true;false;false;"";0;true;true;false;false
+7;460;"EFICIENCIA";1;false;false;false;true;7;520;false;true;false;false;"";0;true;true;false;false
+7;470;"FACT. M.O. / Nº OPERARIOS";1;false;false;true;true;7;520;false;true;false;false;"";0;true;true;false;false
+7;480;"FACTURADAS/TEORICAS TOTALES";1;false;false;true;true;7;999;false;true;false;false;"";0;false;true;false;false
+7;490;"IMPAGADOS EUROS";1;false;false;true;true;7;999;false;true;false;false;"";0;false;true;false;false
+7;500;"CHATARRA";1;false;false;true;true;7;999;false;true;false;true;"";0;false;true;false;false
+7;510;"SUMA DE VENTAS";3;false;false;true;true;7;510;true;false;true;true;"";0;false;true;false;false
+7;520;"REFERENCIA **NO USAR**";1;false;false;true;true;7;520;false;false;true;false;"";0;false;true;false;false
+8;10;"VENTA DE RECAMBIOS";1;false;false;true;true;8;10;false;false;false;true;"";0;false;true;false;false
+8;20;"RECUPERACION DE GASTOS";1;false;false;true;true;8;10;false;false;false;true;"";0;false;true;false;false
+8;30;"INGRESOS DE VENTA";2;true;false;true;true;8;10;true;false;false;true;"";0;false;true;false;false
+8;40;"COSTO DE LO VENDIDO";1;false;false;true;true;8;10;false;false;false;true;"";0;false;true;false;false
+8;50;"PENALIZACION POR R.U.";1;false;false;true;true;8;10;false;false;false;true;"";0;false;true;false;false
+8;60;"PORTES Y EMBALAJES";1;false;false;true;true;8;10;false;false;false;true;"";0;false;true;false;false
+8;70;"DESCUENTOS";1;false;false;true;true;8;10;false;false;false;true;"";0;false;true;false;false
+8;80;"COSTO DE LA VENTA";2;true;false;true;true;8;10;true;false;false;true;"";0;false;true;false;false
+8;90;"MARGEN DE LA VENTA";3;true;false;true;true;8;10;true;false;false;true;"";0;false;true;false;false
+8;100;"PREVISION OBSOLETOS";1;false;false;true;true;8;10;false;false;false;true;"";0;false;true;false;false
+8;110;"COMISIONES S/VENTA";1;false;false;true;true;8;10;false;false;false;true;"";0;false;true;false;false
+8;120;"HORAS EXTRAS";1;false;false;true;true;8;10;false;false;false;true;"";0;false;true;false;false
+8;130;"GASTOS DE VIAJE";1;false;false;true;true;8;10;false;false;false;true;"";0;false;true;false;false
+8;140;"RAPPELES POR VENTA";1;false;false;true;true;8;10;false;false;false;true;"";0;false;true;false;false
+8;150;"GASTOS VARIABLES";2;true;false;true;true;8;10;true;false;false;true;"";0;false;true;false;false
+8;160;"SUELDOS";1;false;false;true;true;8;10;false;false;false;true;"";0;false;true;false;false
+8;170;"SEGUROS SOCIALES";1;false;false;true;true;8;10;false;false;false;true;"";0;false;true;false;false
+8;180;"VEHICULOS DE SERVICIO";1;false;false;true;true;8;10;false;false;false;true;"";0;false;true;false;false
+8;190;"FORMACION DE PERSONAL";1;false;false;true;true;8;10;false;false;false;true;"";0;false;true;false;false
+8;200;"GASTOS DIVERSOS";1;false;false;true;true;8;10;false;false;false;true;"";0;false;true;false;false
+8;210;"GASTOS FIJOS";4;true;false;true;true;8;10;true;false;false;true;"";0;false;true;false;false
+8;220;"MARGEN";5;true;false;true;true;8;10;true;false;false;true;"";0;false;true;false;false
+8;230;"COMISION POR SERVICIO A TALLER";1;false;false;true;true;8;10;false;false;false;true;"";0;false;true;false;false
+8;240;"RAPPELES POR COMPRA";1;false;false;true;true;8;10;false;false;false;true;"";0;false;true;false;false
+8;250;"RAPPEL CUALITATIVO";1;false;false;true;true;8;10;false;false;false;true;"";0;false;true;false;false
+8;260;"MARGEN ANTES DE REPARTO GTOS.";6;true;false;true;true;8;10;true;false;false;true;"";0;false;true;false;false
+8;270;"20% GASTOS DE BASE";3;false;false;true;true;8;10;true;false;false;true;"";0;false;true;false;false
+8;280;"20% GASTOS GENERALES";3;false;false;true;true;8;10;true;false;false;true;"";0;false;true;false;false
+8;290;"MARGEN NETO";7;true;false;true;true;8;10;true;false;false;true;"";0;false;true;false;false
+8;300;"STOCK A PRECIO DE COSTE MEDIO";1;false;false;true;true;8;350;false;true;false;false;"";0;false;true;false;false
+8;310;"STOCK A PVP";1;false;false;true;true;8;350;false;true;false;false;"";0;false;true;false;false
+8;320;"ROTACIONES A COSTE";1;false;false;false;true;8;350;false;true;false;false;"";0;true;true;false;false
+8;330;"FACT. TOTAL (ALM+TALL)/Nº OPER";1;false;false;true;true;8;350;false;true;false;false;"";0;true;true;false;false
+8;340;"";1;false;false;true;true;8;350;false;false;true;false;"";0;false;true;false;false
+8;350;"REFERENCIA **NO USAR**";1;false;false;true;true;8;350;false;false;true;false;"";0;false;true;false;false
+11;10;"COMPRA DE TURISMOS FIAT";1;false;false;true;true;11;360;false;false;false;true;"";0;false;true;false;false
+11;20;"";1;false;true;true;true;11;360;false;false;false;true;"";0;false;true;false;false
+11;30;"COMPRA TURISMOS LANCIA";1;false;false;true;true;11;360;false;false;false;true;"";0;false;true;false;false
+11;40;"";1;false;true;true;true;11;360;false;false;false;false;"";0;false;true;false;false
+11;50;"COMPRA TURISMOS ALFA ROMEO";1;false;false;true;true;11;360;false;false;false;true;"";0;false;true;false;false
+11;60;"";1;false;true;true;true;11;360;false;false;false;true;"";0;false;true;false;false
+11;70;"COMPRAS DE DEMOS";1;false;false;true;true;11;360;false;false;false;true;"";0;false;true;false;false
+11;80;"";1;false;true;true;true;11;360;false;false;false;true;"";0;false;true;false;false
+11;90;"COMPRA DE LIGEROS";1;false;false;true;true;11;360;false;false;false;true;"";0;false;true;false;false
+11;100;"";1;false;true;true;true;11;360;false;false;false;true;"";0;false;true;false;false
+11;110;"COMPRA DE TURISMOS USADOS";1;false;false;true;true;11;360;false;false;false;true;"";0;false;true;false;false
+11;120;"";1;false;true;true;true;11;360;false;false;false;true;"";0;false;true;false;false
+11;130;"COMPRA DE LIGEROS USADOS";1;false;false;true;true;11;360;false;false;false;true;"";0;false;true;false;false
+11;140;"";1;false;true;true;true;11;360;false;false;false;true;"";0;false;true;false;false
+11;150;"COMPRA DE RECAMBIOS FIAT";1;false;false;true;true;11;360;false;false;false;true;"";0;false;true;false;false
+11;160;"COMPRA DE RECAMBIOS LANCIA";1;false;false;true;true;11;360;false;false;false;true;"";0;false;true;false;false
+11;170;"COMPRA DE ACCESORIOS";1;false;false;true;true;11;360;false;false;false;true;"";0;false;true;false;false
+11;180;"COMPRA DE ACEITE";1;false;false;true;true;11;360;false;false;false;true;"";0;false;true;false;false
+11;190;"COMPRAS DE RECAMBIOS ALFA";1;false;false;true;true;11;360;false;false;false;true;"";0;false;true;false;false
+11;200;"";1;false;true;true;true;11;360;false;false;false;false;"";0;false;true;false;false
+11;210;"COMPRA TURISMOS FIAT ELTIRO";1;false;false;true;true;11;360;false;false;false;true;"";0;false;true;false;false
+11;220;"COMPRA TURISMOS LANCIA ELTIRO";1;false;false;true;true;11;360;false;false;false;true;"";0;false;true;false;false
+11;230;"COMPRA TURISMOS ALFA ELTIRO";1;false;false;true;true;11;360;false;false;false;true;"";0;false;true;false;false
+11;240;"";1;false;true;true;true;11;360;false;false;false;false;"";0;false;true;false;false
+11;250;"COMPRA TURISMOS DEMOS ELTIRO";1;false;false;true;true;11;360;false;false;false;true;"";0;false;true;false;false
+11;260;"";1;false;true;true;true;11;360;false;false;false;false;"";0;false;true;false;false
+11;270;"COMPRA DE LIGEROS ELTIRO";1;false;false;true;true;11;360;false;false;false;true;"";0;false;true;false;false
+11;280;"";1;false;true;true;true;11;360;false;false;false;false;"";0;false;true;false;false
+11;290;"COMPRAS TURISMOS USADOS ELTIRO";1;false;false;true;true;11;360;false;false;false;true;"";0;false;true;false;false
+11;300;"COMPRAS LIGEROS USADOS ELTIRO";1;false;false;true;true;11;360;false;false;false;true;"";0;false;true;false;false
+11;310;"";1;false;true;true;true;11;360;false;false;false;false;"";0;false;true;false;false
+11;320;"COMPRA DE RECAMBIOS ELTIRO";1;false;false;true;true;11;360;false;false;false;true;"";0;false;true;false;false
+11;330;"COMPRA DE ACCESORIOS ELTIRO";1;false;false;true;true;11;360;false;false;false;true;"";0;false;true;false;false
+11;340;"COMPRA DE ACEITES ELTIRO";1;false;false;true;true;11;360;false;false;false;true;"";0;false;true;false;false
+11;350;"COMPRA DE NEUMATICOS ELTIRO";1;false;false;true;true;11;360;false;false;false;true;"";0;false;true;false;false
+11;360;"";1;false;true;true;true;11;360;false;false;false;true;"";0;false;true;false;false
+12;10;"VENTA DE VEHICULOS";1;false;false;true;true;12;550;false;false;false;true;"";0;false;true;false;false
+12;20;"VENTA DE VEHICULOS POR AGENTES";1;false;false;true;true;12;550;false;false;false;true;"";0;false;true;false;false
+12;30;"PRIMAS PROMOCIONALES";1;false;false;true;true;12;550;false;false;false;true;"";0;false;true;false;false
+12;40;"INGRESOS DE VENTAS";2;true;false;true;true;12;550;true;false;false;true;"";0;false;true;false;false
+12;50;"COSTO DE LOS VEHICULOS";1;false;false;true;true;12;550;false;false;false;true;"";0;false;true;false;false
+12;60;"PORTES Y TRASIEGOS";1;false;false;true;true;12;550;false;false;false;true;"";0;false;true;false;false
+12;70;"P.A.P. Y PREENTREGAS ACC-TIPO";1;false;false;true;true;12;550;false;false;false;true;"";0;false;true;false;false
+12;80;"ACCESORIOS VN Y REACONDICIONA.";1;false;false;true;true;12;550;false;false;false;true;"";0;false;true;false;false
+12;100;"SOBREVALORACION VO";1;false;false;true;true;12;550;false;false;false;true;"";0;false;true;false;false
+12;110;"DESCUENTOS";1;false;false;true;true;12;550;false;false;false;true;"";0;false;true;false;false
+12;120;"COSTO DE LA VENTA";2;true;false;true;true;12;550;true;false;false;true;"";0;false;true;false;false
+12;130;"MARGEN DE LA VENTA";3;true;false;true;true;12;550;true;false;false;true;"";0;false;true;false;false
+12;140;"COMISIONES A VENDEDORES";1;false;false;true;true;12;550;false;false;false;true;"";0;false;true;false;false
+12;150;"COMISIONES A COLABORADORES";1;false;false;true;true;12;550;false;false;false;true;"";0;false;true;false;false
+12;160;"COMISIONES A AGENTES";1;false;false;true;true;12;550;false;false;false;true;"";0;false;true;false;false
+12;170;"GASTOS DE VIAJE Y REPRESENTAC.";1;false;false;true;true;12;550;false;false;false;true;"";0;false;true;false;false
+12;180;"PUBLICIDAD DIRECTA Y PROMOCION";1;false;false;true;true;12;550;false;false;false;true;"";0;false;true;false;false
+12;190;"GASTOS VARIABLES";2;true;false;true;true;12;550;true;false;false;true;"";0;false;true;false;false
+12;200;"SUELDOS";1;false;false;true;true;12;550;false;false;false;true;"";0;false;true;false;false
+12;210;"SEGUROS SOCIALES";1;false;false;true;true;12;550;false;false;false;true;"";0;false;true;false;false
+12;220;"FORMACION DE PERSONAL";1;false;false;true;true;12;550;false;false;false;true;"";0;false;true;false;false
+12;230;"GASTOS DIVERSOS";1;false;false;true;true;12;550;false;false;false;true;"";0;false;true;false;false
+12;240;"GASTOS FIJOS";2;true;false;true;true;12;550;true;false;false;true;"";0;false;true;false;false
+12;250;"MARGEN";4;true;false;true;true;12;550;true;false;false;true;"";0;false;true;false;false
+12;260;"MARGEN EN VENTA A CONCESIONAR.";1;false;false;true;true;12;550;false;false;false;true;"";0;false;true;false;false
+12;270;"RAPPELES POR COMPRAS";1;false;false;true;true;12;550;false;false;false;true;"";0;false;true;false;false
+12;280;"RAPPELES POR VENTAS";1;false;false;true;true;12;550;false;false;false;true;"";0;false;true;false;false
+12;290;"RAPPEL CUALITATIVO";1;false;false;true;true;12;550;false;false;false;true;"";0;false;true;false;false
+12;300;"INGRESOS ATIPICOS: GESTORIAS";1;false;false;true;true;12;550;false;false;false;true;"";0;false;true;false;false
+12;310;"INGRESOS ATIPICOS: FINANCIERAS";1;false;false;true;true;12;550;false;false;false;true;"";0;false;true;false;false
+12;320;"INGRESOS ATIPICOS:SUPERGARANT.";1;false;false;true;true;12;550;false;false;false;true;"";0;false;true;false;false
+12;330;"INGRESOS ATIPICOS:SEGUROS";1;false;false;true;true;12;550;false;false;false;true;"";0;false;true;false;false
+12;340;"INGRESOS COMERCIALES RENTING";1;false;false;true;true;12;550;false;false;false;true;"";0;false;true;false;false
+12;350;"INGRESOS COLABORACION RENTING";1;false;false;true;true;12;550;false;false;false;true;"";0;false;true;false;false
+12;360;"RECUPERACION DE GASTOS";1;false;false;true;true;12;550;false;false;false;true;"";0;false;true;false;false
+12;370;"COMISIONES VENTAS OTRAS EMPRE.";1;false;false;true;true;12;550;false;false;false;true;"";0;false;true;false;false
+12;374;"INGRESOS OPERAC.BUY-BACK";1;false;false;true;true;12;550;false;false;false;true;"";0;false;true;false;false
+12;376;"PROVISION BUY-BACK";1;false;false;true;true;12;550;false;false;false;true;"";0;false;true;false;false
+12;380;"TOTAL INGRESOS ATIPICOS";5;true;false;true;true;12;550;true;false;false;true;"";0;false;true;false;false
+12;390;"MARGEN ANTES DE REPARTO GTOS.";5;true;false;true;true;12;550;true;false;false;true;"";0;false;true;false;false
+12;400;"0% GASTOS DE BASE";3;false;false;true;true;12;550;true;false;false;true;"";0;false;true;false;false
+12;410;"0% GASTOS GENERALES";3;false;false;true;true;12;550;true;false;false;true;"";0;false;true;false;false
+12;420;"MARGEN NETO";7;true;false;true;true;12;550;true;false;false;true;"";0;false;true;false;false
+12;430;"EXISTENCIAS NUM.";1;false;false;false;true;12;560;false;true;false;false;"";0;false;true;false;false
+12;440;"EXISTENCIAS PTAS.";1;false;false;true;true;12;560;false;true;false;false;"";0;false;true;false;false
+12;450;"VEHICULOS VENDIDOS";1;false;false;false;true;12;450;false;true;false;true;"";0;false;true;false;false
+12;455;"VEH.VENDIDOS BUY-BACK";1;false;false;false;true;12;450;false;true;false;true;"";0;false;true;false;false
+12;460;"VENDIDOS A CONCESION";1;false;false;false;true;12;450;false;true;false;true;"";0;false;true;false;false
+12;470;"VENDIDOS POR CTA OTRAS EMPRESA";1;false;false;false;true;12;450;false;true;false;true;"";0;false;true;false;false
+12;480;"VEHICULOS COMPRADOS";1;false;false;false;true;12;450;false;true;false;true;"";0;false;true;false;false
+12;490;"MATRICULACIONES: ACUMULADO";1;false;false;false;true;12;450;false;true;false;true;"";0;false;true;false;false
+12;500;"FINANCIERAS: ACUMULADO";1;false;false;false;true;12;450;false;true;false;true;"";0;false;true;false;false
+12;510;"EUROS FINANCIADOS";1;false;false;true;true;12;550;false;true;false;true;"";0;false;true;false;false
+12;520;"SUPERGARANTIAS: ACUMULADO";1;false;false;false;true;12;450;false;true;false;true;"";0;false;true;false;false
+12;530;"SEGUROS: ACUMULADO";1;false;false;false;true;12;450;false;true;false;true;"";0;false;true;false;false
+12;540;"DIAS DE VENTA EN STOCK";1;false;false;false;true;12;560;false;true;false;false;"";0;true;true;false;false
+12;550;"SUMA DE VENTAS";2;false;false;true;true;12;550;true;false;true;true;"";0;false;true;false;false
+12;560;"REFERENCIA **NO USAR**";1;false;false;true;true;12;560;false;false;true;false;"";0;false;true;false;false
+13;10;"VENTA DE MANO DE OBRA CLIENTES";1;false;false;true;true;13;60;false;false;false;true;"";0;false;true;false;false
+13;20;"VENTA DE MANO DE OBRA INTERNA";1;false;false;true;true;13;60;false;false;false;true;"";0;false;true;false;false
+13;30;"VENTA DE MANO DE OBRA GARANTIA";1;false;false;true;true;13;60;false;false;false;true;"";0;false;true;false;false
+13;40;"VENTA DE REVISIONES,PAP Y 24H";1;false;false;true;true;13;60;false;false;false;true;"";0;false;true;false;false
+13;50;"VENTA DE TRABAJOS DE TERCEROS";1;false;false;true;true;13;60;false;false;false;true;"";0;false;true;false;false
+13;60;"VENTA DE MANO DE OBRA";2;true;false;true;true;13;60;true;false;false;true;"";0;false;true;false;false
+13;70;"REMUNERACIONES FIJAS";1;false;false;true;true;13;60;false;false;false;true;"";0;false;true;false;false
+13;80;"REMUNERACIONES EVENTUALES";1;false;false;true;true;13;60;false;false;false;true;"";0;false;true;false;false
+13;90;"HORAS EXTRAS";1;false;false;true;true;13;60;false;false;false;true;"";0;false;true;false;false
+13;100;"SEGUROS SOCIALES";1;false;false;true;true;13;60;false;false;false;true;"";0;false;true;false;false
+13;110;"DESCUENTOS EN MANO DE OBRA";1;false;false;true;true;13;60;false;false;false;true;"";0;false;true;false;false
+13;120;"COMPRA DE TRABAJOS DE TERCEROS";1;false;false;true;true;13;60;false;false;false;true;"";0;false;true;false;false
+13;130;"COSTO DE LA MANO DE OBRA";2;true;false;true;true;13;60;true;false;false;true;"";0;false;true;false;false
+13;140;"MARGEN DE LA MANO DE OBRA";3;true;false;true;true;13;60;true;false;false;true;"";0;false;true;false;false
+13;150;"VENTA DE MATERIAL CLIENTES";1;false;false;true;true;13;180;false;false;false;true;"";0;false;true;false;false
+13;160;"VENTA DE MATERIALES INTERNOS";1;false;false;true;true;13;180;false;false;false;true;"";0;false;true;false;false
+13;170;"VENTA DE MATERIALES GARANTIA";1;false;false;true;true;13;180;false;false;false;true;"";0;false;true;false;false
+13;180;"VENTA DE MATERIALES";2;true;false;true;true;13;180;true;false;false;true;"";0;false;true;false;false
+13;190;"COMPRA DE MATERIALES";1;false;false;true;true;13;180;false;false;false;true;"";0;false;true;false;false
+13;200;"PAGO ALMACEN";1;false;false;true;true;13;180;false;false;false;true;"";0;false;true;false;false
+13;210;"DESCUENTOS EN MATERIALES";1;false;false;true;true;13;180;false;false;false;true;"";0;false;true;false;false
+13;220;"COSTO DE LOS MATERIALES";2;true;false;true;true;13;180;true;false;false;true;"";0;false;true;false;false
+13;230;"MARGEN DE LOS MATERIALES";3;true;false;true;true;13;180;true;false;false;true;"";0;false;true;false;false
+13;240;"ELEMENTOS DE CONSUMO";1;false;false;true;true;13;510;false;false;false;true;"";0;false;true;false;false
+13;250;"MANT.SISTEMAS GESTION TALLER";1;false;false;true;true;13;510;false;false;false;true;"";0;false;true;false;false
+13;260;"COMPRA DE PEQUEÑA HERRAMIENTA";1;false;false;true;true;13;510;false;false;false;true;"";0;false;true;false;false
+13;270;"FORMACION DE PERSONAL";1;false;false;true;true;13;510;false;false;false;true;"";0;false;true;false;false
+13;280;"VEHICULOS DE SERVICIO";1;false;false;true;true;13;510;false;false;false;true;"";0;false;true;false;false
+13;290;"GASTOS VEHICULOS SUSTITUTIVO";1;false;false;true;true;13;510;false;false;false;true;"";0;false;true;false;false
+13;300;"PUBLICIDAD";1;false;false;true;true;13;510;false;false;false;true;"";0;false;true;false;false
+13;310;"GASTOS DIVERSOS";1;false;false;true;true;13;510;false;false;false;true;"";0;false;true;false;false
+13;320;"GASTOS FIJOS";4;true;false;true;true;13;510;true;false;false;true;"";0;false;true;false;false
+13;330;"MARGEN";5;true;false;true;true;13;510;true;false;false;true;"";0;false;true;false;false
+13;340;"RAPPEL CUALITATIVO";1;false;false;true;true;13;510;false;false;false;true;"";0;false;true;false;false
+13;350;"INGRESOS VEHIC. SUSTITUTIVOS";1;false;false;true;true;13;510;false;false;false;true;"";0;false;true;false;false
+13;360;"INGRESOS ATIPICOS";1;false;false;true;true;13;510;false;false;false;true;"";0;false;true;false;false
+13;370;"DIF. EN GARANTIAS NO ACEPTADAS";1;false;false;true;true;13;510;false;false;false;true;"";0;false;true;false;false
+13;380;"TOTAL INGRESOS ATIPICOS";5;true;false;true;true;13;510;true;false;false;true;"";0;false;true;false;false
+13;390;"MARGEN ANTES DE REPARTO GASTOS";6;true;false;true;true;13;510;true;false;false;true;"";0;false;true;false;false
+13;400;"0% GASTOS DE BASE";3;false;false;true;true;13;510;true;false;false;true;"";0;false;true;false;false
+13;410;"0% GASTOS GENERALES";3;false;false;true;true;13;510;true;false;false;true;"";0;false;true;false;false
+13;420;"MARGEN NETO";7;true;false;true;true;13;510;true;false;false;true;"";0;false;true;false;false
+13;430;"NUM. REPARACIONES";1;false;false;false;true;13;520;false;true;false;true;"";0;false;true;false;false
+13;440;"ABSENTISMO";1;false;false;false;true;13;520;false;true;false;false;"";0;true;true;false;false
+13;450;"PARO";1;false;false;false;true;13;520;false;true;false;false;"";0;true;true;false;false
+13;460;"EFICIENCIA";1;false;false;false;true;13;520;false;true;false;false;"";0;true;true;false;false
+13;470;"FACT. M.O. / Nº OPERARIOS";1;false;false;true;true;13;520;false;true;false;false;"";0;true;true;false;false
+13;480;"FACTURADAS/TEORICAS TOTALES";1;false;false;true;true;13;999;false;true;false;false;"";0;false;true;false;false
+13;490;"IMPAGADOS EUROS";1;false;false;true;true;13;999;false;true;false;false;"";0;false;true;false;false
+13;500;"CHATARRA";1;false;false;true;true;13;999;false;true;false;true;"";0;false;true;false;false
+13;510;"SUMA VENTAS";3;false;false;true;true;13;510;true;false;true;true;"";0;false;true;false;false
+13;520;"REFERENCIA **NO USAR**";1;false;false;true;true;13;520;false;false;true;false;"";0;false;true;false;false
+14;10;"VENTA DE VEHICULOS";1;false;false;true;true;14;550;false;false;false;true;"";0;false;true;false;false
+14;20;"VENTA DE VEHICULOS POR AGENTES";1;false;false;true;true;14;550;false;false;false;true;"";0;false;true;false;false
+14;30;"PRIMAS PROMOCIONALES";1;false;false;true;true;14;550;false;false;false;true;"";0;false;true;false;false
+14;40;"INGRESOS DE VENTAS";2;true;false;true;true;14;550;true;false;false;true;"";0;false;true;false;false
+14;50;"COSTO DE LOS VEHICULOS";1;false;false;true;true;14;550;false;false;false;true;"";0;false;true;false;false
+14;60;"PORTES Y TRASIEGOS";1;false;false;true;true;14;550;false;false;false;true;"";0;false;true;false;false
+14;70;"P.A.P. Y PREENTREGAS ACC-TIPO";1;false;false;true;true;14;550;false;false;false;true;"";0;false;true;false;false
+14;80;"ACCESORIOS VN Y REACONDICIONA.";1;false;false;true;true;14;550;false;false;false;true;"";0;false;true;false;false
+14;100;"SOBREVALORACION VO";1;false;false;true;true;14;550;false;false;false;true;"";0;false;true;false;false
+14;110;"DESCUENTOS";1;false;false;true;true;14;550;false;false;false;true;"";0;false;true;false;false
+14;120;"COSTO DE LA VENTA";2;true;false;true;true;14;550;true;false;false;true;"";0;false;true;false;false
+14;130;"MARGEN DE LA VENTA";3;true;false;true;true;14;550;true;false;false;true;"";0;false;true;false;false
+14;140;"COMISIONES A VENDEDORES";1;false;false;true;true;14;550;false;false;false;true;"";0;false;true;false;false
+14;150;"COMISIONES A COLABORADORES";1;false;false;true;true;14;550;false;false;false;true;"";0;false;true;false;false
+14;160;"COMISIONES A AGENTES";1;false;false;true;true;14;550;false;false;false;true;"";0;false;true;false;false
+14;170;"GASTOS DE VIAJE Y REPRESENTAC.";1;false;false;true;true;14;550;false;false;false;true;"";0;false;true;false;false
+14;180;"PUBLICIDAD DIRECTA Y PROMOCION";1;false;false;true;true;14;550;false;false;false;true;"";0;false;true;false;false
+14;190;"GASTOS VARIABLES";2;true;false;true;true;14;550;true;false;false;true;"";0;false;true;false;false
+14;200;"SUELDOS";1;false;false;true;true;14;550;false;false;false;true;"";0;false;true;false;false
+14;210;"SEGUROS SOCIALES";1;false;false;true;true;14;550;false;false;false;true;"";0;false;true;false;false
+14;220;"FORMACION DE PERSONAL";1;false;false;true;true;14;550;false;false;false;true;"";0;false;true;false;false
+14;230;"GASTOS DIVERSOS";1;false;false;true;true;14;550;false;false;false;true;"";0;false;true;false;false
+14;240;"GASTOS FIJOS";2;true;false;true;true;14;550;true;false;false;true;"";0;false;true;false;false
+14;250;"MARGEN";4;true;false;true;true;14;550;true;false;false;true;"";0;false;true;false;false
+14;260;"MARGEN VENTA A CONCESIONARIOS";1;false;false;true;true;14;550;false;false;false;true;"";0;false;true;false;false
+14;270;"RAPPELES POR COMPRAS";1;false;false;true;true;14;550;false;false;false;true;"";0;false;true;false;false
+14;280;"RAPPEL POR VENTAS";1;false;false;true;true;14;550;false;false;false;true;"";0;false;true;false;false
+14;290;"RAPPEL CUALITATIVO";1;false;false;true;true;14;550;false;false;false;true;"";0;false;true;false;false
+14;300;"INGRESOS ATIPICOS: GESTORIAS";1;false;false;true;true;14;550;false;false;false;true;"";0;false;true;false;false
+14;310;"INGRESOS ATIPICOS: FINANCIERAS";1;false;false;true;true;14;550;false;false;false;true;"";0;false;true;false;false
+14;320;"INGRESOS ATIPICOS:SUPERGARANT.";1;false;false;true;true;14;550;false;false;false;true;"";0;false;true;false;false
+14;330;"INGRESOS ATIPICOS:SEGUROS";1;false;false;true;true;14;550;false;false;false;true;"";0;false;true;false;false
+14;340;"INGRESOS COMERCIALES RENTING";1;false;false;true;true;14;550;false;false;false;true;"";0;false;true;false;false
+14;350;"INGRESOS COLABORACION RENTING";1;false;false;true;true;14;550;false;false;false;true;"";0;false;true;false;false
+14;360;"RECUPERACION DE GASTOS";1;false;false;true;true;14;550;false;false;false;true;"";0;false;true;false;false
+14;370;"COMISIONES VENTAS OTRAS EMPRE.";1;false;false;true;true;14;550;false;false;false;true;"";0;false;true;false;false
+14;374;"INGRESOS OPERAC.BUY-BACK";1;false;false;true;true;14;550;false;false;false;true;"";0;false;true;false;false
+14;376;"PROVISION BUY-BACK";1;false;false;true;true;14;550;false;false;false;true;"";0;false;true;false;false
+14;380;"TOTAL INGRESOS ATIPICOS";5;true;false;true;true;14;550;true;false;false;true;"";0;false;true;false;false
+14;390;"MARGEN ANTES DE REPARTO GTOS.";5;true;false;true;true;14;550;true;false;false;true;"";0;false;true;false;false
+14;400;"20% GASTOS DE BASE";3;false;false;true;true;14;550;true;false;false;true;"";0;false;true;false;false
+14;410;"20% GASTOS GENERALES";3;false;false;true;true;14;550;true;false;false;true;"";0;false;true;false;false
+14;420;"MARGEN NETO";6;true;false;true;true;14;550;true;false;false;true;"";0;false;true;false;false
+14;430;"EXISTENCIAS NUM.";1;false;false;false;true;14;560;false;true;false;false;"";0;false;true;false;false
+14;440;"EXISTENCIAS PTAS.";1;false;false;true;true;14;560;false;true;false;false;"";0;false;true;false;false
+14;450;"VEHICULOS VENDIDOS";1;false;false;false;true;14;450;false;true;false;true;"";0;false;true;false;false
+14;455;"VEH. AUTOMATRICULADOS";1;false;false;false;true;14;450;false;true;false;true;"";0;false;true;false;false
+14;460;"VENDIDOS A CONCESION";1;false;false;false;true;14;450;false;true;false;true;"";0;false;true;false;false
+14;470;"VENDIDOS POR CTA OTRAS EMPRESA";1;false;false;false;true;14;450;false;true;false;true;"";0;false;true;false;false
+14;480;"VEHICULOS COMPRADOS";1;false;false;false;true;14;450;false;true;false;true;"";0;false;true;false;false
+14;490;"MATRICULACIONES: ACUMULADO";1;false;false;false;true;14;450;false;true;false;true;"";0;false;true;false;false
+14;500;"FINANCIERAS: ACUMULADO";1;false;false;false;true;14;450;false;true;false;true;"";0;false;true;false;false
+14;510;"EUROS FINANCIADOS";1;false;false;true;true;14;550;false;true;false;true;"";0;false;true;false;false
+14;520;"SUPERGARANTIAS: ACUMULADO";1;false;false;false;true;14;450;false;true;false;true;"";0;false;true;false;false
+14;530;"SEGUROS: ACUMULADO";1;false;false;false;true;14;450;false;true;false;true;"";0;false;true;false;false
+14;540;"DIAS DE VENTA EN STOCK";1;false;false;false;true;14;560;false;true;false;false;"";0;true;true;false;false
+14;550;"SUMA DE VENTAS";2;false;false;true;true;14;550;true;false;true;true;"";0;false;true;false;false
+14;560;"REFERENCIA **NO USAR**";1;false;false;true;true;14;560;false;false;true;false;"";0;false;true;false;false
+15;10;"VENTA DE VEHICULOS DEMOS";1;false;false;true;true;15;30;false;false;false;true;"";0;false;true;false;false
+15;20;"OTROS INGRESOS";1;false;false;true;true;15;30;false;false;false;true;"";0;false;true;false;false
+15;30;"TOTAL VENTAS DE DEMOS";2;true;false;true;true;15;30;true;false;false;true;"";0;false;true;false;false
+15;40;"COSTE DE ADQUISICION";1;false;false;true;true;15;30;false;false;false;true;"";0;false;true;false;false
+15;50;"MANTENIMIENTOS";1;false;false;true;true;15;30;false;false;false;true;"";0;false;true;false;false
+15;60;"SEGUROS";1;false;false;true;true;15;30;false;false;false;true;"";0;false;true;false;false
+15;70;"OTROS GASTOS";1;false;false;true;true;15;30;false;false;false;true;"";0;false;true;false;false
+15;80;"TOTAL COSTO DE DEMOS";2;true;false;true;true;15;30;true;false;false;true;"";0;false;true;false;false
+15;90;"MARGEN DE DEMOS";3;true;false;true;true;15;30;true;false;false;true;"";0;false;true;false;false
+15;100;"";1;false;true;true;true;15;100;false;false;false;false;"";0;false;true;false;false
+15;110;"COMPRAS (+)";1;false;false;false;true;15;150;false;true;false;true;"";0;false;true;false;false
+15;120;"VENTAS (-)";1;false;false;false;true;15;150;false;true;false;true;"";0;false;true;false;false
+15;130;"EXISTENCIAS NUM.";1;false;false;false;true;15;150;false;true;false;false;"";0;false;true;false;false
+15;140;"EXISTENCIAS EUROS";1;false;false;true;true;15;150;false;true;false;false;"";0;false;true;false;false
+15;150;"REFERENCIA **NO USAR**";1;false;false;true;true;15;150;false;false;true;false;"";0;false;true;false;false
+17;10;"CEDIDO POR OTRAS SOCIEDADES";1;false;false;true;true;17;140;false;false;false;true;"";0;false;true;false;false
+17;20;"ALQUILERES - INGRESOS";1;false;false;true;true;17;140;false;false;false;true;"";0;false;true;false;false
+17;30;"INGRESOS ATIPICOS";1;false;false;true;true;17;140;false;false;false;true;"";0;false;true;false;false
+17;40;"SUBVENCIONES";1;false;false;true;true;17;140;false;false;false;true;"";0;false;true;false;false
+17;50;"RESULTADOS OTROS EJERCICIOS";1;false;false;true;true;17;140;false;false;false;true;"";0;false;true;false;false
+17;60;"REALIZACIONES DE INMOVILIZADO";1;false;false;true;true;17;140;false;false;false;true;"";0;false;true;false;false
+17;70;"RESULTADOS AJENOS A EXPLOTACIO";1;false;false;true;true;17;140;false;false;false;true;"";0;false;true;false;false
+17;80;"PROVISIONES POR INSOLVENCIAS";1;false;false;true;true;17;140;false;false;false;true;"";0;false;true;false;false
+17;90;"INGR.OPERAC.BUY-BACK";1;false;false;true;true;17;140;false;false;false;true;"";0;false;true;false;false
+17;100;"CEDIDO A OTRAS SOCIEDADES";1;false;false;true;true;17;140;false;false;false;true;"";0;false;true;false;false
+17;110;"AMORTIZ. INMOVILIZADO NO OPERA";1;false;false;true;true;17;140;false;false;false;true;"";0;false;true;false;false
+17;120;"GASTOS ATIPICOS";1;false;false;true;true;17;140;false;false;false;true;"";0;false;true;false;false
+17;130;"GASTOS OBRAS EXTRAORDINARIAS";1;false;false;true;true;17;140;false;false;false;true;"";0;false;true;false;false
+17;140;"TOTAL RESULTADOS EXTRAORDINAR.";2;true;false;true;true;17;140;true;false;false;true;"";0;false;true;false;false
+20;10;"PERSONAL DE BASE";1;false;false;true;true;20;110;false;false;false;true;"";0;false;true;false;false
+20;20;"ALQUILERES";1;false;false;true;true;20;110;false;false;false;true;"";0;false;true;false;false
+20;30;"ENTRETENIMIENTO Y REPARACIONES";1;false;false;true;true;20;110;false;false;false;true;"";0;false;true;false;false
+20;40;"SERVICIOS -LUZ-AGUA-BASURA";1;false;false;true;true;20;110;false;false;false;true;"";0;false;true;false;false
+20;50;"LIMPIEZA Y CONSUMO";1;false;false;true;true;20;110;false;false;false;true;"";0;false;true;false;false
+20;60;"TRANSPORTES Y DESPLAZAMIENTOS";1;false;false;true;true;20;110;false;false;false;true;"";0;false;true;false;false
+20;70;"VEHICULOS DE SERVICIO";1;false;false;true;true;20;110;false;false;false;true;"";0;false;true;false;false
+20;80;"TELEFONOS";1;false;false;true;true;20;110;false;false;false;true;"";0;false;true;false;false
+20;90;"OTROS GASTOS DIVERSOS";1;false;false;true;true;20;110;false;false;false;true;"";0;false;true;false;false
+20;100;"AMORTIZACIONES";1;false;false;true;true;20;110;false;false;false;true;"";0;false;true;false;false
+20;110;"TOTAL GASTOS DE BASE";2;true;false;true;true;20;110;true;false;false;true;"";0;false;true;false;false
+21;10;"VENTA DE VEHICULOS";1;false;false;true;true;21;550;false;false;false;true;"";0;false;true;false;false
+21;20;"VENTA DE VEHICULOS POR AGENTES";1;false;false;true;true;21;550;false;false;false;true;"";0;false;true;false;false
+21;30;"PRIMAS PROMOCIONALES";1;false;false;true;true;21;550;false;false;false;true;"";0;false;true;false;false
+21;40;"INGRESOS DE VENTAS";2;true;false;true;true;21;550;true;false;false;true;"";0;false;true;false;false
+21;50;"COSTO DE LOS VEHICULOS";1;false;false;true;true;21;550;false;false;false;true;"";0;false;true;false;false
+21;60;"PORTES Y TRASIEGOS";1;false;false;true;true;21;550;false;false;false;true;"";0;false;true;false;false
+21;70;"P.A.P. Y PREENTREGAS ACC-TIPO";1;false;false;true;true;21;550;false;false;false;true;"";0;false;true;false;false
+21;80;"ACCESORIOS VN Y REACONDICIONA.";1;false;false;true;true;21;550;false;false;false;true;"";0;false;true;false;false
+21;100;"SOBREVALORACION VO";1;false;false;true;true;21;550;false;false;false;true;"";0;false;true;false;false
+21;110;"DESCUENTOS";1;false;false;true;true;21;550;false;false;false;true;"";0;false;true;false;false
+21;120;"COSTO DE LA VENTA";2;true;false;true;true;21;550;true;false;false;true;"";0;false;true;false;false
+21;130;"MARGEN DE LA VENTA";3;true;false;true;true;21;550;true;false;false;true;"";0;false;true;false;false
+21;140;"COMISIONES A VENDEDORES";1;false;false;true;true;21;550;false;false;false;true;"";0;false;true;false;false
+21;150;"COMISIONES A COLABORADORES";1;false;false;true;true;21;550;false;false;false;true;"";0;false;true;false;false
+21;160;"COMISIONES A AGENTES";1;false;false;true;true;21;550;false;false;false;true;"";0;false;true;false;false
+21;170;"GASTOS DE VIAJE Y REPRESENTAC.";1;false;false;true;true;21;550;false;false;false;true;"";0;false;true;false;false
+21;180;"PUBLICIDAD DIRECTA Y PROMOCION";1;false;false;true;true;21;550;false;false;false;true;"";0;false;true;false;false
+21;190;"GASTOS VARIABLES";2;true;false;true;true;21;550;true;false;false;true;"";0;false;true;false;false
+21;200;"SUELDOS";1;false;false;true;true;21;550;false;false;false;true;"";0;false;true;false;false
+21;210;"SEGUROS SOCIALES";1;false;false;true;true;21;550;false;false;false;true;"";0;false;true;false;false
+21;220;"FORMACION DE PERSONAL";1;false;false;true;true;21;550;false;false;false;true;"";0;false;true;false;false
+21;230;"GASTOS DIVERSOS";1;false;false;true;true;21;550;false;false;false;true;"";0;false;true;false;false
+21;240;"GASTOS FIJOS";4;true;false;true;true;21;550;true;false;false;true;"";0;false;true;false;false
+21;250;"MARGEN";5;true;false;true;true;21;550;true;false;false;true;"";0;false;true;false;false
+21;260;"MARGEN EN VENTA A CONCESIONAR.";1;false;false;true;true;21;550;false;false;false;true;"";0;false;true;false;false
+21;270;"RAPPELES POR COMPRAS";1;false;false;true;true;21;550;false;false;false;true;"";0;false;true;false;false
+21;280;"RAPPELES POR VENTAS";1;false;false;true;true;21;550;false;false;false;true;"";0;false;true;false;false
+21;290;"RAPPEL CUALITATIVO";1;false;false;true;true;21;550;false;false;false;true;"";0;false;true;false;false
+21;300;"INGRESOS ATIPICOS: GESTORIAS";1;false;false;true;true;21;550;false;false;false;true;"";0;false;true;false;false
+21;310;"INGRESOS ATIPICOS: FINANCIERAS";1;false;false;true;true;21;550;false;false;false;true;"";0;false;true;false;false
+21;320;"INGRESOS ATIPICOS:SUPERGARANT.";1;false;false;true;true;21;550;false;false;false;true;"";0;false;true;false;false
+21;330;"INGRESOS ATIPICOS:SEGUROS";1;false;false;true;true;21;550;false;false;false;true;"";0;false;true;false;false
+21;340;"INGRESOS COMERCIALES RENTING";1;false;false;true;true;21;550;false;false;false;true;"";0;false;true;false;false
+21;350;"INGRESOS COLABORACION RENTING";1;false;false;true;true;21;550;false;false;false;true;"";0;false;true;false;false
+21;360;"RECUPERACION DE GASTOS";1;false;false;true;true;21;550;false;false;false;true;"";0;false;true;false;false
+21;370;"COMISIONES VENTAS OTRAS EMPRE.";1;false;false;true;true;21;550;false;false;false;true;"";0;false;true;false;false
+21;374;"INGRESOS OPERAC.BUY-BACK";1;false;false;true;true;21;550;false;false;false;true;"";0;false;true;false;false
+21;376;"PROVISION BUY-BACK";1;false;false;true;true;21;550;false;false;false;true;"";0;false;true;false;false
+21;380;"TOTAL INGRESOS ATIPICOS";5;true;false;true;true;21;550;true;false;false;true;"";0;false;true;false;false
+21;390;"MARGEN ANTES DE REPARTO GTOS.";6;true;false;true;true;21;550;true;false;false;true;"";0;false;true;false;false
+21;400;"40% GASTOS DE BASE";3;false;false;true;true;21;550;true;false;false;true;"";0;false;true;false;false
+21;410;"40% GASTOS GENERALES";3;false;false;true;true;21;550;true;false;false;true;"";0;false;true;false;false
+21;420;"MARGEN NETO";7;true;false;true;true;21;550;true;false;false;true;"";0;false;true;false;false
+21;430;"EXISTENCIAS NUM.";1;false;false;false;true;21;560;false;true;false;false;"";0;false;true;false;false
+21;440;"EXISTENCIAS PTAS";1;false;false;true;true;21;560;false;true;false;false;"";0;false;true;false;false
+21;450;"VEHICULOS VENDIDOS";1;false;false;false;true;21;450;false;true;false;true;"";0;false;true;false;false
+21;455;"VEH. AUTOMATRICULADOS";1;false;false;false;true;21;450;false;true;false;true;"";0;false;true;false;false
+21;460;"VENDIDOS A CONCESION";1;false;false;false;true;21;450;false;true;false;true;"";0;false;true;false;false
+21;470;"VENDIDOS POR CTA OTRAS EMPRESA";1;false;false;false;true;21;450;false;true;false;true;"";0;false;true;false;false
+21;480;"VEHICULOS COMPRADOS";1;false;false;false;true;21;450;false;true;false;true;"";0;false;true;false;false
+21;490;"MATRICULACIONES: ACUMULADO";1;false;false;false;true;21;450;false;true;false;true;"";0;false;true;false;false
+21;500;"FINANCIERAS: ACUMULADO";1;false;false;false;true;21;450;false;true;false;true;"";0;false;true;false;false
+21;510;"EUROS FINANCIADOS";1;false;false;true;true;21;550;false;true;false;true;"";0;false;true;false;false
+21;520;"SUPERGARANTIAS: ACUMULADO";1;false;false;false;true;21;450;false;true;false;true;"";0;false;true;false;false
+21;530;"SEGUROS: ACUMULADO";1;false;false;false;true;21;450;false;true;false;true;"";0;false;true;false;false
+21;540;"DIAS DE VENTA EN STOCK";1;false;false;false;true;21;560;false;true;false;false;"";0;true;true;false;false
+21;550;"SUMA DE VENTAS";2;false;false;true;true;21;550;true;false;true;true;"";0;false;true;false;false
+21;560;"REFERENCIA **NO USAR**";1;false;false;true;true;21;560;false;false;true;false;"";0;false;true;false;false
+22;10;"VENTA DE VEHICULOS";1;false;false;true;true;22;550;false;false;false;true;"";0;false;true;false;false
+22;20;"VENTA DE VEHICULOS POR AGENTES";1;false;false;true;true;22;550;false;false;false;true;"";0;false;true;false;false
+22;30;"PRIMAS PROMOCIONALES";1;false;false;true;true;22;550;false;false;false;true;"";0;false;true;false;false
+22;40;"INGRESOS DE VENTAS";2;true;false;true;true;22;550;true;false;false;true;"";0;false;true;false;false
+22;50;"COSTO DE LOS VEHICULOS";1;false;false;true;true;22;550;false;false;false;true;"";0;false;true;false;false
+22;60;"PORTES Y TRASIEGOS";1;false;false;true;true;22;550;false;false;false;true;"";0;false;true;false;false
+22;70;"P.A.P. Y PREENTREGAS ACC-TIPO";1;false;false;true;true;22;550;false;false;false;true;"";0;false;true;false;false
+22;80;"ACCESORIOS VN Y REACONDICIONA.";1;false;false;true;true;22;550;false;false;false;true;"";0;false;true;false;false
+22;100;"SOBREVALORACION VO";1;false;false;true;true;22;550;false;false;false;true;"";0;false;true;false;false
+22;110;"DESCUENTOS";1;false;false;true;true;22;550;false;false;false;true;"";0;false;true;false;false
+22;120;"COSTO DE LA VENTA";2;true;false;true;true;22;550;true;false;false;true;"";0;false;true;false;false
+22;130;"MARGEN DE LA VENTA";3;true;false;true;true;22;550;true;false;false;true;"";0;false;true;false;false
+22;140;"COMISIONES A VENDEDORES";1;false;false;true;true;22;550;false;false;false;true;"";0;false;true;false;false
+22;150;"COMISIONES A COLABORADORES";1;false;false;true;true;22;550;false;false;false;true;"";0;false;true;false;false
+22;160;"COMISIONES A AGENTES";1;false;false;true;true;22;550;false;false;false;true;"";0;false;true;false;false
+22;170;"GASTOS DE VIAJE Y REPRESENTAC.";1;false;false;true;true;22;550;false;false;false;true;"";0;false;true;false;false
+22;180;"PUBLICIDAD DIRECTA Y PROMOCION";1;false;false;true;true;22;550;false;false;false;true;"";0;false;true;false;false
+22;190;"GASTOS VARIABLES";2;true;false;true;true;22;550;true;false;false;true;"";0;false;true;false;false
+22;200;"SUELDOS";1;false;false;true;true;22;550;false;false;false;true;"";0;false;true;false;false
+22;210;"SEGUROS SOCIALES";1;false;false;true;true;22;550;false;false;false;true;"";0;false;true;false;false
+22;220;"FORMACION DE PERSONAL";1;false;false;true;true;22;550;false;false;false;true;"";0;false;true;false;false
+22;230;"GASTOS DIVERSOS";1;false;false;true;true;22;550;false;false;false;true;"";0;false;true;false;false
+22;240;"GASTOS FIJOS";2;true;false;true;true;22;550;true;false;false;true;"";0;false;true;false;false
+22;250;"MARGEN";4;true;false;true;true;22;550;true;false;false;true;"";0;false;true;false;false
+22;260;"MARGEN EN VENTA A CONCESIONAR.";1;false;false;true;true;22;550;false;false;false;true;"";0;false;true;false;false
+22;270;"RAPPELES POR COMPRAS";1;false;false;true;true;22;550;false;false;false;true;"";0;false;true;false;false
+22;280;"RAPPELES POR VENTAS";1;false;false;true;true;22;550;false;false;false;true;"";0;false;true;false;false
+22;290;"RAPPEL CUALITATIVO";1;false;false;true;true;22;550;false;false;false;true;"";0;false;true;false;false
+22;300;"INGRESOS ATIPICOS: GESTORIAS";1;false;false;true;true;22;550;false;false;false;true;"";0;false;true;false;false
+22;310;"INGRESOS ATIPICOS: FINANCIERAS";1;false;false;true;true;22;550;false;false;false;true;"";0;false;true;false;false
+22;320;"INGRESOS ATIPICOS:SUPERGARANT.";1;false;false;true;true;22;550;false;false;false;true;"";0;false;true;false;false
+22;330;"INGRESOS ATIPICOS:SEGUROS";1;false;false;true;true;22;550;false;false;false;true;"";0;false;true;false;false
+22;340;"INGRESOS COMERCIALES RENTING";1;false;false;true;true;22;550;false;false;false;true;"";0;false;true;false;false
+22;350;"INGRESOS COLABORACION RENTING";1;false;false;true;true;22;550;false;false;false;true;"";0;false;true;false;false
+22;360;"RECUPERACION DE GASTOS";1;false;false;true;true;22;550;false;false;false;true;"";0;false;true;false;false
+22;370;"COMISIONES VENTAS OTRAS EMPRE.";1;false;false;true;true;22;550;false;false;false;true;"";0;false;true;false;false
+22;374;"INGRESOS OPERAC.BUY-BACK";1;false;false;true;true;22;550;false;false;false;true;"";0;false;true;false;false
+22;376;"PROVISION BUY-BACK";1;false;false;true;true;22;550;false;false;false;true;"";0;false;true;false;false
+22;380;"TOTAL INGRESOS ATIPICOS";5;true;false;true;true;22;550;true;false;false;true;"";0;false;true;false;false
+22;390;"MARGEN ANTES DE REPARTO GTOS.";5;true;false;true;true;22;550;true;false;false;true;"";0;false;true;false;false
+22;400;"20% GASTOS DE BASE";3;false;false;true;true;22;550;true;false;false;true;"";0;false;true;false;false
+22;410;"20% GASTOS GENERALES";3;false;false;true;true;22;550;true;false;false;true;"";0;false;true;false;false
+22;420;"MARGEN NETO";7;true;false;true;true;22;550;true;false;false;true;"";0;false;true;false;false
+22;430;"EXISTENCIAS NUM.";1;false;false;false;true;22;560;false;true;false;false;"";0;false;true;false;false
+22;440;"EXISTENCIAS PTAS.";1;false;false;true;true;22;560;false;true;false;false;"";0;false;true;false;false
+22;450;"VEHICULOS VENDIDOS";1;false;false;false;true;22;450;false;true;false;true;"";0;false;true;false;false
+22;455;"VEH. AUTOMATIRCULADOS";1;false;false;false;true;22;450;false;true;false;true;"";0;false;true;false;false
+22;460;"VENDIDOS A CONCESION";1;false;false;false;true;22;450;false;true;false;true;"";0;false;true;false;false
+22;470;"VENDIDOS POR CTA OTRAS EMPRESA";1;false;false;false;true;22;450;false;true;false;true;"";0;false;true;false;false
+22;480;"VEHICULOS COMPRADOS";1;false;false;false;true;22;450;false;true;false;true;"";0;false;true;false;false
+22;490;"MATRICULACIONES: ACUMULADO";1;false;false;false;true;22;450;false;true;false;true;"";0;false;true;false;false
+22;500;"FINANCIERAS: ACUMULADO";1;false;false;false;true;22;450;false;true;false;true;"";0;false;true;false;false
+22;510;"EUROS FINANCIADOS";1;false;false;true;true;22;550;false;true;false;true;"";0;false;true;false;false
+22;520;"SUPERGARANTIAS: ACUMULADO";1;false;false;false;true;22;450;false;true;false;true;"";0;false;true;false;false
+22;530;"SEGUROS: ACUMULADO";1;false;false;false;true;22;450;false;true;false;true;"";0;false;true;false;false
+22;540;"DIAS DE VENTA EN STOCK";1;false;false;false;true;22;560;false;true;false;false;"";0;true;true;false;false
+22;550;"SUMA DE VENTAS";2;false;false;true;true;22;550;true;false;true;true;"";0;false;true;false;false
+22;560;"REFERENCIA **NO USAR**";1;false;false;true;true;22;560;false;false;true;false;"";0;false;true;false;false
+23;10;"VENTA DE VEHICULOS";1;false;false;true;true;23;550;false;false;false;true;"";0;false;true;false;false
+23;20;"VENTA DE VEHICULOS POR AGENTES";1;false;false;true;true;23;550;false;false;false;true;"";0;false;true;false;false
+23;30;"PRIMAS PROMOCIONALES";1;false;false;true;true;23;550;false;false;false;true;"";0;false;true;false;false
+23;40;"INGRESOS DE VENTAS";2;true;false;true;true;23;550;true;false;false;true;"";0;false;true;false;false
+23;50;"COSTO DE LOS VEHICULOS";1;false;false;true;true;23;550;false;false;false;true;"";0;false;true;false;false
+23;60;"PORTES Y TRASIEGOS";1;false;false;true;true;23;550;false;false;false;true;"";0;false;true;false;false
+23;70;"P.A.P. Y PREENTREGAS ACC-TIPO";1;false;false;true;true;23;550;false;false;false;true;"";0;false;true;false;false
+23;80;"ACCESORIOS VN Y REACONDICIONA.";1;false;false;true;true;23;550;false;false;false;true;"";0;false;true;false;false
+23;100;"SOBREVALORACION VO";1;false;false;true;true;23;550;false;false;false;true;"";0;false;true;false;false
+23;110;"DESCUENTOS";1;false;false;true;true;23;550;false;false;false;true;"";0;false;true;false;false
+23;120;"COSTO DE LA VENTA";2;true;false;true;true;23;550;true;false;false;true;"";0;false;true;false;false
+23;130;"MARGEN DE LA VENTA";3;true;false;true;true;23;550;true;false;false;true;"";0;false;true;false;false
+23;140;"COMISIONES A VENDEDORES";1;false;false;true;true;23;550;false;false;false;true;"";0;false;true;false;false
+23;150;"COMISIONES A COLABORADORES";1;false;false;true;true;23;550;false;false;false;true;"";0;false;true;false;false
+23;160;"COMISIONES A AGENTES";1;false;false;true;true;23;550;false;false;false;true;"";0;false;true;false;false
+23;170;"GASTOS DE VIAJE Y REPRESENTAC.";1;false;false;true;true;23;550;false;false;false;true;"";0;false;true;false;false
+23;180;"PUBLICIDAD DIRECTA Y PROMOCION";1;false;false;true;true;23;550;false;false;false;true;"";0;false;true;false;false
+23;190;"GASTOS VARIABLES";2;true;false;true;true;23;550;true;false;false;true;"";0;false;true;false;false
+23;200;"SUELDOS";1;false;false;true;true;23;550;false;false;false;true;"";0;false;true;false;false
+23;210;"SEGUROS SOCIALES";1;false;false;true;true;23;550;false;false;false;true;"";0;false;true;false;false
+23;220;"FORMACION DE PERSONAL";1;false;false;true;true;23;550;false;false;false;true;"";0;false;true;false;false
+23;230;"GASTOS DIVERSOS";1;false;false;true;true;23;550;false;false;false;true;"";0;false;true;false;false
+23;240;"GASTOS FIJOS";2;true;false;true;true;23;550;true;false;false;true;"";0;false;true;false;false
+23;250;"MARGEN";4;true;false;true;true;23;550;true;false;false;true;"";0;false;true;false;false
+23;260;"MARGEN VENTA A CONCESIONARIOS";1;false;false;true;true;23;550;false;false;false;true;"";0;false;true;false;false
+23;270;"RAPPELES POR COMPRAS";1;false;false;true;true;23;550;false;false;false;true;"";0;false;true;false;false
+23;280;"RAPPEL POR VENTAS";1;false;false;true;true;23;550;false;false;false;true;"";0;false;true;false;false
+23;290;"RAPPEL CUALITATIVO";1;false;false;true;true;23;550;false;false;false;true;"";0;false;true;false;false
+23;300;"INGRESOS ATIPICOS: GESTORIAS";1;false;false;true;true;23;550;false;false;false;true;"";0;false;true;false;false
+23;310;"INGRESOS ATIPICOS: FINANCIERAS";1;false;false;true;true;23;550;false;false;false;true;"";0;false;true;false;false
+23;320;"INGRESOS ATIPICOS:SUPERGARANT.";1;false;false;true;true;23;550;false;false;false;true;"";0;false;true;false;false
+23;330;"INGRESOS ATIPICOS:SEGUROS";1;false;false;true;true;23;550;false;false;false;true;"";0;false;true;false;false
+23;340;"INGRESOS COMERCIALES RENTING";1;false;false;true;true;23;550;false;false;false;true;"";0;false;true;false;false
+23;350;"INGRESOS COLABORACION RENTING";1;false;false;true;true;23;550;false;false;false;true;"";0;false;true;false;false
+23;360;"RECUPERACION DE GASTOS";1;false;false;true;true;23;550;false;false;false;true;"";0;false;true;false;false
+23;370;"COMISIONES VENTAS OTRAS EMPRE.";1;false;false;true;true;23;550;false;false;false;true;"";0;false;true;false;false
+23;374;"INGRESOS OPERAC.BUY-BACK";1;false;false;true;true;23;550;false;false;false;true;"";0;false;true;false;false
+23;376;"PROVISION BUY-BACK";1;false;false;true;true;23;550;false;false;false;true;"";0;false;true;false;false
+23;380;"TOTAL INGRESOS ATIPICOS";5;true;false;true;true;23;550;true;false;false;true;"";0;false;true;false;false
+23;390;"MARGEN ANTES DE REPARTO GTOS.";5;true;false;true;true;23;550;true;false;false;true;"";0;false;true;false;false
+23;400;"0% GASTOS DE BASE";3;false;false;true;true;23;550;true;false;false;true;"";0;false;true;false;false
+23;410;"0% DE GASTOS GENERALES";3;false;false;true;true;23;550;true;false;false;true;"";0;false;true;false;false
+23;420;"MARGEN NETO";6;true;false;true;true;23;550;true;false;false;true;"";0;false;true;false;false
+23;430;"EXISTENCIAS NUM.";1;false;false;false;true;23;560;false;true;false;false;"";0;false;true;false;false
+23;440;"EXISTENCIAS PTAS.";1;false;false;true;true;23;560;false;true;false;false;"";0;false;true;false;false
+23;450;"VEHICULOS VENDIDOS";1;false;false;false;true;23;450;false;true;false;true;"";0;false;true;false;false
+23;455;"VEH.VENDIDOS BUY-BACK";1;false;false;false;true;23;450;false;true;false;true;"";0;false;true;false;false
+23;460;"VENDIDOS A CONCESION";1;false;false;false;true;23;450;false;true;false;true;"";0;false;true;false;false
+23;470;"VENDIDOS POR CTA OTRAS EMPRESA";1;false;false;false;true;23;450;false;true;false;true;"";0;false;true;false;false
+23;480;"VEHICULOS COMPRADOS";1;false;false;false;true;23;450;false;true;false;true;"";0;false;true;false;false
+23;490;"MATRICULACIONES: ACUMULADO";1;false;false;false;true;23;450;false;true;false;true;"";0;false;true;false;false
+23;500;"FINANCIERAS: ACUMULADO";1;false;false;false;true;23;450;false;true;false;true;"";0;false;true;false;false
+23;510;"EUROS FINANCIADOS";1;false;false;true;true;23;550;false;true;false;true;"";0;false;true;false;false
+23;520;"SUPERGARANTIAS: ACUMULADO";1;false;false;false;true;23;450;false;true;false;true;"";0;false;true;false;false
+23;530;"SEGUROS: ACUMULADO";1;false;false;false;true;23;450;false;true;false;true;"";0;false;true;false;false
+23;540;"DIAS DE VENTA EN STOCK";1;false;false;false;true;23;560;false;true;false;false;"";0;true;true;false;false
+23;550;"SUMA DE VENTAS";2;false;false;true;true;23;550;true;false;true;true;"";0;false;true;false;false
+23;560;"REFEENCIA **NO USAR**";1;false;false;true;true;23;560;false;false;true;false;"";0;false;true;false;false
+24;10;"VENTA DE VEHICULOS DEMOS";1;false;false;true;true;24;30;false;false;false;true;"";0;false;true;false;false
+24;20;"OTROS INGRESOS";1;false;false;true;true;24;30;false;false;false;true;"";0;false;true;false;false
+24;30;"TOTAL VENTAS DE DEMOS";2;true;false;true;true;24;30;true;false;false;true;"";0;false;true;false;false
+24;40;"COSTE DE ADQUISICION";1;false;false;true;true;24;30;false;false;false;true;"";0;false;true;false;false
+24;50;"MANTENIMIENTOS";1;false;false;true;true;24;30;false;false;false;true;"";0;false;true;false;false
+24;60;"SEGUROS";1;false;false;true;true;24;30;false;false;false;true;"";0;false;true;false;false
+24;70;"OTROS GASTOS";1;false;false;true;true;24;30;false;false;false;true;"";0;false;true;false;false
+24;80;"TOTAL COSTO DE DEMOS";2;true;false;true;true;24;30;true;false;false;true;"";0;false;true;false;false
+24;90;"MARGEN DE DEMOS";3;true;false;true;true;24;30;true;false;false;true;"";0;false;true;false;false
+24;100;"";1;false;true;true;true;24;100;false;false;false;false;"";0;false;true;false;false
+24;110;"COMPRAS (+)";1;false;false;false;true;24;150;false;true;false;true;"";0;false;true;false;false
+24;120;"VENTAS (-)";1;false;false;false;true;24;150;false;true;false;true;"";0;false;true;false;false
+24;130;"EXISTENCIAS NUM.";1;false;false;false;true;24;150;false;true;false;false;"";0;false;true;false;false
+24;140;"EXISTENCIAS EUROS";1;false;false;true;true;24;150;false;true;false;false;"";0;false;true;false;false
+24;150;"REFERENCIA **NO USAR**";1;false;false;true;true;24;150;false;false;true;false;"";0;false;true;false;false
+25;10;"VENTA DE VEHICULOS";1;false;false;true;true;25;590;false;false;false;true;"";0;false;true;false;false
+25;20;"VENTAS DE COMPLEMENTOS";1;false;false;true;true;25;590;false;false;false;true;"";0;false;true;false;false
+25;30;"VENTA DE VEHICULOS POR AGENTES";1;false;false;true;true;25;590;false;false;false;true;"";0;false;true;false;false
+25;40;"PRIMAS PROMOCIONALES";1;false;false;true;true;25;590;false;false;false;true;"";0;false;true;false;false
+25;50;"INGRESOS DE VENTAS";2;true;false;true;true;25;590;true;false;false;true;"";0;false;true;false;false
+25;60;"COSTO DE LOS VEHICULOS";1;false;false;true;true;25;590;false;false;false;true;"";0;false;true;false;false
+25;70;"COSTO DE COMPLEMENTOS";1;false;false;true;true;25;590;false;false;false;true;"";0;false;true;false;false
+25;80;"PORTES Y TRASIEGOS";1;false;false;true;true;25;590;false;false;false;true;"";0;false;true;false;false
+25;90;"P.A.P. Y PREENTREGAS ACC-TIPO";1;false;false;true;true;25;590;false;false;false;true;"";0;false;true;false;false
+25;100;"ACCESORIOS VN Y REACONDICIONA.";1;false;false;true;true;25;590;false;false;false;true;"";0;false;true;false;false
+25;120;"SOBREVALORACION VO";1;false;false;true;true;25;590;false;false;false;true;"";0;false;true;false;false
+25;130;"DESCUENTOS";1;false;false;true;true;25;590;false;false;false;true;"";0;false;true;false;false
+25;140;"COSTO DE LA VENTA";2;true;false;true;true;25;590;true;false;false;true;"";0;false;true;false;false
+25;150;"MARGEN DE LA VENTA";3;true;false;true;true;25;590;true;false;false;true;"";0;false;true;false;false
+25;160;"COMISIONES A VENDEDORES";1;false;false;true;true;25;590;false;false;false;true;"";0;false;true;false;false
+25;170;"COMISIONES A COLABORADORES";1;false;false;true;true;25;590;false;false;false;true;"";0;false;true;false;false
+25;180;"COMISIONES A AGENTES";1;false;false;true;true;25;590;false;false;false;true;"";0;false;true;false;false
+25;190;"GASTOS DE VIAJE Y REPRESENTAC.";1;false;false;true;true;25;590;false;false;false;true;"";0;false;true;false;false
+25;200;"PUBLICIDAD DIRECTA Y PROMOCION";1;false;false;true;true;25;590;false;false;false;true;"";0;false;true;false;false
+25;210;"GASTOS VARIABLES";2;true;false;true;true;25;590;true;false;false;true;"";0;false;true;false;false
+25;220;"SUELDOS";1;false;false;true;true;25;590;false;false;false;true;"";0;false;true;false;false
+25;230;"SEGUROS SOCIALES";1;false;false;true;true;25;590;false;false;false;true;"";0;false;true;false;false
+25;240;"VEHICULOS DE SERVICIO";1;false;false;true;true;25;590;false;false;false;true;"";0;false;true;false;false
+25;250;"FORMACION DE PERSONAL";1;false;false;true;true;25;590;false;false;false;true;"";0;false;true;false;false
+25;260;"GASTOS DIVERSOS";1;false;false;true;true;25;590;false;false;false;true;"";0;false;true;false;false
+25;270;"GASTOS FIJOS";4;true;false;true;true;25;590;true;false;false;true;"";0;false;true;false;false
+25;280;"MARGEN";5;true;false;true;true;25;590;true;false;false;true;"";0;false;true;false;false
+25;290;"MARGEN EN VENTA A CONCESIONAR.";1;false;false;true;true;25;590;false;false;false;true;"";0;false;true;false;false
+25;300;"RAPPELES POR COMPRAS";1;false;false;true;true;25;590;false;false;false;true;"";0;false;true;false;false
+25;310;"RAPPELES POR VENTAS";1;false;false;true;true;25;590;false;false;false;true;"";0;false;true;false;false
+25;320;"RAPPEL CUALITATIVO";1;false;false;true;true;25;590;false;false;false;true;"";0;false;true;false;false
+25;330;"INGRESOS ATIPICOS: GESTORIAS";1;false;false;true;true;25;590;false;false;false;true;"";0;false;true;false;false
+25;340;"INGRESOS ATIPICOS: FINANCIERAS";1;false;false;true;true;25;590;false;false;false;true;"";0;false;true;false;false
+25;350;"INGRESOS ATIPICOS: SEGUROS";1;false;false;true;true;25;590;false;false;false;true;"";0;false;true;false;false
+25;360;"INGRESOS ATIPICOS: SUPERGARAN.";1;false;false;true;true;25;590;false;false;false;true;"";0;false;true;false;false
+25;370;"INGRESOS COMERCIALES RENTING";1;false;false;true;true;25;590;false;false;false;true;"";0;false;true;false;false
+25;380;"INGRESOS COLABORACION RENTING";1;false;false;true;true;25;590;false;false;false;true;"";0;false;true;false;false
+25;390;"RECUPERACION DE GASTOS";1;false;false;true;true;25;590;false;false;false;true;"";0;false;true;false;false
+25;400;"COMISIONES VENTAS OTRAS EMPRE.";1;false;false;true;true;25;590;false;false;false;true;"";0;false;true;false;false
+25;404;"INGRESOS OPERAC. BUY-BACK";1;false;false;true;true;25;590;false;false;false;true;"";0;false;true;false;false
+25;406;"PROVISION BUY-BACK";1;false;false;true;true;25;590;false;false;false;true;"";0;false;true;false;false
+25;410;"TOTAL INGRESOS ATIPICOS";5;true;false;true;true;25;590;true;false;false;true;"";0;false;true;false;false
+25;420;"MARGEN ANTES DE REPARTO GTOS.";6;true;false;true;true;25;590;true;false;false;true;"";0;false;true;false;false
+25;430;"40% GASTOS DE BASE";3;false;false;true;true;25;590;true;false;false;true;"";0;false;true;false;false
+25;440;"40% GASTOS GENERALES";3;false;false;true;true;25;590;true;false;false;true;"";0;false;true;false;false
+25;450;"MARGEN NETO";7;true;false;true;true;25;590;true;false;false;true;"";0;false;true;false;false
+25;460;"EXISTENCIAS NUM.";1;false;false;false;true;25;600;false;true;false;false;"";0;false;true;false;false
+25;470;"EXISTENCIAS PTAS";1;false;false;true;true;25;600;false;true;false;false;"";0;false;true;false;false
+25;480;"VEHICULOS VENDIDOS";1;false;false;false;true;25;480;false;true;false;true;"";0;false;true;false;false
+25;485;"VEH. AUTOMATRICULADOS";1;false;false;false;true;25;480;false;true;false;true;"";0;false;true;false;false
+25;490;"VENDIDOS A CONCESION";1;false;false;false;true;25;480;false;true;false;true;"";0;false;true;false;false
+25;500;"VENDIDOS POR CTA OTRAS EMPRESA";1;false;false;false;true;25;480;false;true;false;true;"";0;false;true;false;false
+25;510;"VEHICULOS COMPRADOS";1;false;false;false;true;25;480;false;true;false;true;"";0;false;true;false;false
+25;520;"DIAS DE VENTA EN STOCK";1;false;false;false;true;25;600;false;true;false;false;"";0;false;true;false;false
+25;530;"MATRICULACIONES: ACUMULADO";1;false;false;false;true;25;480;false;true;false;true;"";0;false;true;false;false
+25;540;"FINANCIERAS: ACUMULADO";1;false;false;false;true;25;480;false;true;false;true;"";0;false;true;false;false
+25;550;"SUPERGARANTIAS: ACUMULADO";1;false;false;false;true;25;480;false;true;false;true;"";0;false;true;false;false
+25;560;"SEGUROS: ACUMULADO";1;false;false;false;true;25;480;false;true;false;true;"";0;false;true;false;false
+25;570;"EUROS COMPROMETIDOS BUY-BACK";1;false;false;true;true;25;590;false;true;false;false;"";0;false;true;false;false
+25;580;"GARANTIAS FABRICA";1;false;false;true;true;25;590;false;true;false;true;"";0;false;true;false;false
+25;590;"SUMA DE VENTAS";2;false;false;true;true;25;590;true;false;true;true;"";0;false;true;false;false
+25;600;"REFERENCIA **NO USAR**";1;false;false;true;true;25;600;false;false;true;false;"";0;false;true;false;false
+26;10;"VENTA DIRECTA DE VEHICULOS";1;false;false;true;true;26;30;false;false;false;true;"";0;false;true;false;false
+26;20;"VENTAS A DESGUACES";1;false;false;true;true;26;30;false;false;false;true;"";0;false;true;false;false
+26;30;"TOTAL VENTAS";2;true;false;true;true;26;30;true;false;false;true;"";0;false;true;false;false
+26;40;"COSTO DE LOS VEHICULOS";1;false;false;true;true;26;30;false;false;false;true;"";0;false;true;false;false
+26;50;"PROVISION RECOMPRA APLICADA";1;false;false;true;true;26;30;false;false;false;true;"";0;false;true;false;false
+26;60;"PORTES Y GASOLINA";1;false;false;true;true;26;30;false;false;false;true;"";0;false;true;false;false
+26;70;"REACONDICIONAMIENTOS";1;false;false;true;true;26;30;false;false;false;true;"";0;false;true;false;false
+26;80;"GARANTIA DE USADOS";1;false;false;true;true;26;30;false;false;false;true;"";0;false;true;false;false
+26;90;"OBSEQUIOS";1;false;false;true;true;26;30;false;false;false;true;"";0;false;true;false;false
+26;100;"IMPUESTOS DIRECTOS";1;false;false;true;true;26;30;false;false;false;true;"";0;false;true;false;false
+26;110;"GESTORIAS";1;false;false;true;true;26;30;false;false;false;true;"";0;false;true;false;false
+26;120;"TOTAL COSTOS";2;true;false;true;true;26;30;true;false;false;true;"";0;false;true;false;false
+26;130;"MARGEN DIRECTO DE LA VENTA";3;true;false;true;true;26;30;true;false;false;true;"";0;false;true;false;false
+26;140;"COMISIONES A VENDEDORES";1;false;false;true;true;26;30;false;false;false;true;"";0;false;true;false;false
+26;150;"COMISIONES A COLABORADORES";1;false;false;true;true;26;30;false;false;false;true;"";0;false;true;false;false
+26;160;"PUBLICIDAD Y PROMOCION";1;false;false;true;true;26;30;false;false;false;true;"";0;false;true;false;false
+26;170;"GASTOS DE VIAJE";1;false;false;true;true;26;30;false;false;false;true;"";0;false;true;false;false
+26;180;"DEPRECIACION DEL STOCK";1;false;false;true;true;26;30;false;false;false;true;"";0;false;true;false;false
+26;190;"GASTOS VARIABLES";2;true;false;true;true;26;30;true;false;false;true;"";0;false;true;false;false
+26;200;"SUELDOS";1;false;false;true;true;26;30;false;false;false;true;"";0;false;true;false;false
+26;210;"SEGURIDAD SOCIAL";1;false;false;true;true;26;30;false;false;false;true;"";0;false;true;false;false
+26;220;"GASTOS DIVERSOS";1;false;false;true;true;26;30;false;false;false;true;"";0;false;true;false;false
+26;230;"GASTOS FIJOS";2;true;false;true;true;26;30;true;false;false;true;"";0;false;true;false;false
+26;240;"MARGEN";4;true;false;true;true;26;30;true;false;false;true;"";0;false;true;false;false
+26;250;"CESION DE V.N. (POR CAMBIO)";1;false;false;true;true;26;30;false;false;false;true;"";0;false;true;false;false
+26;260;"RAPPEL V.O.";1;false;false;true;true;26;30;false;false;false;true;"";0;false;true;false;false
+26;270;"INGRESOS ATIPICOS: FINANCIERAS";1;false;false;true;true;26;30;false;false;false;true;"";0;false;true;false;false
+26;280;"INGRESOS ATIPICOS: SEG.Y GEST.";1;false;false;true;true;26;30;false;false;false;true;"";0;false;true;false;false
+26;290;"INGRESOS ATIPICOS: USACAR";1;false;false;true;true;26;30;false;false;false;true;"";0;false;true;false;false
+26;300;"INTERESES STOCK USACAR";1;false;false;true;true;26;30;false;false;false;true;"";0;false;true;false;false
+26;310;"INGRESOS ATIPICOS: COMISIONES";1;false;false;true;true;26;30;false;false;false;true;"";0;false;true;false;false
+26;320;"TOTAL INGRESOS ATIPICOS";2;true;false;true;true;26;30;true;false;false;true;"";0;false;true;false;false
+26;330;"MARGEN ANTES DE REPARTO GASTOS";5;true;false;true;true;26;30;true;false;false;true;"";0;false;true;false;false
+26;340;"0% GASTOS DE BASE";3;false;false;true;true;26;30;true;false;false;true;"";0;false;true;false;false
+26;350;"0% GASTOS GENERALES";3;false;false;true;true;26;30;true;false;false;true;"";0;false;true;false;false
+26;360;"MARGEN NETO FINAL";6;true;false;true;true;26;30;true;false;false;true;"";0;false;true;false;false
+26;370;"EXISTENCIAS EN STOCK NUM.";1;false;false;false;true;26;480;false;true;false;false;"";0;false;true;false;false
+26;380;"EXISTENCIAS EN STOCK EUROS";1;false;false;true;true;26;480;false;true;false;false;"";0;false;true;false;false
+26;390;"VEHICULOS VENDIDOS USADOS";1;false;false;false;true;26;480;false;true;false;true;"";0;false;true;false;false
+26;400;"VENTAS RENTACARES + RENTING R";1;false;false;false;true;26;480;false;true;false;true;"";0;false;true;false;false
+26;410;"VENTAS RENTING FICT+CL";1;false;false;false;true;26;480;false;true;false;true;"";0;false;true;false;false
+26;420;"VEHICULOS COMPRADOS";1;false;false;false;true;26;480;false;true;false;true;"";0;false;true;false;false
+26;430;"VENTAS A DESGUACES NUM.";1;false;false;false;true;26;480;false;true;false;true;"";0;false;true;false;false
+26;440;"DIAS DE VENTA EN STOCK";1;false;false;false;true;26;480;false;true;false;false;"";0;true;true;false;false
+26;450;"FINANCIACIONES NUM.";1;false;false;false;true;26;480;false;true;false;true;"";0;false;true;false;false
+26;460;"EUROS FINANCIADOS";1;false;false;true;true;26;30;false;true;false;true;"";0;false;true;false;false
+26;470;"SEGUROS NUM.";1;false;false;false;true;26;480;false;true;false;true;"";0;false;true;false;false
+26;480;"REFERENCIA **NO USAR**";1;false;false;true;true;26;480;false;false;true;false;"";0;false;true;false;false
+27;10;"VENTA DIRECTA DE VEHICULOS";1;false;false;true;true;27;30;false;false;false;true;"";0;false;true;false;false
+27;20;"VENTAS POR OTROS CANALES";1;false;false;true;true;27;30;false;false;false;true;"";0;false;true;false;false
+27;30;"TOTAL VENTAS";2;true;false;true;true;27;30;true;false;false;true;"";0;false;true;false;false
+27;40;"COSTO DE USADOS";1;false;false;true;true;27;30;false;false;false;true;"";0;false;true;false;false
+27;50;"PORTES Y TRASIEGOS";1;false;false;true;true;27;30;false;false;false;true;"";0;false;true;false;false
+27;60;"REACONDICIONAMIENTOS";1;false;false;true;true;27;30;false;false;false;true;"";0;false;true;false;false
+27;70;"GARANTIA DE POST-ENTREGA";1;false;false;true;true;27;30;false;false;false;true;"";0;false;true;false;false
+27;80;"GASTOS DE GESTORIAS";1;false;false;true;true;27;30;false;false;false;true;"";0;false;true;false;false
+27;90;"OBSEQUIOS";1;false;false;true;true;27;30;false;false;false;true;"";0;false;true;false;false
+27;100;"IMPUESTOS MUNICIPALES";1;false;false;true;true;27;30;false;false;false;true;"";0;false;true;false;false
+27;110;"SOBREVALORACION VO";1;false;false;true;true;27;30;false;false;false;true;"";0;false;true;false;false
+27;120;"APLICACION PROVISION BUY-BACK";1;false;false;true;true;27;30;false;false;false;true;"";0;false;true;false;false
+27;130;"TOTAL COSTOS";2;true;false;true;true;27;30;true;false;false;true;"";0;false;true;false;false
+27;140;"MARGEN DIRECTO DE LA VENTA";3;true;false;true;true;27;30;true;false;false;true;"";0;false;true;false;false
+27;150;"COMISIONES A VENDEDORES";1;false;false;true;true;27;30;false;false;false;true;"";0;false;true;false;false
+27;160;"COMISIONES A COLABORADORES";1;false;false;true;true;27;30;false;false;false;true;"";0;false;true;false;false
+27;170;"GASTOS DE VIAJE";1;false;false;true;true;27;30;false;false;false;true;"";0;false;true;false;false
+27;180;"PUBLICIDAD Y PROMOCION";1;false;false;true;true;27;30;false;false;false;true;"";0;false;true;false;false
+27;190;"DEPRECIACION DEL STOCK";1;false;false;true;true;27;30;false;false;false;true;"";0;false;true;false;false
+27;200;"GASTOS VARIABLES";2;true;false;true;true;27;30;true;false;false;true;"";0;false;true;false;false
+27;210;"SUELDOS";1;false;false;true;true;27;30;false;false;false;true;"";0;false;true;false;false
+27;220;"SEGURIDAD SOCIAL";1;false;false;true;true;27;30;false;false;false;true;"";0;false;true;false;false
+27;230;"VEHICULOS DE SERVICIO";1;false;false;true;true;27;30;false;false;false;true;"";0;false;true;false;false
+27;240;"GASTOS DIVERSOS";1;false;false;true;true;27;30;false;false;false;true;"";0;false;true;false;false
+27;250;"GASTOS FIJOS";2;true;false;true;true;27;30;true;false;false;true;"";0;false;true;false;false
+27;260;"MARGEN";4;true;false;true;true;27;30;true;false;false;true;"";0;false;true;false;false
+27;270;"CESION DE VN";1;false;false;true;true;27;30;false;false;false;true;"";0;false;true;false;false
+27;280;"INGRESOS ATIPICOS: FINANCIERAS";1;false;false;true;true;27;30;false;false;false;true;"";0;false;true;false;false
+27;290;"INGRESOS ATIPICOS: SEG.Y GEST.";1;false;false;true;true;27;30;false;false;false;true;"";0;false;true;false;false
+27;300;"INGRESOS ATIPICOS: RENTACARES";1;false;false;true;true;27;30;false;false;false;true;"";0;false;true;false;false
+27;310;"INGRESOS ATIPICOS: COMISIONES";1;false;false;true;true;27;30;false;false;false;true;"";0;false;true;false;false
+27;320;"TOTAL INGRESOS ATIPICOS";2;true;false;true;true;27;30;true;false;false;true;"";0;false;true;false;false
+27;330;"MARGEN ANTES DE REPARTO GASTOS";5;true;false;true;true;27;30;true;false;false;true;"";0;false;true;false;false
+27;340;"0% GASTOS DE BASE";3;false;false;true;true;27;30;true;false;false;true;"";0;false;true;false;false
+27;350;"0% GASTOS GENERALES";3;false;false;true;true;27;30;true;false;false;true;"";0;false;true;false;false
+27;360;"MARGEN NETO FINAL";6;true;false;true;true;27;30;true;false;false;true;"";0;false;true;false;false
+27;370;"EXISTENCIAS EN STOCK NUM.";1;false;false;false;true;27;480;false;true;false;false;"";0;false;true;false;false
+27;380;"EXISTENCIAS EN STOCK EUROS";1;false;false;true;true;27;480;false;true;false;false;"";0;false;true;false;false
+27;390;"VEHICULOS VENDIDOS";1;false;false;false;true;27;480;false;true;false;true;"";0;false;true;false;false
+27;400;"VENTAS RENTACARES + RENTING R";1;false;false;false;true;27;480;false;true;false;true;"";0;false;true;false;false
+27;410;"VENTAS RENTING FICT+CL";1;false;false;false;true;27;480;false;true;false;true;"";0;false;true;false;false
+27;420;"VEHICULOS COMPRADOS";1;false;false;false;true;27;480;false;true;false;true;"";0;false;true;false;false
+27;430;"VENTAS A DESGUACES NUM.";1;false;false;false;true;27;480;false;true;false;true;"";0;false;true;false;false
+27;440;"DIAS DE VENTA EN STOCK";1;false;false;false;true;27;480;false;true;false;false;"";0;true;true;false;false
+27;450;"FINANCIACIONES NUM.";1;false;false;false;true;27;480;false;true;false;true;"";0;false;true;false;false
+27;460;"EUROS FINANCIADOS";1;false;false;true;true;27;30;false;true;false;true;"";0;false;true;false;false
+27;470;"SEGUROS NUM.";1;false;false;false;true;27;480;false;true;false;true;"";0;false;true;false;false
+27;480;"REFERENCIA **NO USAR**";1;false;false;true;true;27;480;false;false;true;false;"";0;false;true;false;false
+28;10;"VENTA DE RECAMBIOS";1;false;false;true;true;28;10;false;false;false;true;"";0;false;true;false;false
+28;20;"RECUPERACION DE GASTOS";1;false;false;true;true;28;10;false;false;false;true;"";0;false;true;false;false
+28;30;"INGRESOS DE VENTA";2;true;false;true;true;28;10;true;false;false;true;"";0;false;true;false;false
+28;40;"COSTO DE LO VENDIDO";1;false;false;true;true;28;10;false;false;false;true;"";0;false;true;false;false
+28;50;"PENALIZACION POR R.U.";1;false;false;true;true;28;10;false;false;false;true;"";0;false;true;false;false
+28;60;"PORTES Y EMBALAJES";1;false;false;true;true;28;10;false;false;false;true;"";0;false;true;false;false
+28;70;"DESCUENTOS";1;false;false;true;true;28;10;false;false;false;true;"";0;false;true;false;false
+28;80;"COSTO DE LA VENTA";2;true;false;true;true;28;10;true;false;false;true;"";0;false;true;false;false
+28;90;"MARGEN DE LA VENTA";3;true;false;true;true;28;10;true;false;false;true;"";0;false;true;false;false
+28;100;"PREVISION OBSOLETOS";1;false;false;true;true;28;10;false;false;false;true;"";0;false;true;false;false
+28;110;"COMISIONES S/VENTA";1;false;false;true;true;28;10;false;false;false;true;"";0;false;true;false;false
+28;120;"HORAS EXTRAS";1;false;false;true;true;28;10;false;false;false;true;"";0;false;true;false;false
+28;130;"GASTOS DE VIAJE";1;false;false;true;true;28;10;false;false;false;true;"";0;false;true;false;false
+28;140;"RAPPELES POR VENTA";1;false;false;true;true;28;10;false;false;false;true;"";0;false;true;false;false
+28;150;"GASTOS VARIABLES";2;true;false;true;true;28;10;true;false;false;true;"";0;false;true;false;false
+28;160;"SUELDOS";1;false;false;true;true;28;10;false;false;false;true;"";0;false;true;false;false
+28;170;"SEGUROS SOCIALES";1;false;false;true;true;28;10;false;false;false;true;"";0;false;true;false;false
+28;180;"VEHICULOS DE SERVICIO";1;false;false;true;true;28;10;false;false;false;true;"";0;false;true;false;false
+28;190;"FORMACION DE PERSONAL";1;false;false;true;true;28;10;false;false;false;true;"";0;false;true;false;false
+28;200;"GASTOS DIVERSOS";1;false;false;true;true;28;10;false;false;false;true;"";0;false;true;false;false
+28;210;"GASTOS FIJOS";4;true;false;true;true;28;10;true;false;false;true;"";0;false;true;false;false
+28;220;"MARGEN";5;true;false;true;true;28;10;true;false;false;true;"";0;false;true;false;false
+28;230;"COMISION POR SERVICIO A TALLER";1;false;false;true;true;28;10;false;false;false;true;"";0;false;true;false;false
+28;240;"RAPPELES POR COMPRA";1;false;false;true;true;28;10;false;false;false;true;"";0;false;true;false;false
+28;250;"RAPPEL CUALITATIVO";1;false;false;true;true;28;10;false;false;false;true;"";0;false;true;false;false
+28;260;"MARGEN ANTES DE REPARTO GTOS.";6;true;false;true;true;28;10;true;false;false;true;"";0;false;true;false;false
+28;270;"0% GASTOS DE BASE";3;false;false;true;true;28;10;true;false;false;true;"";0;false;true;false;false
+28;280;"0% GASTOS GENERALES";3;false;false;true;true;28;10;true;false;false;true;"";0;false;true;false;false
+28;290;"MARGEN NETO";7;true;false;true;true;28;10;true;false;false;true;"";0;false;true;false;false
+28;300;"STOCK A PRECIO DE COSTE MEDIO";1;false;false;true;true;28;350;false;true;false;false;"";0;false;true;false;false
+28;310;"STOCK A PVP";1;false;false;true;true;28;350;false;true;false;false;"";0;false;true;false;false
+28;320;"ROTACIONES A COSTE";1;false;false;false;true;28;350;false;true;false;false;"";0;true;true;false;false
+28;330;"FACT. TOTAL (ALM+TALL)/Nº OPER";1;false;false;true;true;28;350;false;true;false;false;"";0;true;true;false;false
+28;340;"";1;false;false;true;true;28;350;false;false;true;false;"";0;false;true;false;false
+28;350;"REFERENCIA **NO USAR**";1;false;false;true;true;28;350;false;false;true;false;"";0;false;true;false;false
+29;10;"PERSONAL DE DIRECCION";1;false;false;true;true;29;160;false;false;false;true;"";0;false;true;false;false
+29;20;"PERSONAL DE ADMINISTRACION";1;false;false;true;true;29;160;false;false;false;true;"";0;false;true;false;false
+29;30;"PERSONAL PREJUBILADO";1;false;false;true;true;29;160;false;false;false;true;"";0;false;true;false;false
+29;40;"IMPUESTOS";1;false;false;true;true;29;160;false;false;false;true;"";0;false;true;false;false
+29;50;"PRIMAS DE SEGUROS";1;false;false;true;true;29;160;false;false;false;true;"";0;false;true;false;false
+29;60;"OFICINAS Y SERVICIOS ADMRVOS.";1;false;false;true;true;29;160;false;false;false;true;"";0;false;true;false;false
+29;70;"TRANSPORTES Y DESPLAZAMIENTOS";1;false;false;true;true;29;160;false;false;false;true;"";0;false;true;false;false
+29;80;"SUMINISTROS DE ESCRITORIO";1;false;false;true;true;29;160;false;false;false;true;"";0;false;true;false;false
+29;90;"FRANQUEO, VALIJA Y MENSAJERIA";1;false;false;true;true;29;160;false;false;false;true;"";0;false;true;false;false
+29;100;"MISIONES Y RECEPCIONES";1;false;false;true;true;29;160;false;false;false;true;"";0;false;true;false;false
+29;110;"PUBLICIDAD (OBSEQ.,LLAVEROS..)";1;false;false;true;true;29;160;false;false;false;true;"";0;false;true;false;false
+29;120;"JURIDICOS Y SERV. PROFESIONAL.";1;false;false;true;true;29;160;false;false;false;true;"";0;false;true;false;false
+29;130;"SERV.DE CALIDAD Y MEDIOAMBIEN.";1;false;false;true;true;29;160;false;false;false;true;"";0;false;true;false;false
+29;140;"SUSCRIPCIONES Y DOCUMENTACION";1;false;false;true;true;29;160;false;false;false;true;"";0;false;true;false;false
+29;150;"OTROS GASTOS DIVERSOS";1;false;false;true;true;29;160;false;false;false;true;"";0;false;true;false;false
+29;160;"TOTAL GASTOS GENERALES";2;true;false;true;true;29;160;true;false;false;true;"";0;false;true;false;false
+29;170;"";1;false;true;true;true;29;180;false;false;false;true;"";0;false;true;false;false
+29;180;"RATIOS";1;false;false;true;true;29;180;false;false;false;false;"";0;false;true;false;false
+29;190;"";1;false;true;true;true;29;180;false;false;false;false;"";0;false;true;false;false
+29;200;"CAPITAL Y RESERVAS";1;false;false;true;true;29;180;false;false;false;false;"";0;false;true;false;false
+29;210;"";1;false;true;true;true;29;180;false;false;false;false;"";0;false;true;false;false
+29;220;"FACTURACION ESPINARDO ELTIRO";8;true;false;true;true;29;220;true;false;false;true;"";0;false;true;false;false
+29;230;"";1;false;true;true;true;29;180;false;false;false;false;"";0;false;true;false;false
+29;240;"RESULTADO NETO ESPINARDO";13;true;false;true;true;29;220;true;false;false;true;"";0;false;true;false;false
+29;250;"";1;false;true;true;true;29;180;false;false;false;false;"";0;false;true;false;false
+29;260;"PLANTILLA TOTAL";1;false;false;false;true;29;180;false;true;false;false;"";0;false;true;false;false
+29;270;"";1;false;true;true;true;29;180;false;false;false;false;"";0;false;true;false;false
+29;280;"FACTURACION POR PERSONA";1;false;false;true;true;29;180;false;true;false;false;"";0;false;true;false;false
+29;290;"";1;false;true;true;true;29;180;false;false;false;false;"";0;false;true;false;false
+29;300;"GASTOS ESTRUCTURA / FACTURACIO";3;false;false;true;true;29;220;true;false;false;true;"";0;false;true;false;false
+29;310;"";1;false;true;true;true;29;180;false;false;false;false;"";0;false;true;false;false
+29;320;"RESULTADO / CAPITAL+RESERVAS";1;false;false;true;true;29;180;false;false;false;false;"";0;false;true;false;false
+30;10;"BASE: CTRA. ALICANTE:";10;true;false;true;true;30;110;false;false;false;false;"";0;false;true;false;false
+30;20;"VENTAS TURISMOS FIAT";10;false;false;true;true;30;110;true;false;false;true;"";0;false;true;false;false
+30;30;"VENTAS TURISMOS LANCIA";10;false;false;true;true;30;110;true;false;false;true;"";0;false;true;false;false
+30;40;"VENTAS TURISMOS ALFA";10;false;false;true;true;30;110;true;false;false;true;"";0;false;true;false;false
+30;50;"VENTAS DEMOS";10;false;false;true;true;30;110;true;false;false;true;"";0;false;true;false;false
+30;60;"VENTAS LIGEROS";10;false;false;true;true;30;110;true;false;false;true;"";0;false;true;false;false
+30;70;"VENTAS USADOS";10;false;false;true;true;30;110;true;false;false;true;"";0;false;true;false;false
+30;80;"VENTAS LIGEROS VO";10;false;false;true;true;30;110;true;false;false;true;"";0;false;true;false;false
+30;90;"TALLER";10;false;false;true;true;30;110;true;false;false;true;"";0;false;true;false;false
+30;100;"ALMACEN";10;false;false;true;true;30;110;true;false;false;true;"";0;false;true;false;false
+30;110;"RESULTADO OPERT.";11;true;false;true;true;30;110;true;false;false;true;"";0;false;true;false;false
+30;120;"GASTOS BASE CTRA. ALICANTE";11;false;false;true;true;30;110;true;false;false;true;"";0;false;true;false;false
+30;130;"GASTOS GENERALES CTRA.ALICANTE";11;false;false;true;true;30;110;true;false;false;true;"";0;false;true;false;false
+30;140;"50% FINANCIERA";10;false;false;true;true;30;110;true;false;false;true;"";0;false;true;false;false
+30;150;"50% EXTRAORDINARIOS";10;false;false;true;true;30;110;true;false;false;true;"";0;false;true;false;false
+30;160;"RESULTADO NETO";12;true;false;true;true;30;110;true;false;false;true;"";0;false;true;false;false
+30;170;"";10;false;true;true;true;30;110;false;false;false;false;"-";0;false;true;false;false
+30;180;"";10;false;true;true;true;30;110;false;false;false;false;"";0;false;true;false;false
+30;190;"BASE: ESPINARDO";10;true;false;true;true;30;290;false;false;false;false;"";0;false;true;false;false
+30;200;"VENTAS TURISMOS FIAT";10;false;false;true;true;30;290;true;false;false;true;"";0;false;true;false;false
+30;210;"VENTAS TURISMOS LANCIA";10;false;false;true;true;30;290;true;false;false;true;"";0;false;true;false;false
+30;220;"VENTAS TURISMOS ALFA";10;false;false;true;true;30;290;true;false;false;true;"";0;false;true;false;false
+30;230;"VENTAS DEMOS";10;false;false;true;true;30;290;true;false;false;true;"";0;false;true;false;false
+30;240;"VENTAS LIGEROS";10;false;false;true;true;30;290;true;false;false;true;"";0;false;true;false;false
+30;250;"VENTAS USADOS";10;false;false;true;true;30;290;true;false;false;true;"";0;false;true;false;false
+30;260;"VENTAS LIGEROS VO";10;false;false;true;true;30;290;true;false;false;true;"";0;false;true;false;false
+30;270;"TALLER";10;false;false;true;true;30;290;true;false;false;true;"";0;false;true;false;false
+30;280;"ALMACEN";10;false;false;true;true;30;290;true;false;false;true;"";0;false;true;false;false
+30;290;"RESULTADO OPERAT.";11;true;false;true;true;30;290;true;false;false;true;"";0;false;true;false;false
+30;300;"GASTOS BASE ESPINARDO ELTIRO";11;false;false;true;true;30;290;true;false;false;true;"";0;false;true;false;false
+30;310;"GASTOS GENERALES ESPINARDO";11;false;false;true;true;30;290;true;false;false;true;"";0;false;true;false;false
+30;320;"50% FINANCIERA";10;false;false;true;true;30;290;true;false;false;true;"";0;false;true;false;false
+30;330;"50% EXTRAORDINARIOS";10;false;false;true;true;30;290;true;false;false;true;"";0;false;true;false;false
+30;340;"RESULTADO NETO";12;true;false;true;true;30;290;true;false;false;true;"";0;false;true;false;false
+30;350;"";10;false;true;true;true;30;290;false;false;false;false;"-";0;false;true;false;false
+30;360;"";10;false;true;true;true;30;290;false;false;false;false;"";0;false;true;false;false
+30;370;"RESULTADO CTRA. ALICANTE";13;false;false;true;true;30;410;true;false;false;true;"";0;false;true;false;false
+30;380;"RESULTADO ESPINARDO";13;false;false;true;true;30;420;true;false;false;true;"";0;false;true;false;false
+30;390;"RESULTADO NETO FINAL";14;true;false;true;true;30;430;true;false;false;true;"";0;false;true;false;false
+30;400;"";10;false;true;true;true;30;400;false;false;false;false;"";0;false;true;false;false
+30;410;"FACTURACION CTRA. ALICANTE";10;false;false;true;true;30;410;true;false;false;true;"";0;false;true;false;false
+30;420;"FACTURACION ESPINARDO";10;false;false;true;true;30;420;true;false;false;true;"";0;false;true;false;false
+30;430;"FACTURACION TOTAL";11;true;false;true;true;30;430;true;false;false;true;"";0;false;true;false;false
+30;440;"";10;false;true;true;true;30;440;false;false;false;false;"";0;false;true;false;false
+31;10;"INTERESES ANTICIPO ORDENES";1;false;false;true;true;31;40;false;false;false;true;"";0;false;true;false;false
+31;20;"DESCUENTO POR PRONTO PAGO";1;false;false;true;true;31;40;false;false;false;true;"";0;false;true;false;false
+31;30;"OTROS INGRESOS FINANCIEROS";1;false;false;true;true;31;40;false;false;false;true;"";0;false;true;false;false
+31;40;"INGRESOS FINANCIEROS";2;true;false;true;true;31;40;true;false;false;true;"";0;false;true;false;false
+31;50;"";1;false;true;true;true;31;40;false;false;false;false;"";0;false;true;false;false
+31;60;"INT. PRESTAMO CENTRAL INMOVIL.";1;false;false;true;true;31;120;false;false;false;true;"";0;false;true;false;false
+31;70;"INT. PRESTAMO CENTRAL CIRCULTE";1;false;false;true;true;31;120;false;false;false;true;"";0;false;true;false;false
+31;80;"INTERESES POLIZA CIRCULANTE";1;false;false;true;true;31;120;false;false;false;true;"";0;false;true;false;false
+31;90;"INTERESES POLIZA STOCK";1;false;false;true;true;31;120;false;false;false;true;"";0;false;true;false;false
+31;100;"INT. ANTICIPO REMESES CLI-CENT";1;false;false;true;true;31;120;false;false;false;true;"";0;false;true;false;false
+31;110;"O.GASTOS FINANCIEROS Y BANCAR.";1;false;false;true;true;31;120;false;false;false;true;"";0;false;true;false;false
+31;120;"GASTOS FINANCIEROS";2;true;false;true;true;31;120;true;false;false;true;"";0;false;true;false;false
+31;130;"";1;false;true;true;true;31;120;false;false;false;false;"";0;false;true;false;false
+31;140;"MARGEN FINANCIERO";3;true;false;true;true;31;140;true;false;false;true;"";0;false;true;false;false

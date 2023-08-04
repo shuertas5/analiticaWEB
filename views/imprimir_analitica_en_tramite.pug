@@ -1,0 +1,72 @@
+link(rel="shortcut icon" href="#")
+link(rel="stylesheet", href="/css/bootstrap.min.css")
+div(class="d-flex flex-column") 
+    div(class="container" style="height: calc(100vh - 195px);overflow-y: auto;margin-bottom: 10px;")
+        form(id="my_form" method='POST' action="/imprimir_analitica_en_tramite")
+            div(style="font-family: Courier;font-weight: bold;")  
+                span Mes en Cálculo&nbsp;&nbsp;
+                span(style="color: blue;") #{mes_en_calculo_format}  
+            div(class="divider py-1 bg-secondary")
+            div(class="row" style="margin-top: 15px;")
+                div(class="col-xs-6 col-sm-3 col-md-3 col-lg-3 treu_control")
+                    p(class="etiqueta") Formato Listado 
+                    select(class="form-select" name="FORMATO_LISTADO" id="FORMATO_LISTADO" value=formato_listado)
+                        option(value="1" selected= formato_listado == '1') Negro Apaisado
+                        option(value="2" selected= formato_listado == '2') Negro Vertical
+                        option(value="3" selected= formato_listado == '3') Color Apaisado
+                        option(value="4" selected= formato_listado == '4') Color Vertical
+            div(class="row")
+                div(class="col-xs-4 col-sm-2 col-md-2 col-lg-2 treu_control")
+                    p(class="etiqueta") Hoja Inicial 
+                    treungc-combodlgnum(id="HOJA_INICIAL" name="HOJA_INICIAL" titulo_id="TITU_HOJA_INICIAL" formato="##" value=hoja_inicial ondropdown="dropdown_hoja_inicial();" ondatachange="cambio_hoja_inicial();")
+                div(class="col-xs-6 col-sm-6 col-md-6 col-lg-6 treu_control")
+                    p(id="TITU_HOJA_INICIAL" class="repon_titulo")
+            div(class="row")
+                div(class="col-xs-4 col-sm-2 col-md-2 col-lg-2 treu_control")
+                    p(class="etiqueta") Hoja Final 
+                    treungc-combodlgnum(id="HOJA_FINAL" name="HOJA_FINAL" titulo_id="TITU_HOJA_FINAL" formato="##" value=hoja_final ondropdown="dropdown_hoja_final();" ondatachange="cambio_hoja_final();")
+                div(class="col-xs-6 col-sm-6 col-md-6 col-lg-6 treu_control")
+                    p(id="TITU_HOJA_FINAL" class="repon_titulo")
+            button(id="submit" class="btn btn-md btn-primary btn-block" style="display: none;" onclick="ajax_submit('#my_form', 'temporal');")
+    div(class="mt-auto" class="botonera")
+        div(class="row")
+            div(class="col-xs-4 col-sm-3 col-md-3 col-lg-3")
+                button(id="mandar" class="btn btn-md btn-block" style=""+color_boton onclick="iniciar_impresion();") #{titulo_boton}
+            div(class="col-xs-4 col-sm-3 col-md-3 col-lg-3")
+                button(id="cancel" class="btn btn-md btn-secondary btn-block" onclick="$('#accion_cancelar')[0].click();") Cancelar
+    a(style="display: none" href="/" id="accion_cancelar" data-link)
+script.
+    function cambio_hoja_inicial() {
+        cambio_hojas_inicio($('#HOJA_INICIAL').attr('id'),$('#HOJA_INICIAL').attr('titulo_id'));
+    }
+    function dropdown_hoja_inicial() {
+        seleccion_hojas_inicio($('#HOJA_INICIAL').attr('id'),null);
+    }
+    function cambio_hoja_final() {
+        cambio_hojas_inicio($('#HOJA_FINAL').attr('id'),$('#HOJA_FINAL').attr('titulo_id'));
+    }
+    function dropdown_hoja_final() {
+        seleccion_hojas_inicio($('#HOJA_FINAL').attr('id'),null);
+    }
+    function iniciar_impresion() {
+        var hoja_inicial = $('#HOJA_INICIAL').val();
+        var hoja_final = $('#HOJA_FINAL').val();
+        var formato_listado=$('#FORMATO_LISTADO').val();
+        var lista = new Array();
+        lista_campos_add(lista, "HOJA_INICIAL",hoja_inicial);
+        lista_campos_add(lista, "HOJA_FINAL", hoja_final);
+        lista_campos_add(lista, "FORMATO_LISTADO", formato_listado);
+        var data = lista_campos_escribir_campos(lista);
+        treu_impresion_onshow();
+        $('#treu_impresion_encargo_trabajo').val('imprimir_analitica_en_tramite');
+        $('#treu_impresion_encargo_trabajo_data').val(data);
+        $('#treu_impresion_retorno_previs').val('/imprimir_analitica_en_tramite?hoja_inicial='+hoja_inicial+'&hoja_final='+hoja_final+'&formato_listado='+formato_listado);
+        treu_iniciar_impresion_sele();
+    }
+    
+    window.onload = function(e) {
+        const nodes = document.getElementsByTagName("PRI_IMA");
+        if (nodes.length==0) {
+            window.location="./frontend/index0.html";
+        }
+    }

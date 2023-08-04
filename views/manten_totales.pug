@@ -1,0 +1,73 @@
+link(rel="shortcut icon" href="#")
+link(rel="stylesheet", href="/css/bootstrap.min.css")
+div(class="container")
+    div(class="row")
+        div(class="col-xs-4 col-sm-2 col-md-2 col-lg-2")
+            p(class="etiqueta") Hoja Analitica 
+            treungc-combodlgnum(id="hoja" name="HOJA" titulo_id="TITU_HOJA" formato="##" ondropdown="seleccion_hojas_inicio(this.id,this.titulo_id);" ondatachange="cambio_hojas_inicio(this.id,this.titulo_id);cambios_hoja();" value=hoja)
+        div(class="col-xs-6 col-sm-6 col-md-6 col-lg-6")
+            p(id="TITU_HOJA" class="repon_titulo")
+    div(class="alta2")
+        img(src="/img/mas.svg" class="icono_table" alt="Alta" title="Alta")
+        label
+            a(id="alta_hoja" href="/manten_totales_detalle?opcion=alta" style="font-weight: bold;pointer-events: none" data-link) Alta de Totales de Lineas
+div(class="d-flex flex-column") 
+    div(class="container" style="height: calc(100vh - 245px);overflow-y: auto;margin-bottom: 15px;")
+        div(class="table-responsive")
+            table(class="table table-striped table_size_3")
+                thead(class="thead-dark")
+                    tr
+                        th Opciones
+                        th Num. Linea
+                        th Titulo Linea Analitica
+                        th Componentes
+                tbody(id="cuerpo_lineas")
+script.
+    async function cambios_hoja() {
+        var titulo_hoja="";
+        var hoja = $('#hoja').val();
+        var parametros = JSON.stringify({hoja: hoja});
+        await utilidades('get_hoja_primary',parametros).then(reto=>{
+            if (reto.ret==true) {
+                $('#alta_hoja').attr('style','font-weight: bold;');
+                titulo_hoja=reto.titulo;
+            }
+            else {
+                $('#alta_hoja').attr('style','font-weight: bold;pointer-events: none');
+            }
+        });
+        $('#alta_hoja').attr('href',"/manten_totales_detalle?opcion=alta&hoja="+hoja);
+        leer_lineas();
+    }
+    async function leer_lineas() {
+        var hoja = $('#hoja').val();
+        var parametros = JSON.stringify({hoja: hoja});
+        var cuerpo="";
+        var titulo_linea;
+        await utilidades('get_totales_secuencial',parametros).then( async reto=>{
+            for (var fila of reto) {
+                var parametros = JSON.stringify({hoja: hoja, linea: fila.linea});
+                await utilidades('get_linea_primary',parametros).then(retox=>{
+                    if (retox.ret==true) {
+                        titulo_linea=retox.titulo;
+                    }
+                    else {
+                        titulo_linea="";
+                    }
+                });
+                cuerpo+="<tr>";
+                cuerpo+="<td>"+'<a href="/manten_totales_detalle?opcion=consulta&hoja='+hoja+'&linea='+fila.linea+'" data-link><img src="./img/ver.svg" class="icono_table" alt="Consulta" title="Consulta"/></a>'
+                            +'<a href="/manten_totales_detalle?opcion=modificacion&hoja='+hoja+'&linea='+fila.linea+'" data-link><img src="./img/edit.svg" class="icono_table" alt="Editar" title="Editar"/></a>'
+                            +'<a href="/manten_totales_detalle?opcion=baja&hoja='+hoja+'&linea='+fila.linea+'" data-link><img src="./img/delete.svg" class="icono_table" alt="Baja" title="Baja"/></a></td>';
+                cuerpo+="<td>"+fila.linea+"</td><td>"+titulo_linea+"</td><td>"+fila.nu_compo+"</td></tr>";
+            }
+            $("#cuerpo_lineas").html(cuerpo);
+        });
+    }
+        
+    window.onload = function(e) {
+        const nodes = document.getElementsByTagName("PRI_IMA");
+        if (nodes.length==0) {
+            window.location="./frontend/index0.html";
+        }
+    }

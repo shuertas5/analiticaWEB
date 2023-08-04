@@ -1,0 +1,109 @@
+<!-- Modal -->
+<div class="modal fade" id="seleccion_tipos_hojas_pan" tabindex="-1" role="dialog"
+    aria-labelledby="seleccion_tipos_hojas_ModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document" id="dialo">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="seleccion_tipos_hojas_ModalLabel">Seleccion de Tipos de Hojas</h5>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body, seleccion" style="height: 35vh;overflow-y: auto;">
+                <ul class="list-group" id="lista_seleccion_tipos_hojas">
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="seleccion_tipos_hojas_boton" class="btn btn-primary" data-bs-dismiss="modal"
+                    onclick="seleccionado_tipos_hojas();">Seleccionar</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+    var sele = false;
+
+    function seleccionado_tipos_hojas() {
+        sele = true;
+    }
+
+    function cambio_tipos_hojas_inicio(objetoId, titulo_id) {
+
+        var url = "/seleccion_tipos_hojas"
+
+        $.ajax({
+            type: 'GET',
+            url: url,
+            async: false,
+            success: function (response) {
+                var salida="";
+                response.forEach(element => {
+                    if (element.tipo==$('#' + objetoId).val()) {
+                        salida = element.titulo;
+                    }
+                });
+                $('#' + titulo_id).text(salida);
+            },
+            error: function (xhr, status, err) {
+            }
+        });
+
+        return true;
+
+    }
+
+    function seleccion_tipos_hojas_inicio(objetoId, titulo_id) {
+
+        sele = false;
+
+        var url = "/seleccion_tipos_hojas"
+
+        $.ajax({
+            type: 'GET',
+            url: url,
+            async: false,
+            success: function (response) {
+                var relacion = "";
+                var active = "active";
+                response.forEach(element => {
+                    relacion += "<li class='list-group-item " + active + "' style='cursor: default;'><label style='font-weight: bold;'>" + acoplarseriehtml(element.tipo,2) +  "</label>&nbsp;&nbsp;<label>" + element.titulo + "</label><span style='display: none;'>" + element.tipo + "</span></li>";
+                    active = "";
+                });
+                $("#lista_seleccion_tipos_hojas").html(relacion);
+                $('#seleccion_tipos_hojas_pan').modal({ backdrop: 'static', keyboard: false });
+                $("#seleccion_tipos_hojas_pan").modal('show');
+                $('#seleccion_tipos_hojas_pan').one('hidden.bs.modal', function (e) {
+                    if (sele == true) {
+                        var seleccionado = $('#seleccion_tipos_hojas_pan').find('.active').find('span').text();
+                        $('#' + objetoId).val(seleccionado);
+                    }
+                });
+            },
+            error: function (xhr, status, err) {
+            }
+        });
+
+        return true;
+
+    }
+
+    $('#seleccion_tipos_hojas_pan .list-group').on('click', 'li', function (e) {
+
+        e.preventDefault()
+        $that = $(this);
+        $that.parent().find('li').removeClass('active');
+        $that.addClass('active');
+
+    });
+
+    $('#seleccion_tipos_hojas_pan .list-group').on('dblclick', 'li', function (e) {
+
+        e.preventDefault()
+        $that = $(this);
+        $('#seleccion_tipos_hojas_boton').click();
+
+    });
+
+</script>

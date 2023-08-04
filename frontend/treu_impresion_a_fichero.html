@@ -1,0 +1,114 @@
+<div class="modal fade" id="treu_impresion_a_fichero" tabindex="-1" role="dialog"
+    aria-labelledby="treu_impresion_a_fichero_ModalLabel" aria-hidden="true">
+    <input type="hidden" id="treu_impresion_opcion_a_fichero_filename">
+    <div class="modal-dialog modal-lg" role="document" id="dialo">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="treu_impresion_a_fichero_ModalLabel">Impresion a Fichero</h5>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body" style="height: 30vh;">
+
+                <div style="margin: 15px 20px 10px 20px;">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 treu_control">
+                            <p class="etiqueta">Nombre Fichero de Salida</p> 
+                            <treungc-texto id="sele_nombre" value="" name="sele_nombre" maxlength="40" formato=""></treungc-texto>                           </treungc-texto>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        <div class="form-check"
+                            style="margin-top: 15px;margin-left: 60px;margin-bottom: 15px;font-size: 1.2em;">
+                            <input class="form-check-input" type="radio" name="formato_salida" id="formato_acrobat"
+                                value="forma_acrobat" checked>
+                            <label class="form-check-label" for="formato_acrobat">
+                                Formato Acrobat (*.pdf)
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        <div class="form-check"
+                            style="margin-top: 15px; margin-left: 30px;margin-bottom: 15px;font-size: 1.2em;">
+                            <input class="form-check-input" type="radio" name="formato_salida" id="formato_texto"
+                                value="forma_texto">
+                            <label class="form-check-label" for="formato_texto">
+                                Formato Texto (*.txt)
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+             </div>
+
+            <div class="modal-footer">
+
+                <div style="margin: 0 20px 0px 10px;">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <label id="mensa_error" style="font-size: 0.9em;color: red;display: none;">Mensaje
+                                Error</label>
+                        </div>
+                    </div>
+                </div>
+
+               <button type="button" id="treu_impresion_fichero_boton" onclick="treu_grabar_file();"
+                    class="btn clase_boton_modificacion"><i class="fa fa-download"></i>&nbsp;&nbsp; Grabar en Fichero
+                </button>
+                <button type="button" class="btn btn-secondary" onclick="cancelar_sele_impresion()" data-bs-dismiss="modal">Cerrar Ventana</button>
+               
+            </div>
+
+        </div>
+    </div>
+</div>
+<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="../frontend/static/js/print.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../frontend/static/css/print.min.css">
+<script src="../treu/lista_de_campos_rutinas.js"></script>
+<script src="../frontend/static/js/treu_impresion_bifurcaciones.js"></script>
+<script>
+
+    function treu_check_errores() {
+        if ($('#sele_nombre').val() == '') {
+            $('#mensa_error').text('Error: Nombre de Fichero en Blanco');
+            $('#mensa_error').show();
+            return false;
+        }
+        $('#mensa_error').text('');
+        $('#mensa_error').hide();
+        return true;
+    }
+
+    function treu_grabar_file() {
+        var ret = treu_check_errores();
+        if (ret == true) {
+            var fil = $('#sele_nombre').val();
+            var extension = getFileExtension(fil).toLowerCase();
+            $('#treu_impresion_a_fichero').modal('hide');
+            if ($('.modal-body').find("input[type='radio'][name='formato_salida']:checked").val() == 'forma_acrobat') {
+                $('#treu_impresion_opcion_a_fichero').val(0);
+                $('#treu_impresion_opcion_a_fichero_pdf').val(1);
+                if (extension == 'pdf') {
+                    $('#treu_impresion_opcion_a_fichero_filename').val($('#sele_nombre').val());
+                } else {
+                    $('#treu_impresion_opcion_a_fichero_filename').val($('#sele_nombre').val() + ".pdf");
+                }
+            } else {
+                $('#treu_impresion_opcion_a_fichero').val(1);
+                $('#treu_impresion_opcion_a_fichero_pdf').val(0);
+                $('#treu_impresion_opcion_a_fichero_filename').val($('#sele_nombre').val());
+            }
+            treu_impresion_bifurcaciones();
+        }
+    }
+
+    function treu_impresion_a_fichero_onshow() {
+        $('#formato_acrobat').prop('checked', true);
+    }
+</script>

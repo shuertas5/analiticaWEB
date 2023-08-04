@@ -1,0 +1,225 @@
+link(rel="shortcut icon" href="#")
+link(rel="stylesheet" href="/css/bootstrap.min.css")
+div(class="container")
+    div(class="row")
+        div(class="col-xs-6 col-sm-5 col-md-5 col-lg-5 treu_control")
+            p(class="etiqueta") Tipo de Dato Adicional 
+            select(class="form-select" name="TIPO_ADICIONAL" id="TIPO_ADICIONAL" onchange ="cambio_seleccion();")
+                option(value="" selected= tipo_adicional == '') -- Selecciona Tipo de Adicional --
+                option(value="costes" style="color:red;" selected= tipo_adicional == 'costes') Dato Adicional de Coste
+                option(value="correcciones" style="color:blue;" selected= tipo_adicional == 'correcciones') Dato Adicional de Corrección
+                option(value="estadisticos" style="color:green;" selected= tipo_adicional == 'estadisticos') Dato Adicional Estadistico
+                option(value="acum_estadisticos" style="color:green;" selected= tipo_adicional == 'acum_estadisticos') Dato Acumulado Estadistico
+        div(class="col-xs-4 col-sm-3 col-md-3 col-lg-3" style="margin-top: 25px;")
+            button(id="cancel" class="btn btn-md btn-secondary btn-block" onclick="$('#accion_cancelar2')[0].click();") Cerrar Pantalla
+        treungc-texto(id="senal" value=tipo_adicional style="display: none;" ondatachange="cambio_seleccion()")
+div(class="d-flex flex-column") 
+    div(class="container")
+        div(class="row")
+            div(class="divider py-1 bg-secondary" style="margin-bottom: 10px;margin-top: 10px;")
+    div(class="container" id="conte_tabla" style="height: calc(100vh - 405px);overflow-y: auto;margin-bottom: 10px;")
+        div(class="table-responsive")
+            table(class="table table-striped" id="tabla_adic")
+                thead(class="thead-dark")
+                    tr
+                        th Opc.
+                        th Indice
+                        th Campo Orden
+                        th Titulo Adicional
+                        th Hoja
+                        th Linea
+                        th Importe
+                tbody(id="cuerpo_lineas" style="font-family: 'Courier New';font-size: 1.1em;")
+                each n in rows
+                   tr 
+                        td 
+                            a(href="/introducir_valores_adicionales_detalle?opcion=modificacion&indice="+n.indice data-link)
+                                img(src="./img/edit.svg" class="icono_table" alt="Editar" title="Editar")
+                        td= n.indice
+                        td= n.orden
+                        td= n.titulo 
+                        td= n.hoja 
+                        td= n.linea 
+                        td= n.importe
+    div(class="container")
+        div(class="row")
+            div(class="divider py-1 bg-secondary" style="margin-bottom: 10px;margin-top: 10px;")
+        div(class="row")
+            div(class="col-xs-2 col-sm-2 col-md-2 col-lg-2 treu_control")
+                p(class="etiqueta") Indice 
+                treungc-numer(name="INDICE" id="INDICE" formato="###.###" disabled="true" value=campos.indice)
+            div(class="col-xs-5 col-sm-5 col-md-5 col-lg-5 treu_control")
+                p(class="etiqueta") Titulo Adicional
+                treungc-texto(name="TITULO_ADICIONAL" id="TITULO_ADICIONAL" formato="uppercase" maxlength="30" disabled="true" value=""+campos.titulo_adicional )
+            div(class="col-xs-2 col-sm-2 col-md-2 col-lg-2 treu_control")
+                p(class="etiqueta") Hoja/Linea 
+                treungc-texto(id="HOJA-LINEA" name="HOJA-LINEA" disabled="true" value=campos.hoja_linea)
+            div(class="col-xs-3 col-sm-3 col-md-3 col-lg-3 treu_control")
+                p(class="etiqueta") Importe 
+                treungc-numer(id="IMPORTE" name="IMPORTE" formato="###.###.###,##" disabled="true" value=0)
+        div(class="row")
+            div(class="col-xs-3 col-sm-3 col-md-3 col-lg-3 treu_control")
+                p(class="etiqueta") Forma Grabacion 
+                select(class="form-select" name="FORMA_INTRO" id="FORMA_INTRO" onchange ="cambio_intro();")
+                    option(value="intro" selected= campos.forma_intro == 'intro') Introducir Datos
+                    option(value="actu" selected= campos.forma_intro == 'actu') Actualizar Datos
+            div(class="col-xs-4 col-sm-3 col-md-3 col-lg-3" style="margin-top: 25px;")
+                button(class="btn btn-md btn-block" id='boton_iniciar' style=""+color_boton_iniciar onclick="iniciar_grabacion();" disabled) #{titulo_boton}
+            div(class="col-xs-4 col-sm-3 col-md-3 col-lg-3" style="margin-top: 25px;")
+                button(class="btn btn-md btn-block" id='boton_grabar' style=""+color_boton_grabar onclick="pulsacion_grabar();" disabled) Grabar Importe
+    a(style="display: none" href="/" id="accion_cancelar2" data-link)
+script. 
+    function cambio_seleccion() {
+        var tipo_adicional = $('#TIPO_ADICIONAL').val();
+        $('#boton_grabar').prop('disabled',true);
+        $('#boton_iniciar').prop('disabled',true);
+        if (tipo_adicional!='') {
+            $('#boton_iniciar').prop('disabled',false);
+        }
+        else {
+            $('#boton_iniciar').prop('disabled',true);
+        }
+        leer_lineas();
+    }
+    async function leer_lineas() {
+        var tipo_adicional = $('#TIPO_ADICIONAL').val();
+        var ordenacion='2';
+        var cuerpo="";
+        if (tipo_adicional!='') {
+            var parametros = JSON.stringify({tipo_adicional: tipo_adicional, ordenacion: ordenacion});
+            await utilidades('get_adicionales_secuencial',parametros).then(reto=>{
+                for (var fila of reto) {
+                    cuerpo+="<tr>";
+                    if (fila.blanca==false) {
+                        cuerpo+='<td><a href="/introducir_valores_adicionales_detalle?opcion=modificacion&tipo_adicional='+tipo_adicional+'&indice='+fila.indice+'" data-link><img src="./img/edit.svg" class="icono_table" alt="Editar" title="Editar"/></a></td>';
+                    }
+                    else {
+                        cuerpo+='<td></td>';
+                    }
+                    cuerpo+="<td>"+fila.indice_str+"</td><td>"+fila.ordena_str+"</td><td style='"+fila.titulo_forma+"'>"+fila.titulo+"</td><td>"+fila.hoja_str+"</td><td>"+fila.linea_str+"</td><td style='text-align: right;'>"+fila.importe_str+"</td></tr>";
+                }
+                $("#cuerpo_lineas").html(cuerpo);
+            });
+        }
+        else {
+            $("#cuerpo_lineas").html(cuerpo);
+        }
+    }
+    function iniciar_grabacion() {
+        var tipo_adicional = $('#TIPO_ADICIONAL').val();
+        $("#cuerpo_lineas").html('');
+        if ($('#boton_iniciar').text()!='Fin Grabacion') {
+            $("#TIPO_ADICIONAL").prop('disabled',true);
+            $('#boton_iniciar').text('Fin Grabacion');
+            $('#boton_iniciar').prop('style','background-color: red; color: white;');
+            $('#FORMA_INTRO').prop('disabled',true);
+            leer_para_grabar(-1);
+        }
+        else {
+            $("#IMPORTE").prop('disabled',true);
+            $("#TIPO_ADICIONAL").prop('disabled',false);
+            $('#boton_grabar').prop('disabled',true);
+            $('#boton_iniciar').text('Inicio Grabacion');
+            $('#boton_iniciar').prop('style','background-color: rgb(0,128,0); color: white;');
+            $('#IMPORTE').val(0);
+            $('#INDICE').val(0);
+            $('#TITULO_ADICIONAL').val('');
+            $('#HOJA-LINEA').val('');
+            $('#FORMA_INTRO').prop('disabled',false);
+            leer_lineas();
+        }
+    }
+    async function leer_para_grabar(ultimo) {
+        var tipo_adicional = $('#TIPO_ADICIONAL').val();
+        var ordenacion='2';
+        var cuerpo="";
+        var parametros = JSON.stringify({tipo_adicional: tipo_adicional, ordenacion: ordenacion});
+        await utilidades('get_adicionales_secuencial',parametros).then(reto=>{
+            var cortar=false;
+            for (var fila of reto) {
+                if ($('#FORMA_INTRO').val()=='intro') {
+                    if (fila.grabada==true || fila.blanca==true) {
+                        cuerpo+="<tr>"
+                        cuerpo+='<td></td>';
+                        cuerpo+="<td>"+fila.indice_str+"</td><td>"+fila.ordena_str+"</td><td style='"+fila.titulo_forma+"'>"+fila.titulo+"</td><td>"+fila.hoja_str+"</td><td>"+fila.linea_str+"</td><td style='text-align: right;'>"+fila.importe_str+"</td></tr>";
+                    }
+                    else {
+                        $('#IMPORTE').val(fila.importe);
+                        $('#INDICE').val(fila.indice);
+                        $('#TITULO_ADICIONAL').val(fila.titulo);
+                        $('#HOJA-LINEA').val(fila.hoja_str+"/"+fila.linea_str);
+                        $('#IMPORTE').prop('disabled',false);
+                        $('#boton_grabar').prop('disabled',false);
+                        break;
+                    }
+                }
+                else {
+                    if (ultimo!=-1) {
+                        if (cortar==false || fila.blanca==true) {
+                            cuerpo+="<tr>"
+                            cuerpo+='<td></td>';
+                            cuerpo+="<td>"+fila.indice_str+"</td><td>"+fila.ordena_str+"</td><td style='"+fila.titulo_forma+"'>"+fila.titulo+"</td><td>"+fila.hoja_str+"</td><td>"+fila.linea_str+"</td><td style='text-align: right;'>"+fila.importe_str+"</td></tr>";                       
+                            if (fila.indice==ultimo) {
+                                cortar=true;
+                            }
+                            continue;
+                        }
+                    }
+                    else {
+                        if (fila.blanca==true) {
+                            cuerpo+="<tr>"
+                            cuerpo+='<td></td>';
+                            cuerpo+="<td>"+fila.indice_str+"</td><td>"+fila.ordena_str+"</td><td style='"+fila.titulo_forma+"'>"+fila.titulo+"</td><td>"+fila.hoja_str+"</td><td>"+fila.linea_str+"</td><td style='text-align: right;'>"+fila.importe_str+"</td></tr>";                       
+                            continue;
+                        }
+                    }
+                    $('#IMPORTE').val(fila.importe);
+                    $('#INDICE').val(fila.indice);
+                    $('#TITULO_ADICIONAL').val(fila.titulo);
+                    $('#HOJA-LINEA').val(fila.hoja_str+"/"+fila.linea_str);
+                    $('#IMPORTE').prop('disabled',false);
+                    $('#boton_grabar').prop('disabled',false);
+                    break;
+                }
+            }
+            $("#cuerpo_lineas").html(cuerpo);
+            scroll_tabla();
+        });
+    }
+    function pulsacion_grabar() {
+
+        var tipo_adicional = $('#TIPO_ADICIONAL').val();
+        var indi =$('#INDICE').val();
+        var impor =$('#IMPORTE').val();
+
+        $.ajax({
+            type: 'POST',
+            url: '/introducir_valores_adicionales_detalle',
+            async: true,
+            data: 'opcion=modificacion&tipo_adicional='+tipo_adicional+'&INDICE='+indi+'&IMPORTE='+impor,
+            success: function (response) {
+                $('#IMPORTE').val(0);
+                $('#INDICE').val(0);
+                $('#TITULO_ADICIONAL').val('');
+                $('#HOJA-LINEA').val('');
+                $('#IMPORTE').prop('disabled',true);
+                $('#boton_grabar').prop('disabled',true);
+                scroll_tabla();
+                leer_para_grabar(indi);
+            },
+            error: function (xhr, status, err) {
+                console.log(xhr.responseText);
+            }
+        });
+    }
+    function scroll_tabla() {
+        var rowpos = $('#tabla_adic tr:last').position();
+        $('#conte_tabla').scrollTop(rowpos.top);
+    }
+        
+    window.onload = function(e) {
+        const nodes = document.getElementsByTagName("PRI_IMA");
+        if (nodes.length==0) {
+            window.location="./frontend/index0.html";
+        }
+    }

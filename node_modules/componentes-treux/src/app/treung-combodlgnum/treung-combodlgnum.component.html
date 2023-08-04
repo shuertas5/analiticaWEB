@@ -1,0 +1,7 @@
+<div class="input-group mb-2">
+    <treung-numer #obj (datachange)="cambiodata();" [style]="this.style" [formato]="this.formato" [size]="this.size" [value]="this.value" [disabled]="this.disabled" [valor_positivo]="this.valor_positivo" ></treung-numer>
+    <div class="input-group-prepend">
+        <div class="input-group-text" (click)="ondropdown();" [style]="this.cursor">...</div>
+    </div>
+    <label style="font-size: 1.1em;margin-left: 20px;margin-top: 10px;">{{this.respuesta}}</label>
+</div>

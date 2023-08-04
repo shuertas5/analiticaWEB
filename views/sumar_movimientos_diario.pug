@@ -1,0 +1,47 @@
+link(rel="shortcut icon" href="#")
+link(rel="stylesheet", href="/css/bootstrap.min.css")
+label(style="margin-top: 10px;") Suma del Fichero de Movimientos del Diario
+div(class="container")
+    form(id="my_form" name="fichero" method="post" enctype="multipart/form-data" action="/sumar_movimientos_diario")
+        div(class="row")
+            div(class="divider py-1 bg-secondary")
+        div(class="row" style="margin-top: 15px;")
+            div(class="col-xs-4 col-sm-3 col-md-3 col-lg-3")
+                input(type='hidden' name="oculto" value="o")
+                button(class="btn btn-md btn-block" style=""+color_boton onclick="$('#submit').click();") #{titulo_boton}
+            input(id="submit" class="btn btn-md btn-primary btn-block" style="display: none;" onclick="ajax_submit('#my_form', 'temporal');")
+    a(style="display: none" href="" id="accion_cancelar" onclick="visual_panta();" data-link)
+div(class="d-flex flex-column") 
+    div(class="container" style="height: calc(100vh - 245px);overflow-y: auto;margin-bottom: 10px;margin-top: 10px;")
+        div(class="table-responsive")
+            div(id='pantalla_suma_mov' style="width: 100%; height: 100%;font-size: 0.95em; font-family: 'Courier New', Courier, monospace;")
+script. 
+    function visual_panta() {
+        getFileFromServer("./temporal/retorno.html", async function (text) {
+           refresh_div(text); 
+        });
+    }
+    function refresh_div(tex) {
+
+        var url = "/sumar_movimientos_diario?saltar=true";
+
+        $.ajax({
+            type: 'GET',
+            url: url,
+            async: true,
+            success: function (response) {
+                $('#pantalla_suma_mov').html(tex);
+            },
+            error: function (xhr, status, err) {
+            }
+        });
+
+        return true;
+    }
+    
+    window.onload = function(e) {
+        const nodes = document.getElementsByTagName("PRI_IMA");
+        if (nodes.length==0) {
+            window.location="./frontend/index0.html";
+        }
+    }

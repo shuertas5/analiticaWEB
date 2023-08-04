@@ -1,0 +1,79 @@
+link(rel="shortcut icon" href="#")
+link(rel="stylesheet" href="/css/bootstrap.min.css")
+div(class="d-flex flex-column") 
+    div(class="container")
+        div(class="row")
+            div(class="col-xs-3 col-sm-2 col-md-2 col-lg-2 treu_control")
+                p(class="etiqueta") Num. Hoja 
+                treungc-combodlgnum(name="NUM_HOJA" id="NUM_HOJA" titulo_id="TITU_HOJA_REPAR" formato="##" disabled=""+disabled_clave value=hoja ondropdown="dropdown_hoja();" ondatachange="cambio_hoja();")
+            div(class="col-xs-6 col-sm-6 col-md-6 col-lg-6 treu_control")
+                p(id="TITU_HOJA_REPAR" class="repon_titulo")
+div(class="d-flex flex-column") 
+    div(class="container")
+        div(class="row" style="text-align: right;margin-bottom: 5px;")
+            span(id='total') Suma Repartos : <b>0,00000</b> 
+        div(class="row")
+            div(class="divider py-1 bg-secondary" style="margin-bottom: 10px")
+    div(class="container" style="height: calc(100vh - 313px);overflow-y: auto;margin-bottom: 10px;")
+        form(id="my_form" name="fichero" method="post" enctype="multipart/form-data" action="/reparto_ppto_hojas_detalle")
+            div(class="table-responsive")
+                table(class="table table-striped")
+                    tbody(id="cuerpo_lineas")
+                    -i = 1
+                    while (i<=12)
+                        div(class="row")
+                            tr(class="filasx")
+                                td(style="width: 130px;font-family: monospace; font-size: 0.8em") Reparto Mes #{i}
+                                td(style="width: 170px;")
+                                    div(class="col-xs-12 col-sm-12 col-md-12 col-lg-12 treu_control")
+                                        treungc-numer(name="REPARTO"+i id="REPARTO"+i formato="#,#####" value=campos.repartos[i-1] disabled=""+disabled_campos ondatachange="cambio_valor();")
+                                td(style="width: 700px;")
+                                    div(id='BARRA'+i style="background-color: blue;higth: 100%;")
+                                        span(style="font-size: 2em") .
+                        - i++
+            input(type="hidden" name="opcion" value=opcion)
+            input(type='hidden' id='NUMI_HOJA' name='NUMI_HOJA' value=hoja)
+            button(id="submit" class="btn btn-md btn-primary btn-block" style="display: none;" onclick="ajax_submit('#my_form', 'temporal');")
+    div(class="mt-auto" class="botonera")
+        div(class="row")
+            div(class="col-xs-4 col-sm-3 col-md-3 col-lg-3")
+                button(class="btn btn-md btn-block" style=""+color_boton onclick="$('#submit').click();") #{titulo_boton}
+            div(class="col-xs-4 col-sm-3 col-md-3 col-lg-3")
+                button(id="cancel" class="btn btn-md btn-secondary btn-block" onclick="$('#accion_cancelar')[0].click();") Cancelar
+            div(class="col-xs-4 col-sm-3 col-md-3 col-lg-3")
+                button(id="uniforme" class="btn btn-md btn-block" style=""+color_boton2 disabled=disabled_campos onclick="reparto_uniforme();") Reparto Uniforme
+    a(style="display: none" href="/reparto_ppto_hojas" id="accion_cancelar" data-link)
+script. 
+    function cambio_hoja() {
+        $('#NUMI_HOJA').val($('#NUM_HOJA').val());
+        cambio_hojas_inicio($('#NUM_HOJA').attr('id'),$('#NUM_HOJA').attr('titulo_id'));
+    }
+    function dropdown_hoja() {
+        seleccion_hojas_inicio($('#NUM_HOJA').attr('id'),$('#NUM_HOJA').attr('titulo_id'));
+    }
+    function reparto_uniforme() {
+        for (var i=1; i<12; i++) {
+            $('#REPARTO'+i).val(0.08333);
+        }
+        $('#REPARTO12').val(0.08337);
+    }
+    function cambio_valor() {
+        var suma=0.0;
+        for (var i=1; i<=12; i++) {
+            suma+=$('#REPARTO'+i).val();
+        }
+        $('#total').html("Suma Repartos : <b>"+form('#,#####',suma,'')+"</b> ");
+        dibujar_barras();
+    }
+    function dibujar_barras() {
+        for (var i=1; i<=12; i++) {
+            $('#BARRA'+i).css('width',(($('#REPARTO'+i).val())*100).toString()+'%');
+        }
+    }
+        
+    window.onload = function(e) {
+        const nodes = document.getElementsByTagName("PRI_IMA");
+        if (nodes.length==0) {
+            window.location="./frontend/index0.html";
+        }
+    }

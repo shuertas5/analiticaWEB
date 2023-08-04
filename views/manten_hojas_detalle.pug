@@ -1,0 +1,55 @@
+link(rel="shortcut icon" href="#")
+link(rel="stylesheet", href="/css/bootstrap.min.css")
+div(class="d-flex flex-column") 
+    div(class="container" style="height: calc(100vh - 195px);overflow-y: auto;margin-bottom: 10px;")
+        form(id="my_form" method='POST' action="/manten_hojas_detalle")
+            div(class="row")
+                div(class="col-xs-3 col-sm-2 col-md-2 col-lg-2 treu_control")
+                    p(class="etiqueta") Num. Hoja 
+                    treungc-numer(name="NUM_HOJA" formato="##" disabled=""+disabled_clave value=""+campos.hoja)
+            div(class="row")
+                div(class="col-xs-8 col-sm-6 col-md-6 col-lg-6 treu_control")
+                    p(class="etiqueta") Titulo Hoja Analitica 
+                    treungc-texto(name="TITULO_HOJA" formato="uppercase" maxlength="30" disabled=""+disabled_campos value=""+campos.titulo )
+            div(class="row")
+                div(class="col-xs-4 col-sm-2 col-md-2 col-lg-2 treu_control")
+                    p(class="etiqueta") Hoja Externa 
+                    treungc-texto(name="HOJA_EXTERNA" formato="uppercase" maxlength="5" disabled=""+disabled_campos value=""+campos.hoja_externa)
+                div(class="col-xs-4 col-sm-2 col-md-2 col-lg-2 treu_control")
+                    p(class="etiqueta") Tipo Hoja 
+                    treungc-combodlg(id="tipo_hoja" titulo_id="TITU_TIPO_HOJA" name="TIPO_HOJA" formato="uppercase" maxlength="2" disabled=""+disabled_campos value=""+campos.tipo_hoja ondropdown="seleccion_tipos_hojas_inicio(this.id,this.titulo_id);" ondatachange="cambio_tipos_hojas_inicio(this.id,this.titulo_id);")
+                div(class="col-xs-4 col-sm-4 col-md-4 col-lg-4 treu_control")
+                    p(id="TITU_TIPO_HOJA" class="repon_titulo")
+            div(class="row caja_control")
+                div(class="col-xs-6 col-sm-5 col-md-5 col-lg-5")
+                    input(class="etiqueta_checkradio" type="checkbox" id="INVISIBLE" name="INVISIBLE" value=""+campos.invisible disabled=disabled_campos checked=campos.invisible)
+                    label(class="etiqueta_lab_checkradio" for="INVISIBLE") Hoja No Visible
+            div(class="row")
+                div(class="col-xs-4 col-sm-2 col-md-2 col-lg-2 treu_control")
+                    p(class="etiqueta") Linea Resultados 
+                    treungc-combodlgnum(id="linea_resultado" titulo_id="TITU_LINEA_RESULTADO" name="LINEA_RESULTADO" formato="###" disabled=""+disabled_campos value=""+campos.linea_resultado ondropdown="seleccion_lineas_inicio("+campos.hoja+",this.id,this.titulo_id);" ondatachange="cambio_lineas_inicio("+campos.hoja+",this.id,this.titulo_id);")
+                div(class="col-xs-4 col-sm-4 col-md-4 col-lg-4 treu_control")
+                    p(id="TITU_LINEA_RESULTADO" class="repon_titulo")
+            div(class="row")
+                div(class="col-xs-4 col-sm-2 col-md-2 col-lg-2 treu_control")
+                    p(class="etiqueta") Linea Facturacion 
+                    treungc-combodlgnum(id="linea_facturacion" titulo_id="TITU_LINEA_FACTURACION" name="LINEA_FACTURACION" formato="###" disabled=""+disabled_campos value=""+campos.linea_facturacion ondropdown="seleccion_lineas_inicio("+campos.hoja+",this.id,this.titulo_id);" ondatachange="cambio_lineas_inicio("+campos.hoja+",this.id,this.titulo_id);")
+                div(class="col-xs-4 col-sm-4 col-md-4 col-lg-4 treu_control")
+                    p(id="TITU_LINEA_FACTURACION" class="repon_titulo")
+            button(id="submit" class="btn btn-md btn-primary btn-block" style="display: none;" onclick="ajax_submit('#my_form', 'temporal');")
+            input(type="hidden" value=""+opcion name='opcion')
+    div(class="mt-auto" class="botonera")
+        div(class="row")
+            div(class="col-xs-4 col-sm-3 col-md-3 col-lg-3")
+                button(class="btn btn-md btn-block" style=""+color_boton onclick="$('#submit').click();") #{titulo_boton}
+            div(class="col-xs-4 col-sm-3 col-md-3 col-lg-3")
+                button(id="cancel" class="btn btn-md btn-secondary btn-block" onclick="$('#accion_cancelar')[0].click();") Cancelar
+    a(style="display: none" href="/manten_hojas" id="accion_cancelar" data-link)
+script. 
+    
+    window.onload = function(e) {
+        const nodes = document.getElementsByTagName("PRI_IMA");
+        if (nodes.length==0) {
+            window.location="./frontend/index0.html";
+        }
+    }

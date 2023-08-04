@@ -1,0 +1,73 @@
+<style>
+    .modal-body {
+        height: 45vh;
+        overflow-y: auto;
+    }
+</style>
+<!-- Modal -->
+<div class="modal fade" id="consulta_repartos_lineas" tabindex="-1" role="dialog" 
+    aria-labelledby="consultaRepartosLineasModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document" id="dialo_repartos_lineas">
+        <div class="modal-content" style="width: 120vh;">
+            <div class="modal-header">
+                <h5 class="modal-title" id="consultaRepartosLineasModalLabel">Consulta Repartos Lineas</h5>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="lista_repartos_lineas" style="font-family: Courier; font-size: 0.8em;background-color:navajowhite; height: 35vh; overflow-y: auto; width: 100%; overflow-x: auto; white-space: nowrap;">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+    async function visualizar_repartos_lineas() {
+
+        sele = false;
+
+        var url = "/consulta_reparto_ppto_lineas";
+
+        var titulo;
+
+        return new Promise(function (resolve, reject) {
+
+            $.ajax({
+                type: 'GET',
+                url: url,
+                async: false,
+                success: function (response) {
+
+                    var relacion = "";
+                    relacion+=cabecera_reparto_lineas();
+                    response.forEach(element => {
+                        relacion += "<div><label style='font-weight: bold;'>&nbsp;&nbsp;" + form("##", element.hoja, "H") + "</label>&nbsp;&nbsp;&nbsp;<label style='font-weight: bold;'>" + form("###", element.linea, "H") + "</label>&nbsp;&nbsp;<label>" + acoplarseriehtml(element.titulo,30) + "</label>";
+                        for (var i = 1; i <= 12; i++) {
+                            relacion += "&nbsp;<label>" + form('#,#####', element.coeficientes[i-1], '') + "</label>";
+                        }
+                        relacion += "</div>";
+                    });
+
+                    $("#lista_repartos_lineas").html(relacion);
+                    $('#consulta_repartos_lineas').modal({ backdrop: 'static', keyboard: false });
+                    $("#consulta_repartos_lineas").modal('show');
+                },
+                error: function (xhr, status, err) {
+                }
+            });
+        });
+    }
+    function cabecera_reparto_lineas() {
+        var reto = "";
+        reto+=repcar('-',139)+'<br>';
+        reto+="&nbsp;HOJA LINEA TITULO LINEA ----------------- ";
+        for (var i=1; i<=12; i++) {
+            reto+='MES/'+form('##',i,"0")+'&nbsp;&nbsp;';
+        }
+        reto+='<br>'+repcar('-',139)+'<br>'; 
+        return reto;
+    }
+</script>

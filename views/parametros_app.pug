@@ -1,0 +1,120 @@
+link(rel="shortcut icon" href="#")
+link(rel="stylesheet", href="/css/bootstrap.min.css")
+div(class="d-flex flex-column") 
+    div(class="container" style="height: calc(100vh - 195px);overflow-y: auto;margin-bottom: 10px;")
+        form(id="my_form" method='POST' action="/parametros_app")
+            div(class="row")
+                div(class="col-xs-10 col-sm-9 col-md-9 col-lg-8 treu_control")
+                    p(class="etiqueta") Nombre de la Empresa 
+                    treungc-texto(name="NOMBRE_EMPRESA" formato="uppercase" maxlength="40" value=campos.nombre_empresa)
+            div(class="row")
+                div(class="col-xs-10 col-sm-6 col-md-6 col-lg-6 treu_control")
+                    p(class="etiqueta") Escudo de la Empresa 
+                    select(class="form-select" name="ESCUDO_EMPRESA" id="ESCUDO_EMPRESA" disabled=disabled_campos value=campos.escudo_empresa)
+                        each escudo in campos.escudos
+                            option(value=escudo selected= escudo == campos.escudo_empresa) #{escudo}
+            div(class="row")
+                div(class="col-xs-5 col-sm-2 col-md-2 col-lg-2 treu_control")
+                    p(class="etiqueta") Pasadas Cálculo 
+                    treungc-numer(name="PASADAS_CALCULO" formato="##" value=campos.pasadas_calculo)
+            div(class="row")
+                div(class="col-xs-3 col-sm-2 col-md-2 col-lg-2 treu_control")
+                    p(class="etiqueta") Mes en curso 
+                    treungc-numer(name="MES_EN_CURSO" formato="##" value=campos.mes_en_curso)
+                div(class="col-xs-3 col-sm-2 col-md-2 col-lg-2 treu_control")
+                    p(class="etiqueta") Año en curso 
+                    treungc-numer(name="ANNO_EN_CURSO" formato="####" value=campos.anno_en_curso)
+            div(class="row")
+                div(class="col-xs-7 col-sm-5 col-md-5 col-lg-5 treu_control")
+                    p(class="etiqueta") Titulo Corto Empresa
+                    treungc-texto(name="TIT_CORTO_EMPRESA" formato="uppercase" maxlength="20" value=campos.titulo_corto)
+            div(class="row")
+                div(class="col-xs-3 col-sm-2 col-md-2 col-lg-2 treu_control")
+                    p(class="etiqueta") Año Presupuesto
+                    treungc-numer(name="ANNO_PPTO" formato="####" disabled="true" value=campos.anno_ppto)
+            div(class="row")
+                div(class="col-xs-4 col-sm-3 col-md-3 col-lg-3 treu_control")
+                    p(class="etiqueta") Fecha del Presupuesto
+                    treungc-fecha(name="FECHA_PPTO" disabled="true" value=campos.fecha_ppto)
+                div(class="col-xs-4 col-sm-3 col-md-3 col-lg-3 treu_control")
+                    p(class="etiqueta") Hora del Presupuesto
+                    treungc-texto(name="HORA_PPTO" formato="uppercase" maxlength="10" disabled="true" value=campos.hora_ppto)
+            div(class="row caja_control")
+                div(class="col-xs-6 col-sm-5 col-md-5 col-lg-5")
+                    input(class="etiqueta_checkradio" type="checkbox" id="OBLIG_DESC_ADICIONAL" name="OBLIG_DESC_ADICIONAL" value=""+campos.obligatoria_desc_adicional checked=campos.obligatoria_desc_adicional)
+                    label(class="etiqueta_lab_checkradio" for="OBLIG_DESC_ADICIONAL") Obligatoria Descripion Adicional Ppto.
+                div(class="col-xs-6 col-sm-5 col-md-5 col-lg-5")
+                    input(class="etiqueta_checkradio" type="checkbox" name="PPTO_ACTIVO" id="PPTO_ACTIVO" value=""+campos.ppto_activo checked=campos.ppto_activo)
+                    label(class="etiqueta_lab_checkradio" for="PPTO_ACTIVO") Presupuesto Activo
+            div(class="row caja_control")
+                div(class="col-xs-6 col-sm-5 col-md-5 col-lg-5")
+                    input(class="etiqueta_checkradio" type="checkbox" id="ANALITICA_SUBCTA_VACIA" name="ANALITICA_SUBCTA_VACIA" value=""+campos.analitica_subcta_vacia checked=campos.analitica_subcta_vacia)
+                    label(class="etiqueta_lab_checkradio" for="ANALITICA_SUBCTA_VACIA") Analitica Admite SubCuenta Vacia
+                div(class="col-xs-6 col-sm-5 col-md-5 col-lg-5")
+                    input(class="etiqueta_checkradio" type="checkbox" name="CARGOS_A_NO_VISIBLES" id="CARGOS_A_NO_VISIBLES" value=""+campos.cargos_a_no_visibles checked=campos.cargos_a_no_visibles)
+                    label(class="etiqueta_lab_checkradio" for="CARGOS_A_NO_VISIBLES") Cargos a Lineas No Visibles
+            div(class="row caja_control")
+                div(class="col-xs-6 col-sm-5 col-md-5 col-lg-5")
+                    input(class="etiqueta_checkradio" type="checkbox" id="CONTROL_FECHA" name="CONTROL_FECHA" value=""+campos.control_de_fecha checked=campos.control_de_fecha)
+                    label(class="etiqueta_lab_checkradio" for="CONTROL_FECHA") Control de Fecha en Movimientos
+            div(class="row")
+                div(class="col-xs-4 col-sm-2 col-md-2 col-lg-2 treu_control")
+                    p(class="etiqueta") Hoja Resultados 
+                    treungc-combodlgnum(id="HOJA_RESULTADO" name="HOJA_RESULTADO" formato="##" value=campos.hoja_resultado ondropdown="dropdown_hoja_resultado();" ondatachange="cambio_hoja_resultado();")
+                div(class="col-xs-4 col-sm-2 col-md-2 col-lg-2 treu_control")
+                    p(class="etiqueta") Linea Resultados
+                    treungc-combodlgnum(id="LINEA_RESULTADO" titulo_id="TITU_RESULTADO" name="LINEA_RESULTADO" formato="###" value=campos.linea_resultado ondropdown="dropdown_linea_resultado();" ondatachange="cambio_linea_resultado();")
+                div(class="col-xs-6 col-sm-6 col-md-6 col-lg-6 treu_control")
+                    p(id="TITU_RESULTADO" class="repon_titulo")
+            div(class="row")
+                div(class="col-xs-4 col-sm-2 col-md-2 col-lg-2 treu_control")
+                    p(class="etiqueta") Hoja Facturacion 
+                    treungc-combodlgnum(id="HOJA_FACTURACION" name="HOJA_FACTURACION" formato="##" value=campos.hoja_facturacion ondropdown="dropdown_hoja_facturacion();" ondatachange="cambio_hoja_facturacion();")
+                div(class="col-xs-4 col-sm-2 col-md-2 col-lg-2 treu_control")
+                    p(class="etiqueta") Linea Facturacion
+                    treungc-combodlgnum(id="LINEA_FACTURACION" titulo_id="TITU_FACTURACION" name="LINEA_FACTURACION" formato="###" value=campos.linea_facturacion ondropdown="dropdown_linea_facturacion();" ondatachange="cambio_linea_facturacion();")
+                div(class="col-xs-6 col-sm-6 col-md-6 col-lg-6 treu_control")
+                    p(id="TITU_FACTURACION" class="repon_titulo")
+            button(id="submit" class="btn btn-md btn-primary btn-block" style="display: none;" onclick="ajax_submit('#my_form', 'temporal');")
+    div(class="mt-auto" class="botonera")
+        div(class="row")
+            div(class="col-xs-4 col-sm-3 col-md-3 col-lg-3")
+                button(id="mandar" class="btn btn-md btn-block" style=""+color_boton onclick="$('#submit').click();") #{titulo_boton}
+            div(class="col-xs-4 col-sm-3 col-md-3 col-lg-3")
+                button(id="cancel" class="btn btn-md btn-secondary btn-block" onclick="$('#accion_cancelar')[0].click();") Cancelar
+    a(style="display: none" href="/" id="accion_cancelar" data-link)
+script.
+    function cambio_linea_resultado() {
+        cambio_lineas_inicio($('#HOJA_RESULTADO').val(),$('#LINEA_RESULTADO').attr('id'),$('#LINEA_RESULTADO').attr('titulo_id'));
+    }
+    function dropdown_linea_resultado() {
+        seleccion_lineas_inicio($('#HOJA_RESULTADO').val(),$('#LINEA_RESULTADO').attr('id'),$('#LINEA_RESULTADO').attr('titulo_id'));
+    }
+    function cambio_hoja_resultado() {
+        cambio_hojas_inicio($('#HOJA_RESULTADO').attr('id'),null);
+        cambio_linea_resultado();
+    }
+    function dropdown_hoja_resultado() {
+        seleccion_hojas_inicio($('#HOJA_RESULTADO').attr('id'),null);
+    }
+
+    function cambio_linea_facturacion() {
+        cambio_lineas_inicio($('#HOJA_FACTURACION').val(),$('#LINEA_FACTURACION').attr('id'),$('#LINEA_FACTURACION').attr('titulo_id'));
+    }
+    function dropdown_linea_facturacion() {
+        seleccion_lineas_inicio($('#HOJA_FACTURACION').val(),$('#LINEA_FACTURACION').attr('id'),$('#LINEA_FACTURACION').attr('titulo_id'));
+    }
+    function cambio_hoja_facturacion() {
+        cambio_hojas_inicio($('#HOJA_FACTURACION').attr('id'),null);
+        cambio_linea_facturacion();
+    }
+    function dropdown_hoja_facturacion() {
+        seleccion_hojas_inicio($('#HOJA_FACTURACION').attr('id'),null);
+    }
+        
+    window.onload = function(e) {
+        const nodes = document.getElementsByTagName("PRI_IMA");
+        if (nodes.length==0) {
+            window.location="./frontend/index0.html";
+        }
+    }

@@ -1,0 +1,138 @@
+link(rel="shortcut icon" href="#")
+link(rel="stylesheet", href="/css/bootstrap.min.css")
+label(style="margin-top: 10px;") Calculo del Presupuesto Analtico
+div(class="container")
+    form(id="my_form" name="fichero" method="post" enctype="multipart/form-data" action="/calcular_presupuesto")
+        div(class="row" style='margin-bottom: 10px;')
+            div(class="divider py-1 bg-secondary")
+        div(class="row")
+            div(class="col-xs-3 col-sm-2 col-md-2 col-lg-2 treu_control")
+                p(class="etiqueta") Año Presupuesto
+                treungc-numer(id="ANNO_PPTO" name="ANNO_PPTO" formato="#.###" value=campos.anno_ppto ondatachange="change_anno();")
+        div(class="row caja_control")
+            div(class="col-xs-6 col-sm-4 col-md-4 col-lg-4")
+                input(class="etiqueta_checkradio" type="checkbox" id="REPARTO_GLOBAL" name="REPARTO_GLOBAL" disabled=!activo_reparto_global value=""+campos.reparto_global checked=campos.reparto_global onclick="check_global();")
+                label(class="etiqueta_lab_checkradio" for="REPARTO_GLOBAL") Reparto Global Ppto.
+            div(class="col-xs-6 col-sm-4 col-md-4 col-lg-4")
+                button(class="btn btn-md btn-block" type="button" id="BOTON_REPARTO_GLOBAL" style=""+color_boton disabled=true onclick="visua_repartos_global();") Consulta Reparto Global
+        div(class="row caja_control")
+            div(class="col-xs-6 col-sm-4 col-md-4 col-lg-4")
+                input(class="etiqueta_checkradio" type="checkbox" id="REPARTO_HOJAS" name="REPARTO_HOJAS" disabled=!activo_reparto_hojas value=""+campos.reparto_hojas checked=campos.reparto_hojas onclick="check_hojas();")
+                label(class="etiqueta_lab_checkradio" for="REPARTO_HOJAS") Reparto Hojas Ppto.
+            div(class="col-xs-6 col-sm-4 col-md-4 col-lg-4")
+                button(class="btn btn-md btn-block" type="button" id="BOTON_REPARTO_HOJAS" style=""+color_boton disabled=true onclick="visua_repartos_hojas();") Consulta Reparto Hojas
+        div(class="row caja_control")
+            div(class="col-xs-6 col-sm-4 col-md-4 col-lg-4")
+                input(class="etiqueta_checkradio" type="checkbox" id="REPARTO_LINEAS" name="REPARTO_LINEAS" disabled=!activo_reparto_lineas value=""+campos.reparto_lineas checked=campos.reparto_lineas onclick="check_lineas();")
+                label(class="etiqueta_lab_checkradio" for="REPARTO_LINEAS") Reparto Lineas Ppto.
+            div(class="col-xs-6 col-sm-4 col-md-4 col-lg-4")
+                button(class="btn btn-md btn-block" type="button" id="BOTON_REPARTO_LINEAS" style=""+color_boton disabled=true onclick="visua_repartos_lineas();") Consulta Reparto Lineas
+        button(id="submit" class="btn btn-md btn-primary btn-block" style="display: none;" onclick="ajax_submit('#my_form', 'temporal');")
+        div(class="row" style='margin-bottom: 15px;margin-top: 20px;')
+            div(class="divider py-1 bg-secondary")
+    div(class="d-flex flex-column") 
+        div(class="container" style="height: calc(100vh - 497px);overflow-y: auto;margin-bottom: 10px;")
+            div(class="table-responsive")
+                div(id='pantalla_calcular_presupuesto' style="width: 100%; height: 100%;font-size: 0.95em; font-family: 'Courier New', Courier, monospace;")
+div(class="mt-auto" class="botonera")
+    div(class="row")
+        div(class="col-xs-4 col-sm-3 col-md-3 col-lg-3")
+            button(class="btn btn-md btn-block" style=""+color_boton onclick="iniciar_ejecucion();") #{titulo_boton}
+        div(class="col-xs-4 col-sm-3 col-md-3 col-lg-3")
+            button(id="cancel" class="btn btn-md btn-secondary btn-block" onclick="$('#accion_cancelar2')[0].click();") Cancelar
+    a(style="display: none" href="" id="accion_cancelar" data-link)
+    a(style="display: none" href="/principal" id="accion_cancelar2" data-link)
+script. 
+    function visual_panta() {
+        getFileFromServer("./temporal/retorno.html", async function (text) {
+            refresh_div(text); 
+        });
+    }
+    function refresh_div(tex) {
+
+        var url;
+
+        url = "/calcular_presupuesto";
+
+        $.ajax({
+            type: 'GET',
+            url: url,
+            async: true,
+            success: function (response) {
+                $('#pantalla_calcular_presupuesto').html(tex);
+            },
+            error: function (xhr, status, err) {
+            }
+        });
+
+        return true;
+    }
+    function visua_repartos_lineas() {
+        visualizar_repartos_lineas();
+    }
+    function visua_repartos_hojas() {
+        visualizar_repartos_hojas();
+    }
+    function visua_repartos_global() {
+        visualizar_repartos_global();
+    }
+    function change_anno() {
+        check_global();
+        check_hojas();
+        check_lineas();
+    }
+    function check_global() {
+        if ($('#REPARTO_GLOBAL').is(':checked')) {
+            $('#BOTON_REPARTO_GLOBAL').prop("disabled",false);
+        }
+        else {
+            $('#BOTON_REPARTO_GLOBAL').prop("disabled",true);
+         }
+    }
+    function check_hojas() {
+        if ($('#REPARTO_HOJAS').is(':checked')) {
+            $('#BOTON_REPARTO_HOJAS').prop("disabled",false);
+        }
+        else {
+            $('#BOTON_REPARTO_HOJAS').prop("disabled",true);
+         }
+    }
+    function check_lineas() {
+        if ($('#REPARTO_LINEAS').is(':checked')) {
+            $('#BOTON_REPARTO_LINEAS').prop("disabled",false);
+        }
+        else {
+            $('#BOTON_REPARTO_LINEAS').prop("disabled",true);
+        }
+    }
+    function iniciar_ejecucion() {
+        $('#submit').click();
+        var ele = $("#mensajes_error").find('.erri');
+        if (ele.length == 0) {
+            iniciar_impresion();
+        }
+        visual_panta();
+    }
+    function iniciar_impresion() {
+        var anno = $('#ANNO_PPTO').val();
+        var reparto_global = $('#REPARTO_GLOBAL').is(":checked");
+        var reparto_hojas = $('#REPARTO_HOJAS').is(":checked");
+        var reparto_lineas=$('#REPARTO_LINEAS').is(":checked");
+        var lista = new Array();
+        lista_campos_add(lista, "ANNO_PPTO",anno);
+        lista_campos_add(lista, "REPARTO_GLOBAL",reparto_global);
+        lista_campos_add(lista, "REPARTO_HOJAS", reparto_hojas);
+        lista_campos_add(lista, "REPARTO_LINEAS", reparto_lineas);
+        var data = lista_campos_escribir_campos(lista);
+        treu_impresion_onshow();
+        $('#treu_impresion_encargo_trabajo').val('calcular_presupuesto');
+        $('#treu_impresion_encargo_trabajo_data').val(data);
+        $('#treu_impresion_retorno_previs').val('/calcular_presupuesto?anno_ppto='+anno+'&reparto_global='+reparto_global+'&reparto_hojas='+reparto_hojas+'&reparto_lineas='+reparto_lineas);
+        treu_iniciar_salida_previsualizacion_pdf();
+    }    
+    window.onload = function(e) {
+        const nodes = document.getElementsByTagName("PRI_IMA");
+        if (nodes.length==0) {
+            window.location="./frontend/index0.html";
+        }
+    }

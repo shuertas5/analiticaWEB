@@ -1,0 +1,216 @@
+link(rel="shortcut icon" href="#")
+link(rel="stylesheet" href="/css/bootstrap.min.css")
+div(class="container")
+    div(class="row")
+        div(class="col-xs-4 col-sm-2 col-md-2 col-lg-2")
+            p(class="etiqueta") Hoja Analitica 
+            treungc-combodlgnum(id="HOJA_INTRO" name="HOJA_INTRO" titulo_id="TITU_HOJA" formato="##" ondropdown="seleccion_hojas_inicio(this.id,this.titulo_id);" ondatachange="cambio_hojas_inicio(this.id,this.titulo_id);cambios_hoja();" value=hoja_intro)
+        div(class="col-xs-4 col-sm-4 col-md-4 col-lg-4")
+            p(id="TITU_HOJA" class="repon_titulo")
+        div(class="col-xs-4 col-sm-3 col-md-3 col-lg-3" style="margin-top: 25px;")
+            button(id="cancel" class="btn btn-md btn-secondary btn-block" onclick="$('#accion_cancelar2')[0].click();") Cerrar Pantalla
+div(class="d-flex flex-column") 
+    div(class="container")
+        div(class="row")
+            div(class="divider py-1 bg-secondary" style="margin-bottom: 10px;margin-top: 10px;")
+    div(class="container" id="conte_tabla" style="height: calc(100vh - 405px);overflow-y: auto;margin-bottom: 10px;")
+        div(class="table-responsive")
+            table(class="table table-striped" id="tabla_adic")
+                thead(class="thead-dark")
+                    tr
+                        th Opc.
+                        th Hoja
+                        th Linea
+                        th Titulo Linea
+                        th Importe
+                tbody(id="cuerpo_lineas" style="font-family: 'Courier New';font-size: 1.1em;")
+                each n in rows
+                   tr 
+                        td 
+                            a(href="/introducir_valores_presupuesto_detalle?opcion=modificacion&hoja="+n.hoja+"&linea="+n.linea data-link)
+                                img(src="./img/edit.svg" class="icono_table" alt="Editar" title="Editar")
+                        td= n.hoja 
+                        td= n.linea 
+                        td= n.titulo 
+                        td= n.importe
+    div(class="container")
+        div(class="row")
+            div(class="divider py-1 bg-secondary" style="margin-bottom: 10px;margin-top: 10px;")
+        div(class="row")
+            div(class="col-xs-2 col-sm-2 col-md-2 col-lg-2 treu_control")
+                p(class="etiqueta") Hoja 
+                treungc-numer(name="HOJA" id="HOJA" formato="##" disabled="true" value=campos.hoja)
+            div(class="col-xs-2 col-sm-2 col-md-2 col-lg-2 treu_control")
+                p(class="etiqueta") Linea 
+                treungc-numer(name="LINEA" id="LINEA" formato="###" disabled="true" value=campos.linea)
+            div(class="col-xs-5 col-sm-5 col-md-5 col-lg-5 treu_control")
+                p(class="etiqueta") Titulo Linea
+                treungc-texto(name="TITULO" id="TITULO" formato="uppercase" maxlength="30" disabled="true" value=""+campos.titulo)
+            div(class="col-xs-3 col-sm-3 col-md-3 col-lg-3 treu_control")
+                p(class="etiqueta") Importe 
+                treungc-numer(id="IMPORTE" name="IMPORTE" formato="###.###.###,##" disabled="true" value=0)
+        div(class="row")
+            div(class="col-xs-3 col-sm-3 col-md-3 col-lg-3 treu_control")
+                p(class="etiqueta") Forma Grabacion 
+                select(class="form-select" name="FORMA_INTRO" id="FORMA_INTRO" onchange ="cambio_intro();")
+                    option(value="intro" selected= campos.forma_intro == 'intro') Introducir Datos
+                    option(value="actu" selected= campos.forma_intro == 'actu') Actualizar Datos
+            div(class="col-xs-4 col-sm-3 col-md-3 col-lg-3" style="margin-top: 25px;")
+                button(class="btn btn-md btn-block" id='boton_iniciar' style=""+color_boton_iniciar onclick="iniciar_grabacion();" disabled) #{titulo_boton}
+            div(class="col-xs-4 col-sm-3 col-md-3 col-lg-3" style="margin-top: 25px;")
+                button(class="btn btn-md btn-block" id='boton_grabar' style=""+color_boton_grabar onclick="pulsacion_grabar();" disabled) Grabar Importe
+    a(style="display: none" href="/" id="accion_cancelar2" data-link)
+script. 
+    async function cambios_hoja() {
+        var titulo_hoja=$('#TITU_HOJA').text();
+        var hoja = $('#HOJA_INTRO').val();
+        $('#boton_grabar').prop('disabled',true);
+        $('#boton_iniciar').prop('disabled',true);
+        if (titulo_hoja!='') {
+            $('#boton_iniciar').prop('disabled',false);
+        }
+        else {
+            $('#boton_iniciar').prop('disabled',true);
+        }
+        leer_lineas();
+    }
+    async function leer_lineas() {
+        var hoja_intro = $('#HOJA_INTRO').val();
+        var cuerpo="";
+        if (hoja_intro!=0) {
+            var parametros = JSON.stringify({hoja: hoja_intro});
+            await utilidades('get_valores_ppto_secuencial',parametros).then(reto=>{
+                for (var fila of reto) {
+                    cuerpo+="<tr>";
+                    if (fila.blanca==false && fila.de_totales==false && fila.invisible==false) {
+                        cuerpo+='<td><a href="/introducir_valores_presupuesto_detalle?opcion=modificacion&hoja_intro='+hoja_intro+'&hoja='+fila.hoja+'&linea='+fila.linea+'" data-link><img src="./img/edit.svg" class="icono_table" alt="Editar" title="Editar"/></a></td>';
+                    }
+                    else {
+                        cuerpo+='<td></td>';
+                    }
+                    cuerpo+="<td>"+fila.hoja_str+"</td><td>"+fila.linea_str+"</td><td style='"+fila.titulo_forma+"'>"+fila.titulo+"</td><td style='text-align: right;'>"+fila.importe_str+"</td></tr>";
+                }
+                $("#cuerpo_lineas").html(cuerpo);
+            });
+        }
+        else {
+            $("#cuerpo_lineas").html(cuerpo);
+        }
+    }
+    function iniciar_grabacion() {
+        var hoja_intro = $('#HOJA_INTRO').val();
+        $("#cuerpo_lineas").html('');
+        if ($('#boton_iniciar').text()!='Fin Grabacion') {
+            $("#HOJA_INTRO").prop('disabled',true);
+            $('#boton_iniciar').text('Fin Grabacion');
+            $('#boton_iniciar').prop('style','background-color: red; color: white;');
+            $('#FORMA_INTRO').prop('disabled',true);
+            leer_para_grabar(-1,-1);
+        }
+        else {
+            $("#IMPORTE").prop('disabled',true);
+            $("#HOJA_INTRO").prop('disabled',false);
+            $('#boton_grabar').prop('disabled',true);
+            $('#boton_iniciar').text('Inicio Grabacion');
+            $('#boton_iniciar').prop('style','background-color: rgb(0,128,0); color: white;');
+            $('#IMPORTE').val(0);
+            $('#HOJA').val(0);
+            $('#TITULO').val('');
+            $('#LINEA').val(0);
+            $('#FORMA_INTRO').prop('disabled',false);
+            leer_lineas();
+        }
+    }
+    async function leer_para_grabar(ult_hoja,ult_linea) {
+        var hoja_intro = $('#HOJA_INTRO').val();
+        var cuerpo="";
+        var parametros = JSON.stringify({hoja: hoja_intro});
+        await utilidades('get_valores_ppto_secuencial',parametros).then(reto=>{
+            var cortar=false;
+            for (var fila of reto) {
+                if ($('#FORMA_INTRO').val()=='intro') {
+                    if (fila.grabada==true || fila.blanca==true || fila.de_totales==true || fila.invisible==true) {
+                        cuerpo+="<tr>"
+                        cuerpo+='<td></td>';
+                        cuerpo+="<td>"+fila.hoja_str+"</td><td>"+fila.linea_str+"</td><td style='"+fila.titulo_forma+"'>"+fila.titulo+"</td><td style='text-align: right;'>"+fila.importe_str+"</td></tr>";                       
+                    }
+                    else {
+                        $('#IMPORTE').val(fila.importe);
+                        $('#HOJA').val(fila.hoja);
+                        $('#TITULO').val(fila.titulo);
+                        $('#LINEA').val(fila.linea);
+                        $('#IMPORTE').prop('disabled',false);
+                        $('#boton_grabar').prop('disabled',false);
+                        break;
+                    }
+                }
+                else {
+                    if (ult_hoja!=-1 && ult_linea!=-1) {
+                        if (cortar==false || fila.blanca==true || fila.de_totales==true || fila.invisible==true) {
+                            cuerpo+="<tr>"
+                            cuerpo+='<td></td>';
+                            cuerpo+="<td>"+fila.hoja_str+"</td><td>"+fila.linea_str+"</td><td style='"+fila.titulo_forma+"'>"+fila.titulo+"</td><td style='text-align: right;'>"+fila.importe_str+"</td></tr>";                       
+                            if (fila.hoja==ult_hoja && fila.linea==ult_linea) {
+                                cortar=true;
+                            }
+                            continue;
+                        }
+                    }
+                    else {
+                        if (fila.blanca==true || fila.de_totales==true || fila.invisible==true) {
+                            cuerpo+="<tr>"
+                            cuerpo+='<td></td>';
+                            cuerpo+="<td>"+fila.hoja_str+"</td><td>"+fila.linea_str+"</td><td style='"+fila.titulo_forma+"'>"+fila.titulo+"</td><td style='text-align: right;'>"+fila.importe_str+"</td></tr>";                       
+                            continue;
+                        }
+                    }
+                    $('#IMPORTE').val(fila.importe);
+                    $('#HOJA').val(fila.hoja);
+                    $('#TITULO').val(fila.titulo);
+                    $('#LINEA').val(fila.linea);
+                    $('#IMPORTE').prop('disabled',false);
+                    $('#boton_grabar').prop('disabled',false);
+                    break;
+                }
+            }
+            $("#cuerpo_lineas").html(cuerpo);
+            scroll_tabla();
+        });
+    }
+    function pulsacion_grabar() {
+
+        var hoja = $('#HOJA').val();
+        var linea =$('#LINEA').val();
+        var impor =$('#IMPORTE').val();
+
+        $.ajax({
+            type: 'POST',
+            url: '/introducir_valores_presupuesto_detalle',
+            async: true,
+            data: 'opcion=modificacion&HOJA='+hoja+'&LINEA='+linea+'&IMPORTE='+impor,
+            success: function (response) {
+                $('#IMPORTE').val(0);
+                $('#HOJA').val(0);
+                $('#TITULO').val('');
+                $('#LINEA').val(0);
+                $('#IMPORTE').prop('disabled',true);
+                $('#boton_grabar').prop('disabled',true);
+                scroll_tabla();
+                leer_para_grabar(hoja,linea);
+            },
+            error: function (xhr, status, err) {
+                console.log(xhr.responseText);
+            }
+        });
+    }
+    function scroll_tabla() {
+        var rowpos = $('#tabla_adic tr:last').position();
+        $('#conte_tabla').scrollTop(rowpos.top);
+    }
+        
+    window.onload = function(e) {
+        const nodes = document.getElementsByTagName("PRI_IMA");
+        if (nodes.length==0) {
+            window.location="./frontend/index0.html";
+        }
+    }

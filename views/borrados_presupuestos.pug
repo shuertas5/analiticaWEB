@@ -1,0 +1,106 @@
+link(rel="shortcut icon" href="#")
+link(rel="stylesheet", href="/css/bootstrap.min.css")
+label(style="margin-top: 10px;") Borrado del Presupuesto Analitico
+div(class="container")
+    form(id="my_form" name="fichero" method="POST" enctype="multipart/form-data" action="/borrados_presupuestos")
+        div(class="row")
+            div(class="divider py-1 bg-secondary")
+        div(class="row" style="margin-top: 15px;")
+            div(class="col-xs-6 col-sm-5 col-md-5 col-lg-5 treu_control")
+                p(class="etiqueta") Tipo de Borrado 
+                select(class="form-select" style="font-family: Courier;font-size: 1.0em;" name="TIPO_BORRADO" id="TIPO_BORRADO" value=tipo_borrado onchange="activar_borrados();")
+                    option(value="0" selected= tipo_borrado == '0') -- Seleccionar Borrado --
+                    option(value="1" selected= tipo_borrado == '1') Borrado del Calculo
+                    option(value="2" selected= tipo_borrado == '2') Borrado de Datos Introducidos
+        div(class="row" style="margin-top: 20px;")
+            div(class="col-xs-8 col-sm-8 col-md-8 col-lg-8 treu_control")
+                input(type="radio" id="radio_1" style="" name="BORRADO" value="1" checked=borrado=="1" disabled=true onclick="activar_hoja();")
+                span(style="margin-left: 5px;font-weight: bold;") Borrado Todas las Hojas
+                input(type="radio" id="radio_2" style="margin-left: 30px;" name="BORRADO" value="2" checked=borrado=="2" disabled=true onclick="activar_hoja();")
+                span(style="margin-left: 5px;font-weight: bold;") Borrado Una Hoja
+        div(class="row" style="margin-top: 15px;")
+            div(class="col-xs-4 col-sm-2 col-md-2 col-lg-2")
+                p(class="etiqueta") Hoja Analitica 
+                treungc-combodlgnum(id="HOJA" name="HOJA" titulo_id="TITU_HOJA" formato="##" ondropdown="seleccion_hojas_inicio(this.id,this.titulo_id);" ondatachange="cambio_hojas_inicio(this.id,this.titulo_id);cambios_hoja();" value=hoja disabled='true')
+            div(class="col-xs-6 col-sm-6 col-md-6 col-lg-6")
+                p(id="TITU_HOJA" class="repon_titulo")
+            button(type="submit" id="submit" class="btn btn-md btn-primary btn-block" style="display: none;" onclick="ajax_submit('#my_form', 'temporal');")        
+        div(class="row" style="margin-top: 15px;")
+            div(class="divider py-1 bg-secondary")
+    a(style="display: none" href="/principal" id="accion_cancelar2" onclick="visual_panta();" data-link)
+    a(style="display: none" href="" id="accion_cancelar" onclick="visual_panta();" data-link)
+div(class="d-flex flex-column") 
+    div(class="container" style="height: calc(100vh - 485px);overflow-y: auto;margin-bottom: 10px;margin-top: 10px;")
+        div(class="table-responsive")
+            div(id='pantalla_borrados_ppto' style="width: 100%; height: 100%;font-size: 0.95em; font-family: 'Courier New', Courier, monospace;")
+div(class="mt-auto" class="botonera")
+    div(class="row")
+        div(class="col-xs-4 col-sm-3 col-md-3 col-lg-3")
+            button(id="mandar" class="btn btn-md btn-block" onclick="$('#submit').click();" style=""+color_boton disabled=true ) #{titulo_boton}
+        div(class="col-xs-4 col-sm-3 col-md-3 col-lg-3")
+            button(id="cancel" class="btn btn-md btn-secondary btn-block" onclick="$('#accion_cancelar2')[0].click();") Cancelar
+script. 
+    function visual_panta() {
+        getFileFromServer("./temporal/retorno.html", async function (text) {
+           refresh_div(text); 
+        });
+    }
+    function refresh_div(tex) {
+
+        var url = "/borrados_presupuestos";
+
+        $.ajax({
+            type: 'GET',
+            url: url,
+            async: true,
+            success: function (response) {
+                $('#pantalla_borrados_ppto').html(tex);
+            },
+            error: function (xhr, status, err) {
+            }
+        });
+
+        return true;
+    }
+    function activar_borrados() {
+        if ($('#TIPO_BORRADO option:selected').val()=='1') {
+            $('#mandar').prop('disabled',false);
+            $('#radio_1').prop('disabled',true);
+            $('#radio_2').prop('disabled',true);
+            $('#radio_1').prop('checked',true);
+        }
+        if ($('#TIPO_BORRADO option:selected').val()=='2') {
+            $('#mandar').prop('disabled',false);
+            $('#radio_1').prop('disabled',false);
+            $('#radio_2').prop('disabled',false);
+            $('#radio_1').prop('checked',true);
+            if ($('#radio_2').is(':checked')) {
+                $('#HOJA').prop('disabled',false)
+            }
+            else {
+                $('#HOJA').prop('disabled',true)
+            }
+        }
+        if ($('#TIPO_BORRADO option:selected').val()=='0') {
+            $('#mandar').prop('disabled',true);
+            $('#radio_1').prop('disabled',true);
+            $('#radio_2').prop('disabled',true);
+            $('#HOJA').prop('disabled',true)
+        }
+        activar_hoja();
+    }
+    function activar_hoja() {
+        if ($('#radio_1').is(':checked')) {
+            $('#HOJA').prop('disabled',true)
+        }
+        else {
+            $('#HOJA').prop('disabled',false)
+        }
+    }
+    
+    window.onload = function(e) {
+        const nodes = document.getElementsByTagName("PRI_IMA");
+        if (nodes.length==0) {
+            window.location="./frontend/index0.html";
+        }
+    }

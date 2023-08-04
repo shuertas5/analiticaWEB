@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analitica Web</title>
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="/static/css/index.css">
+    <link rel="stylesheet" href="/treu/estilos-widgets-treu/styles.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+</head>
+
+<body>
+    <div class="container" style="margin-top: 5px;">
+        <header class="row">
+            <div class="col-md-12">
+                <img id="PRI_IMA" style="width: 45px; height:auto;margin-right: 5px;" /><span id="EMPRESA_TRABAJO"
+                    style="font-size: 1.2em;color:darkcyan;font-weight: bold;"></span>
+            </div>
+            <div class="col-md-12"
+                style="font-size: 1.2em;font-family: 'Courier New', Courier, monospace;color: crimson;font-weight: bold;">
+                <span id="title"></span>
+            </div>
+        </header>
+    </div>
+    <div class="container" style="clear:left">
+        <section class="main row">
+            <aside class="col-xs-12 col-sm-4 col-md-3 col-lg-3" id="lateral">
+                <div style="padding: 10px 0px;height:100%;">
+                    <div style="width: 100%;height: calc(100vh - 205px);overflow-y: auto;">
+                        <li class="list-group-item">
+                            <div class="div_ima_menu" id="ima_gestion"><img class="ima_menu" src="/img/ver.svg" /></div>
+                            <a onclick="ver_gestion();">Operativa</a>
+                            <ul class="list-group" id="tit_gestion" style="display: none;">
+                                <li class="list-group-item" style="margin: 0px; padding: 5px;">
+                                    <div class="div_ima_menu"><img class="ima_menu" src="/img/ver_azul.svg" /></div>
+                                    <a href="/consulta_analitica" data-link>Consulta Analitica</a>
+                                </li>
+                                <li class="list-group-item" style="margin: 0px; padding: 5px;">
+                                    <div class="div_ima_menu"><img class="ima_menu" src="/img/print.svg" /></div>
+                                    <a href="/imprimir_analitica" data-link>Imprimir Analitica</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="div_ima_menu" id="ima_historico"><img class="ima_menu" src="/img/ver.svg" />
+                            </div>
+                            <a onclick="ver_historico();">Históricos</a>
+                            <ul class="list-group" id="tit_historico" style="display: none;">
+                                <li class="list-group-item" style="margin: 0px; padding: 5px;">
+                                    <div class="div_ima_menu"><img class="ima_menu" src="/img/ver_azul.svg" /></div>
+                                    <a href="/consulta_historico_analitica" data-link>Consulta Histórico Analitica</a>
+                                </li>
+                                <li class="list-group-item" style="margin: 0px; padding: 5px;">
+                                    <div class="div_ima_menu"><img class="ima_menu" src="/img/ver_azul.svg" /></div>
+                                    <a href="/consulta_historico_presupuesto" data-link>Consulta Histórico Ppto.</a>
+                                </li>
+                                <li class="list-group-item" style="margin: 0px; padding: 5px;">
+                                    <div class="div_ima_menu"><img class="ima_menu" src="/img/print.svg" /></div>
+                                    <a href="/imprimir_historico_analitica" data-link>Imprimir Histórico Analitica</a>
+                                </li>
+                                <li class="list-group-item" style="margin: 0px; padding: 5px;">
+                                    <div class="div_ima_menu"><img class="ima_menu" src="/img/print.svg" /></div>
+                                    <a href="/imprimir_historico_presupuesto" data-link>Imprimir Histórico Ppto.</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="div_ima_menu" id="ima_elaborar_analitica"><img class="ima_menu"
+                                    src="/img/calculator.svg" /></div>
+                            <a onclick="ver_elaborar_analitica();">Elaborar Analítica</a>
+                            <ul class="list-group" id="tit_elaborar_analitica" style="display: none;">
+                                <li class="list-group-item" style="margin: 0px; padding: 5px;">
+                                    <div class="div_ima_menu"><img class="ima_menu" src="/img/upload.svg" /></div>
+                                    <a href="/importar_movimientos" data-link>Importar Diario Mes</a>
+                                </li>
+                                <li class="list-group-item" style="margin: 0px; padding: 5px;">
+                                    <div class="div_ima_menu"><img class="ima_menu" src="/img/calculator.svg" /></div>
+                                    <a href="/calcular_analitica" data-link>Calcular Analitica</a>
+                                </li>
+                                <li class="list-group-item" style="margin: 0px; padding: 5px;">
+                                    <div class="div_ima_menu"><img class="ima_menu" src="/img/delete.svg" /></div>
+                                    <a href="/borrado_calculo_analitica" data-link>Borrar Cálculo Analítica</a>
+                                </li>
+                                <li class="list-group-item" style="margin: 0px; padding: 5px;">
+                                    <div class="div_ima_menu"><img class="ima_menu" src="/img/cierre.svg" /></div>
+                                    <a href="/cierre_calculo_analitica" data-link>Cierre Cálculo Analítica</a>
+                                </li>
+                                <li class="list-group-item" style="margin: 0px; padding: 5px;">
+                                    <div class="div_ima_menu"><img class="ima_menu" src="/img/mas.svg" /></div>
+                                    <a href="/sumar_movimientos_diario" data-link>Sumar Movimientos Diario</a>
+                                </li>
+                                <li class="list-group-item" style="margin: 0px; padding: 5px;">
+                                    <div class="div_ima_menu"><img class="ima_menu" src="/img/input-pipe.svg" /></div>
+                                    <a href="/introducir_valores_adicionales" data-link>Intro. Valores Adicionales</a>
+                                </li>
+                                <li class="list-group-item" style="margin: 0px; padding: 5px;">
+                                    <div class="div_ima_menu"><img class="ima_menu" src="/img/input-pipe.svg" /></div>
+                                    <a href="/correcciones_analiticas" data-link>Correcciones Analíticas</a>
+                                </li>
+                                <li class="list-group-item" style="margin: 0px; padding: 5px;">
+                                    <div class="div_ima_menu"><img class="ima_menu" src="/img/ver_azul.svg" /></div>
+                                    <a href="/consulta_analitica_en_tramite" data-link>Consulta en Tramite</a>
+                                </li>
+                                <li class="list-group-item" style="margin: 0px; padding: 5px;">
+                                    <div class="div_ima_menu"><img class="ima_menu" src="/img/print.svg" /></div>
+                                    <a href="/imprimir_analitica_en_tramite" data-link>Imprimir en Tramite</a>
+                                </li>
+                                <li class="list-group-item" style="margin: 0px; padding: 5px;">
+                                    <div class="div_ima_menu"><img class="ima_menu" src="/img/manten.svg" /></div>
+                                    <a href="/manten_asignaciones" data-link>Asignaciones Analiticas</a>
+                                </li>
+                                <li class="list-group-item" style="margin: 0px; padding: 5px;">
+                                    <div class="div_ima_menu"><img class="ima_menu" src="/img/cancel.svg" /></div>
+                                    <a href="/reapertura_cierre_analitica" data-link>Reapertura Cierre Analítica</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="div_ima_menu" id="ima_elaborar_ppto"><img class="ima_menu"
+                                    src="/img/calculator.svg" /></div>
+                            <a onclick="ver_elaborar_ppto();">Elaborar Presupuesto</a>
+                            <ul class="list-group" id="tit_elaborar_ppto" style="display: none;">
+                                <li class="list-group-item" style="margin: 0px; padding: 5px;">
+                                    <div class="div_ima_menu"><img class="ima_menu" src="/img/ver_azul.svg" /></div>
+                                    <a href="/consulta_presupuesto" data-link>Consulta Presupuesto</a>
+                                </li>
+                                <li class="list-group-item" style="margin: 0px; padding: 5px;">
+                                    <div class="div_ima_menu"><img class="ima_menu" src="/img/print.svg" /></div>
+                                    <a href="/imprimir_presupuesto" data-link>Impresión Presupuesto</a>
+                                </li>
+                                <li class="list-group-item" style="margin: 0px; padding: 5px;">
+                                    <div class="div_ima_menu"><img class="ima_menu" src="/img/delete.svg" /></div>
+                                    <a href="/borrados_presupuestos" data-link>Borrado del Presupuesto</a>
+                                </li>
+                                <li class="list-group-item" style="margin: 0px; padding: 5px;">
+                                    <div class="div_ima_menu"><img class="ima_menu" src="/img/input-pipe.svg" /></div>
+                                    <a href="/introducir_valores_presupuesto" data-link>Introducir Datos Ppto</a>
+                                </li>
+                                <li class="list-group-item" style="margin: 0px; padding: 5px;">
+                                    <div class="div_ima_menu"><img class="ima_menu" src="/img/calculator.svg" /></div>
+                                    <a href="/calcular_presupuesto" data-link>Calcular Presupuesto</a>
+                                </li>
+                                <li class="list-group-item" style="margin: 0px; padding: 5px;">
+                                    <div class="div_ima_menu"><img class="ima_menu" src="/img/transladar.svg" /></div>
+                                    <a href="/reparto_ppto_hoja_linea" data-link>Reparto Presupuesto Lineas</a>
+                                </li>
+                                <li class="list-group-item" style="margin: 0px; padding: 5px;">
+                                    <div class="div_ima_menu"><img class="ima_menu" src="/img/transladar.svg" /></div>
+                                    <a href="/reparto_ppto_hojas" data-link>Reparto Presupuesto Hojas</a>
+                                </li>
+                                <li class="list-group-item" style="margin: 0px; padding: 5px;">
+                                    <div class="div_ima_menu"><img class="ima_menu" src="/img/transladar.svg" /></div>
+                                    <a href="/reparto_ppto_global" data-link>Reparto Presupuesto Global</a>
+                                </li>
+                                <li class="list-group-item" style="margin: 0px; padding: 5px;">
+                                    <div class="div_ima_menu"><img class="ima_menu" src="/img/manten.svg" /></div>
+                                    <a href="/manten_notas_ppto" data-link>Notas del Presupuesto</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="div_ima_menu" id="ima_mantenimientos"><img class="ima_menu"
+                                    src="/img/manten.svg" /></div>
+                            <a onclick="ver_mantenimientos();">Mantenimientos</a>
+                            <ul class="list-group" id="tit_manten" style="display: none;">
+                                <li class="list-group-item" style="margin: 0px; padding: 5px;">
+                                    <div class="div_ima_menu"><img class="ima_menu" src="/img/manten.svg" /></div>
+                                    <a href="/manten_tipos_hojas" data-link>Manten. Tipos de
+                                        Hojas </a>
+                                </li>
+                                <li class="list-group-item" style="margin: 0px; padding: 5px;">
+                                    <div class="div_ima_menu"><img class="ima_menu" src="/img/manten.svg" /></div>
+                                    <a href="/manten_hojas" data-link>Manten. Hojas
+                                        Analíticas</a>
+                                </li>
+                                <li class="list-group-item" style="margin: 0px; padding: 5px;">
+                                    <div class="div_ima_menu"><img class="ima_menu" src="/img/manten.svg" /></div>
+                                    <a href="/manten_lineas" data-link>Manten. Lineas
+                                        Analíticas</a>
+                                </li>
+                                <li class="list-group-item" style="margin: 0px; padding: 5px;">
+                                    <div class="div_ima_menu"><img class="ima_menu" src="/img/manten.svg" /></div>
+                                    <a href="/manten_totales" data-link>Manten. Totales de Lineas</a>
+                                </li>
+                                <li class="list-group-item" style="margin: 0px; padding: 5px;">
+                                    <div class="div_ima_menu"><img class="ima_menu" src="/img/manten.svg" /></div>
+                                    <a href="/manten_adicionales" data-link>Manten. Datos Adicionales</a>
+                                </li>
+                                <li class="list-group-item" style="margin: 0px; padding: 5px;">
+                                    <div class="div_ima_menu"><img class="ima_menu" src="/img/manten.svg" /></div>
+                                    <a href="/manten_origenes_diario" data-link>Manten. Origenes Diario</a>
+                                </li>
+                                <li class="list-group-item" style="margin: 0px; padding: 5px;">
+                                    <div class="div_ima_menu"><img class="ima_menu" src="/img/setting.svg" /></div>
+                                    <a href="/mascaras_cuentas" data-link>Máscaras Cuentas</a>
+                                </li>
+                                <li class="list-group-item" style="margin: 0px; padding: 5px;">
+                                    <div class="div_ima_menu"><img class="ima_menu" src="/img/setting.svg" /></div>
+                                    <a href="/parametros_app" data-link>Parámetros de la
+                                        Aplicacion</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="div_ima_menu" id="ima_utilidades"><img class="ima_menu"
+                                    src="/img/setting.svg" /></div>
+                            <a onclick="ver_utilidades();">Utilidades Aplicación</a>
+                            <ul class="list-group" id="tit_utilidades" style="display: none;">
+                                <li class="list-group-item" style="margin: 0px; padding: 5px;">
+                                    <div class="div_ima_menu"><img class="ima_menu" src="/img/duplicate.svg" /></div>
+                                    <a href="/duplicado_hoja_analitica" data-link>Duplicado Hoja Analitica</a>
+                                </li>
+                                <li class="list-group-item" style="margin: 0px; padding: 5px;">
+                                    <div class="div_ima_menu"><img class="ima_menu" src="/img/delete.svg" /></div>
+                                    <a href="/borrado_hoja_analitica" data-link>Borrado Hoja Analitica</a>
+                                </li>
+                                <li class="list-group-item" style="margin: 0px; padding: 5px;">
+                                    <div class="div_ima_menu"><img class="ima_menu" src="/img/setting.svg" /></div>
+                                    <a href="/generar_aplicacion" data-link>Generar la Aplicación</a>
+                                </li>
+                                <li class="list-group-item" style="margin: 0px; padding: 5px;">
+                                    <div class="div_ima_menu"><img class="ima_menu" src="/img/setting.svg" /></div>
+                                    <a href="/configuracion_app" data-link>Configurar Aplicación</a>
+                                </li>
+                                <li class="list-group-item" style="margin: 0px; padding: 5px;">
+                                    <div class="div_ima_menu"><img class="ima_menu" src="/img/upload.svg" /></div>
+                                    <a href="/importar_imagenes" data-link>Importar Imagenes</a>
+                                </li>
+                                <li class="list-group-item" style="margin: 0px; padding: 5px;">
+                                    <div class="div_ima_menu"><img class="ima_menu" src="/img/upload.svg" /></div>
+                                    <a href="/importar_ficheros_analitica" data-link>Importar Ficheros Analitica</a>
+                                </li>
+                                <li class="list-group-item" style="margin: 0px; padding: 5px;">
+                                    <div class="div_ima_menu"><img class="ima_menu" src="/img/load.svg" /></div>
+                                    <a href="/cargar_importacion_analitica" data-link>Cargar Importacion</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </div>
+                </div>
+                <div style="position: absolute;bottom: 7px;width: 100%;">
+                    <button type="button" style="font-size: 1.2em;width: 43%;text-align: center;"
+                        class="btn btn-lg btn-secondary" onclick="ir_a_entrada();">Salir</button>
+                    <button type="button" style="font-size: 1.2em;width: 43%; margin-left: 5px;text-align: center;"
+                        class="btn btn-lg btn-secondary" onclick="ir_a_inicio_principal();">Inicio</button>
+                    <a style="display: none" href="/principal" id='ir_a_inicio_principalx' data-link></a>
+                    <a style="display: none" href="/index" id='ir_a_entradax'></a>
+                </div>
+            </aside>
+            <article class="col-xs-12 col-sm-8 col-md-9 col-md-9" id="central">
+                <div id="app"></div>
+            </article>
+        </section>
+    </div>
+    <div class="container">
+        <div style="margin-top: 7px;">
+            <footer class="row">
+                <div class="col-md-12">
+                    <h6 style="font-size: 0.8em">&copy; Benipila Valores s.l.</h6>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <div id="errores_visua"></div>
+    <div id="seleccion_tipos_hojas"></div>
+    <div id="seleccion_hojas"></div>
+    <div id="seleccion_lineas"></div>
+    <div id="seleccion_origenes_diario"></div>
+
+    <div id="format_movimientos"></div>
+    <div id="repartos_lineas"></div>
+    <div id="repartos_hojas"></div>
+    <div id="repartos_global"></div>
+
+    <div id="treu_impresion_fichero"></div>
+    <div id="treu_impresion_sele"></div>
+
+    <div id="modulos_popup"></div>
+    <div id="scripts_dinamicos"></div>
+
+</body>
+
+<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="module" src="/static/js/index.js"></script>
+<script type="text/javascript" src="../treu/treu-widgets.js"></script>
+<script type="text/javascript" src="../treu/rutinas_cliente.js"></script>
+<script type="text/javascript" src="../treu/formato_cliente.js"></script>
+<script type="text/javascript" src="../treu/lista_de_campos_rutinas.js"></script>
+<script type="text/javascript" src="./static/js/treu_impresion_bifurcaciones.js"></script>
+<script type="text/javascript" src="./static/views/client_utilidades.js"></script>
+
+<script>
+
+    function ir_a_inicio_principal() {
+        $('#ir_a_inicio_principalx')[0].click();
+    }
+
+    function ir_a_entrada() {
+        $('#ir_a_entradax')[0].click();
+    }
+
+    function agrandar_pantalla() {
+        $('#lateral').prop('style', 'display: none');
+        $('#central').prop('class', 'col-xs-12 col-sm-12 col-md-12 col-md-12');
+        $('#central').prop('style', 'width: 100%;height: calc(100vh - 145px);')
+    }
+    function restaurar_pantalla() {
+        $('#lateral').prop('style', '');
+        $('#central').prop('class', 'col-xs-12 col-sm-8 col-md-9 col-md-9');
+    }
+
+    $('#errores_visua').load("./mensajes_error.html");
+    $('#seleccion_tipos_hojas').load("./seleccion_tipos_hojas.html");
+    $('#seleccion_hojas').load("./seleccion_hojas.html");
+    $('#seleccion_lineas').load("./seleccion_lineas.html");
+    $('#seleccion_origenes_diario').load("./seleccion_origenes_diario.html");
+    $('#format_movimientos').load("./formato_movimientos.html");
+
+    $('#repartos_lineas').load("./consulta_repartos_ppto_lineas.html");
+    $('#repartos_hojas').load("./consulta_repartos_ppto_hojas.html");
+    $('#repartos_global').load("./consulta_repartos_ppto_global.html");
+
+    $('#treu_impresion_fichero').load("./treu_impresion_a_fichero.html");
+    $('#treu_impresion_sele').load("./treu_impresion_sele.html");
+
+</script>
+
+<script>
+
+    function ver_gestion() {
+        if ($('#tit_gestion').css('display') != 'none') {
+            $('#tit_gestion').css('display', 'none');
+            $('#ima_gestion').css('display', '');
+        } else {
+            $('#tit_gestion').css('display', '');
+            $('#ima_gestion').css('display', 'none');
+        }
+    }
+
+    function ver_historico() {
+        if ($('#tit_historico').css('display') != 'none') {
+            $('#tit_historico').css('display', 'none');
+            $('#ima_historico').css('display', '');
+        } else {
+            $('#tit_historico').css('display', '');
+            $('#ima_historico').css('display', 'none');
+        }
+    }
+
+    function ver_elaborar_analitica() {
+        if ($('#tit_elaborar_analitica').css('display') != 'none') {
+            $('#tit_elaborar_analitica').css('display', 'none');
+            $('#ima_elaborar_analitica').css('display', '');
+        } else {
+            $('#tit_elaborar_analitica').css('display', '');
+            $('#ima_elaborar_analitica').css('display', 'none');
+        }
+    }
+
+    function ver_elaborar_ppto() {
+        if ($('#tit_elaborar_ppto').css('display') != 'none') {
+            $('#tit_elaborar_ppto').css('display', 'none');
+            $('#ima_elaborar_ppto').css('display', '');
+        } else {
+            $('#tit_elaborar_ppto').css('display', '');
+            $('#ima_elaborar_ppto').css('display', 'none');
+        }
+    }
+
+    function ver_mantenimientos() {
+
+        if ($('#tit_manten').css('display') != 'none') {
+            $('#tit_manten').css('display', 'none');
+            $('#ima_mantenimientos').css('display', '');
+        } else {
+            $('#tit_manten').css('display', '');
+            $('#ima_mantenimientos').css('display', 'none');
+        }
+    }
+
+    function ver_utilidades() {
+
+        if ($('#tit_utilidades').css('display') != 'none') {
+            $('#tit_utilidades').css('display', 'none');
+            $('#ima_utilidades').css('display', '');
+        } else {
+            $('#tit_utilidades').css('display', '');
+            $('#ima_utilidades').css('display', 'none');
+        }
+    }
+
+    async function leer_nombre_empresa() {
+        var titulo_empre = "";
+        var ima_empre = "";
+        var parametros = JSON.stringify({});
+        await utilidades('get_nombre_empresa', parametros).then(reto => {
+            if (reto.ret == true) {
+                titulo_empre = reto.nombre;
+                ima_empre = reto.imagen;
+            }
+            else {
+                titulo_empre = "";
+                ima_empre = "";
+            }
+        });
+        $('#EMPRESA_TRABAJO').text(titulo_empre);
+        if (ima_empre != "" && ima_empre.substring(0, 2) != '--') {
+            ima_empre = '../img_cliente/' + ima_empre;
+            $('#PRI_IMA').prop('src', ima_empre);
+        }
+        else {
+            $('#PRI_IMA').prop('style', 'display: none');
+        }
+    }
+    leer_nombre_empresa();
+
+    window.addEventListener('beforeunload', function (e) {
+
+        // Customize the confirmation message
+        var e = e || window.event;
+
+        // For IE and Firefox
+        if (e) {
+            e.returnValue = '';
+        }
+
+        // For Safari
+        return '';
+
+    });
+
+</script>
+
+</html>

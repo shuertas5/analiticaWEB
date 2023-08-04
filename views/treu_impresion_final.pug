@@ -1,0 +1,39 @@
+link(rel="shortcut icon" href="#")
+link(rel="stylesheet", href="/css/bootstrap.min.css")
+div(class="container")
+    div(class="row")
+        if (aprevis_pdf == 1)
+            - ext = '.pdf'
+            - mime = 'application/pdf'
+            div(class="detalle")
+                object(width="100%" height="97%" data=id_fichero type=mime)
+                    embed(src=id_fichero type=mime)
+        if (aprevis == 1) 
+            - ext = '.txt'
+            - mime = 'text/plain'
+            div(class="detalle")
+                object(width="150%" height="97%" data=id_fichero type=mime)
+                    embed(src=id_fichero type=mime)
+div(class="botonera")
+    div(class="vertical-center" style="height: 38px;")
+        button(type="button" class="btn btn-md btn-secondary" onclick="cancelar_previs();") Cerrar Pantalla
+        treungc-texto(style="display: none;" id="oculto" value=valor ondatachange="visual_panta();")
+script. 
+    function cancelar_previs() {
+        apagar_panta();
+        $('#enlace_retorno').prop('href',$('#treu_impresion_retorno_previs').val());
+        $('#enlace_retorno')[0].click();
+    }
+    function visual_panta() {
+        agrandar_pantalla();
+    }
+    function apagar_panta() {
+        restaurar_pantalla();
+    }
+    
+    window.onload = function(e) {
+        const nodes = document.getElementsByTagName("PRI_IMA");
+        if (nodes.length==0) {
+            window.location="./frontend/index0.html";
+        }
+    }

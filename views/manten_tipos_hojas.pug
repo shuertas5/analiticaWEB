@@ -1,0 +1,36 @@
+link(rel="shortcut icon" href="#")
+link(rel="stylesheet", href="/css/bootstrap.min.css")
+div(class="container")
+    div(class="alta")
+        img(src="/img/mas.svg" class="icono_table" alt="Alta" title="Alta")
+        label
+            a(href="/manten_tipos_hojas_detalle?opcion=alta" style="font-weight: bold;" data-link) Alta de Tipos de Hojas
+div(class="d-flex flex-column") 
+    div(class="container" style="height: calc(100vh - 195px);overflow-y: auto;margin-bottom: 10px;")
+        div(class="table-responsive")
+            table(class="table table-striped")
+                thead(class="thead-dark")
+                    tr
+                        th Opciones
+                        th Tipo
+                        th Titulo Tipo Hoja
+                tbody
+                each n in rows
+                    tr 
+                        td
+                            a(href="/manten_tipos_hojas_detalle?opcion=consulta&tipo="+n.tipo data-link) 
+                                img(src="./img/ver.svg" class="icono_table" alt="Consulta" title="Consulta")
+                            a(href="/manten_tipos_hojas_detalle?opcion=modificacion&tipo="+n.tipo data-link)
+                                img(src="./img/edit.svg" class="icono_table" alt="Editar" title="Editar")
+                            a(href="/manten_tipos_hojas_detalle?opcion=baja&tipo="+n.tipo data-link)
+                                img(src="./img/delete.svg" class="icono_table" alt="Baja" title="Baja")
+                        td= n.tipo
+                        td= n.titulo
+script. 
+    
+    window.onload = function(e) {
+        const nodes = document.getElementsByTagName("PRI_IMA");
+        if (nodes.length==0) {
+            window.location="./frontend/index0.html";
+        }
+    }

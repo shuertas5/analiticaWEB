@@ -1,0 +1,127 @@
+link(rel="shortcut icon" href="#")
+link(rel="stylesheet", href="/css/bootstrap.min.css")
+div(class="container")
+    div(class="row")
+        div(class="col-xs-6 col-sm-5 col-md-5 col-lg-5 treu_control")
+            p(class="etiqueta") Tipo de Dato Adicional 
+            select(class="form-select" style="font-family: Courier;font-size: 1.0em;" name="TIPO_ADICIONAL" id="TIPO_ADICIONAL" onchange ="cambio_seleccion();")
+                option(value="" selected= tipo_adicional == '') -- Selecciona Tipo de Adicional --
+                option(value="costes" style="color:red;" selected= tipo_adicional == 'costes') Dato Adicional de Coste
+                option(value="correcciones" style="color:blue;" selected= tipo_adicional == 'correcciones') Dato Adicional de Corrección
+                option(value="estadisticos" style="color:green;" selected= tipo_adicional == 'estadisticos') Dato Adicional Estadistico
+                option(value="acum_estadisticos" style="color:green;" selected= tipo_adicional == 'acum_estadisticos') Dato Acumulado Estadistico
+        treungc-texto(id="senal" value=tipo_adicional style="display: none;" ondatachange="cambio_seleccion()")
+    div(class="row" style="margin-top: 15px;")
+        div(class="alta")
+            img(src="/img/mas.svg" class="icono_table" alt="Alta" title="Alta")
+            label
+                a(id="alta_adicion" href="/manten_adicionales_detalle?opcion=alta" style="font-weight: bold;margin-right: 15px;pointer-events: none" data-link) Alta de Adicionales
+            img(src="/img/print.svg" class="icono_table" alt="Impresion" title="Impresion")
+            label
+                a(id="impre_adicion" href="" onclick="iniciar_impresion();" style="font-weight: bold;pointer-events: none" data-link) Impresion de Adicionales
+            input(type="radio" id="radio_1" style="margin-left: 90px;" name="radio" value="1" checked=ordenacion=="1" onclick="cambio_seleccion();")
+            span(style="margin-left: 5px;font-weight: bold;") Orden Indice
+            input(type="radio" id="radio_2" style="margin-left: 30px;" name="radio" value="2" checked=ordenacion=="2" onclick="cambio_seleccion();")
+            span(style="margin-left: 5px;font-weight: bold;") Orden Campo Orden
+div(class="d-flex flex-column") 
+    div(class="container" style="height: calc(100vh - 195px);overflow-y: auto;margin-bottom: 10px;")
+        div(class="table-responsive")
+            table(class="table table-striped table_size_3")
+                thead(class="thead-dark")
+                    tr
+                        th Opciones
+                        th Indice
+                        th Campo Orden
+                        th Titulo Adicional
+                        th Hoja
+                        th Linea
+                        th Titulo Linea
+                tbody(id="cuerpo_lineas")
+                each n in rows
+                   tr 
+                        td 
+                            a(href="/manten_adicionales_detalle?opcion=consulta&indice="+n.indice data-link) 
+                                img(src="./img/ver.svg" class="icono_table" alt="Consulta" title="Consulta")
+                            a(href="/manten_adicionales_detalle?opcion=modificacion&indice="+n.indice data-link)
+                                img(src="./img/edit.svg" class="icono_table" alt="Editar" title="Editar")
+                            a(href="/manten_adicionales_detalle?opcion=baja&indice="+n.indice data-link)
+                                img(src="./img/delete.svg" class="icono_table" alt="Baja" title="Baja")
+                        td= n.indice
+                        td= n.orden
+                        td= n.titulo 
+                        td= n.hoja 
+                        td= n.linea 
+                        td= n.titu_linea
+script. 
+    function cambio_seleccion() {
+        var tipo_adicional = $('#TIPO_ADICIONAL').val();
+        var ordenancion='1';
+        if ($('#radio_1').is(':checked')) {
+            ordenacion='1';
+        }
+        else {
+            ordenacion='2';
+        }
+        if (tipo_adicional!="") {
+            $('#alta_adicion').attr('style','font-weight: bold;margin-right: 15px;');
+            $('#impre_adicion').attr('style','font-weight: bold;');
+        }
+        else {
+            $('#alta_adicion').attr('style','font-weight: bold;pointer-events: none;margin-right: 15px;');
+            $('#impre_adicion').attr('style','font-weight: bold;pointer-events: none;');
+        }
+        $('#alta_adicion').attr('href',"/manten_adicionales_detalle?opcion=alta&tipo_adicional="+tipo_adicional+"&ordenacion="+ordenacion);
+        leer_lineas();
+    }
+    async function leer_lineas() {
+        var tipo_adicional = $('#TIPO_ADICIONAL').val();
+        var ordenancion='1';
+        if ($('#radio_1').is(':checked')) {
+            ordenacion='1';
+        }
+        else {
+            ordenacion='2';
+        }
+        var cuerpo="";
+        if (tipo_adicional!='') {
+            var parametros = JSON.stringify({tipo_adicional: tipo_adicional, ordenacion: ordenacion});
+            await utilidades('get_adicionales_secuencial',parametros).then(reto=>{
+                for (var fila of reto) {
+                    cuerpo+="<tr>";
+                    cuerpo+="<td>"+'<a href="/manten_adicionales_detalle?opcion=consulta&tipo_adicional='+tipo_adicional+'&ordenacion='+ordenacion+'&indice='+fila.indice+'" data-link><img src="./img/ver.svg" class="icono_table" alt="Consulta" title="Consulta"/></a>'
+                                +'<a href="/manten_adicionales_detalle?opcion=modificacion&tipo_adicional='+tipo_adicional+'&ordenacion='+ordenacion+'&indice='+fila.indice+'" data-link><img src="./img/edit.svg" class="icono_table" alt="Editar" title="Editar"/></a>'
+                                +'<a href="/manten_adicionales_detalle?opcion=baja&tipo_adicional='+tipo_adicional+'&ordenacion='+ordenacion+'&indice='+fila.indice+'" data-link><img src="./img/delete.svg" class="icono_table" alt="Baja" title="Baja"/></a></td>';
+                    cuerpo+="<td>"+fila.indice+"</td><td>"+fila.orden+"</td><td>"+fila.titulo+"</td><td>"+fila.hoja+"</td><td>"+fila.linea+"</td><td>"+fila.titu_linea+"</td></tr>";
+                }
+                $("#cuerpo_lineas").html(cuerpo);
+            });
+        }
+        else {
+            $("#cuerpo_lineas").html(cuerpo);
+        }
+    }
+    function iniciar_impresion() {
+        var tipo_adicional = $('#TIPO_ADICIONAL').val();
+        var ordenancion='1';
+        if ($('#radio_1').is(':checked')) {
+            ordenacion='1';
+        }
+        else {
+            ordenacion='2';
+        }
+        var lista = new Array();
+        lista_campos_add(lista, "tipo_adicional", $('#TIPO_ADICIONAL').val());
+        var data = lista_campos_escribir_campos(lista);
+        treu_impresion_onshow();
+        $('#treu_impresion_encargo_trabajo').val('imprimir_datos_adicionales');
+        $('#treu_impresion_encargo_trabajo_data').val(data);
+        $('#treu_impresion_retorno_previs').val('/manten_adicionales?tipo_adicional='+tipo_adicional+'&ordenacion='+ordenacion);
+        treu_iniciar_impresion_sele();
+    }
+        
+    window.onload = function(e) {
+        const nodes = document.getElementsByTagName("PRI_IMA");
+        if (nodes.length==0) {
+            window.location="./frontend/index0.html";
+        }
+    }

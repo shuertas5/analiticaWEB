@@ -1,0 +1,39 @@
+{
+  "name": "analiticaweb",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ascii-encoding": "^1.1.4",
+    "body-parser": "^1.20.1",
+    "bootstrap": "4.6",
+    "browserify": "^17.0.0",
+    "componentes-treux": "^0.0.8",
+    "cookie-parser": "^1.4.6",
+    "express": "^4.18.2",
+    "express-fileupload": "^1.4.0",
+    "express-session": "^1.17.3",
+    "html2pdf": "^0.0.11",
+    "iconv": "^3.0.1",
+    "iconv-lite": "^0.6.3",
+    "jquery": "^3.6.1",
+    "jspdf": "^2.5.1",
+    "libreria-treu": "^0.0.3",
+    "moment": "^2.29.4",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "pg": "^8.8.0",
+    "pug": "^3.0.2",
+    "windows-1252": "^3.0.4"
+  },
+  "description": "",
+  "devDependencies": {
+    "pg-sync": "^0.2.0"
+  }
+}

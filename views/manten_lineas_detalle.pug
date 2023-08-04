@@ -1,0 +1,116 @@
+link(rel="shortcut icon" href="#")
+link(rel="stylesheet" href="/css/bootstrap.min.css")
+div(class="d-flex flex-column") 
+    div(class="container")
+        div(class="row")
+            div(class="caja_titulo")
+                span Hoja Analitica ...
+                span(id="hoja_analitica" style="margin-left: 7px;font-weight: bold") #{hoja}
+                span(id="titulo_hoja" style="margin-left: 7px;font-weight: bold;") #{titulo_hoja}
+        form(id="my_form" method='POST' action="/manten_lineas_detalle")
+            div(class="container" style="height: calc(100vh - 243px);overflow-y: auto;margin-bottom: 10px;")
+                div(class="row")
+                    div(class="col-xs-3 col-sm-2 col-md-2 col-lg-2 treu_control")
+                        p(class="etiqueta") Num. Linea 
+                        treungc-numer(name="NUM_LINEA" formato="###" disabled=""+disabled_clave value=""+campos.linea)
+                div(class="row")
+                    div(class="col-xs-8 col-sm-6 col-md-6 col-lg-6 treu_control")
+                        p(class="etiqueta") Titulo Linea Analitica 
+                        treungc-texto(name="TITULO_LINEA" formato="uppercase" maxlength="30" disabled=""+disabled_campos value=""+campos.titulo)
+                div(class="row")
+                    div(class="col-xs-4 col-sm-2 col-md-2 col-lg-2 treu_control")
+                        p(class="etiqueta") Ref. Hoja 
+                        treungc-combodlgnum(id="REF_HOJA" name="REF_HOJA" formato="##" disabled=""+disabled_campos value=""+campos.ref_hoja ondropdown="dropdown_hoja_ref();" ondatachange="cambio_hoja_ref();")
+                    div(class="col-xs-4 col-sm-2 col-md-2 col-lg-2 treu_control")
+                        p(class="etiqueta") Ref. Linea 
+                        treungc-combodlgnum(id="REF_LINEA" name="REF_LINEA" titulo_id="TITU_REF_LINEA" formato="###" disabled=""+disabled_campos value=""+campos.ref_linea ondropdown="dropdown_linea_ref();" ondatachange="cambio_linea_ref();")
+                    div(class="col-xs-6 col-sm-6 col-md-6 col-lg-6 treu_control")
+                        p(id="TITU_REF_LINEA" class="repon_titulo")
+                div(class="row")
+                    div(class="col-xs-4 col-sm-2 col-md-2 col-lg-2 treu_control")
+                        p(class="etiqueta") Pasada Calculo 
+                        treungc-numer(name="PASADA_CALCULO" formato="##" disabled=""+disabled_campos value=""+campos.pasadas_calculo)
+                    div(class="col-xs-4 col-sm-2 col-md-2 col-lg-2 treu_control")
+                        p(class="etiqueta") Caracter Blanco 
+                        treungc-texto(name="CARACTER_BLANCO" maxlength="1" disabled=""+disabled_campos value=""+campos.caracterblanco)
+                div(class="row caja_control")
+                    div(class="col-xs-6 col-sm-5 col-md-5 col-lg-5")
+                        input(class="etiqueta_checkradio" type="checkbox" id="INVISIBLE" name="INVISIBLE" value=""+campos.invisible disabled=disabled_campos checked=campos.invisible)
+                        label(class="etiqueta_lab_checkradio" for="INVISIBLE") Linea No Visible
+                    div(class="col-xs-6 col-sm-5 col-md-5 col-lg-5")
+                        input(class="etiqueta_checkradio" type="checkbox" id="DE_TOTALES" name="DE_TOTALES" value=""+campos.de_totales disabled=disabled_campos checked=campos.de_totales)
+                        label(class="etiqueta_lab_checkradio" for="DE_TOTALES") Linea de Totales
+                div(class="row caja_control")
+                    div(class="col-xs-6 col-sm-5 col-md-5 col-lg-5")
+                        input(class="etiqueta_checkradio" type="checkbox" id="INTENSA" name="INTENSA" value=""+campos.intensa disabled=disabled_campos checked=campos.intensa)
+                        label(class="etiqueta_lab_checkradio" for="INTENSA") Intensa (Visualiz.)
+                    div(class="col-xs-6 col-sm-5 col-md-5 col-lg-5")
+                        input(class="etiqueta_checkradio" type="checkbox" id="BLANCA" name="BLANCA" value=""+campos.blanca disabled=disabled_campos checked=campos.blanca)
+                        label(class="etiqueta_lab_checkradio" for="BLANCA") Linea Blanca
+                div(class="row caja_control")
+                    div(class="col-xs-6 col-sm-5 col-md-5 col-lg-5")
+                        input(class="etiqueta_checkradio" type="checkbox" id="SUMABLE" name="SUMABLE" value=""+campos.sumable disabled=disabled_campos checked=campos.sumable)
+                        label(class="etiqueta_lab_checkradio" for="SUMABLE") Linea Sumable
+                    div(class="col-xs-6 col-sm-5 col-md-5 col-lg-5")
+                        input(class="etiqueta_checkradio" type="checkbox" id="ESTADISTICA" name="ESTADISTICA" value=""+campos.estadistica disabled=disabled_campos checked=campos.estadistica)
+                        label(class="etiqueta_lab_checkradio" for="ESTADISTICA") Linea Estadistica
+                div(class="row caja_control")
+                    div(class="col-xs-6 col-sm-5 col-md-5 col-lg-5")
+                        input(class="etiqueta_checkradio" type="checkbox" id="CON_DECIMALES" name="CON_DECIMALES" value=""+campos.con_decimales disabled=disabled_campos checked=campos.con_decimales)
+                        label(class="etiqueta_lab_checkradio" for="CON_DECIMALES") Con Decimales
+                    div(class="col-xs-6 col-sm-5 col-md-5 col-lg-5")
+                        input(class="etiqueta_checkradio" type="checkbox" id="NO_ACUMULABLE" name="NO_ACUMULABLE" value=""+campos.no_acumulable disabled=disabled_campos checked=campos.no_acumulable)
+                        label(class="etiqueta_lab_checkradio" for="NO_ACUMULABLE") Linea No Acumulable
+                div(class="row caja_control")
+                    div(class="col-xs-6 col-sm-5 col-md-5 col-lg-5")
+                        input(class="etiqueta_checkradio" type="checkbox" id="CON_PORCENTAJE" name="CON_PORCENTAJE" value=""+campos.con_porcentaje disabled=disabled_campos checked=campos.con_porcentaje)
+                        label(class="etiqueta_lab_checkradio" for="CON_PORCENTAJE") Con Porcentaje
+                    div(class="col-xs-6 col-sm-5 col-md-5 col-lg-5")
+                        input(class="etiqueta_checkradio" type="checkbox" id="REDUCCION_A_MILLARES" name="REDUCCION_A_MILLARES" value=""+campos.reduccionamillares disabled=disabled_campos checked=campos.reduccionamillares)
+                        label(class="etiqueta_lab_checkradio" for="REDUCCION_A_MILLARES") Reducible a Millares
+                div(class="row caja_control")
+                    div(class="col-xs-6 col-sm-5 col-md-5 col-lg-5")
+                        input(class="etiqueta_checkradio" type="checkbox" id="LINEA_DE_MARGEN" name="LINEA_DE_MARGEN" value=""+campos.lineademargen disabled=disabled_campos checked=campos.lineademargen)
+                        label(class="etiqueta_lab_checkradio" for="LINEA_DE_MARGEN") Linea de Margen
+                    div(class="col-xs-6 col-sm-5 col-md-5 col-lg-5")
+                        input(class="etiqueta_checkradio" type="checkbox" id="LINEA_DE_REPARTO" name="LINEA_DE_REPARTO" value=""+campos.lineadereparto disabled=disabled_campos checked=campos.lineadereparto)
+                        label(class="etiqueta_lab_checkradio" for="LINEA_DE_REPARTO") Linea de Reparto
+                div(class="row")
+                    div(class="col-xs-6 col-sm-5 col-md-5 col-lg-5 treu_control")
+                        p(class="etiqueta") Tipo de Acumulado 
+                        select(class="form-select" style="font-family: Courier;font-size: 1.0em;" name="TIPO_ACUMULADO" id="TIPO_ACUMULADO" disabled=disabled_campos value=campos.tipoacumulado)
+                            option(value="1" selected= campos.tipoacumulado == '1') Acumulado Suma Meses
+                            option(value="2" selected= campos.tipoacumulado == '2') Acumulado Dato Extra
+                            option(value="3" selected= campos.tipoacumulado == '3') Acumulado Media Anual
+                            option(value="4" selected= campos.tipoacumulado == '4') Acumulado Media 12 Meses
+                button(id="submit" class="btn btn-md btn-primary btn-block" style="display: none;" onclick="ajax_submit('#my_form', 'temporal');")
+                input(type="hidden" name="HOJA" value=hoja)
+                input(type="hidden" name="opcion" value=opcion)
+    div(class="mt-auto" class="botonera")
+        div(class="row")
+            div(class="col-xs-4 col-sm-3 col-md-3 col-lg-3")
+                button(class="btn btn-md btn-block" style=""+color_boton onclick="$('#submit').click();") #{titulo_boton}
+            div(class="col-xs-4 col-sm-3 col-md-3 col-lg-3")
+                button(id="cancel" class="btn btn-md btn-secondary btn-block" onclick="$('#accion_cancelar')[0].click();") Cancelar
+    a(style="display: none" href="/manten_lineas?hoja="+hoja id="accion_cancelar" data-link)
+script.
+    function cambio_linea_ref() {
+        cambio_lineas_inicio($('#REF_HOJA').val(),$('#REF_LINEA').attr('id'),$('#REF_LINEA').attr('titulo_id'));
+    }
+    function dropdown_linea_ref() {
+        seleccion_lineas_inicio($('#REF_HOJA').val(),$('#REF_LINEA').attr('id'),$('#REF_LINEA').attr('titulo_id'));
+    }
+    function cambio_hoja_ref() {
+        cambio_hojas_inicio($('#REF_HOJA').attr('id'),null);
+        cambio_linea_ref();
+    }
+    function dropdown_hoja_ref() {
+        seleccion_hojas_inicio($('#REF_HOJA').attr('id'),null);
+    }
+        
+    window.onload = function(e) {
+        const nodes = document.getElementsByTagName("PRI_IMA");
+        if (nodes.length==0) {
+            window.location="./frontend/index0.html";
+        }
+    }

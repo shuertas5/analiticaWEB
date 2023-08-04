@@ -1,0 +1,85 @@
+link(rel="shortcut icon" href="#")
+link(rel="stylesheet", href="/css/bootstrap.min.css")
+label(style="margin-top: 10px;") Calculo de la Analítica
+div(class="container")
+    form(id="my_form" name="fichero" method="post" enctype="multipart/form-data" action="/calcular_analitica")
+        div(class="row" style='margin-bottom: 10px;')
+            div(class="divider py-1 bg-secondary")
+        div(class="row caja_control")
+            div(class="col-xs-6 col-sm-6 col-md-6 col-lg-6 treu_control")
+                span(class="campo_titulo_visual") Mes a Calcular: 
+                span(class="campo_titulo_visual_conten" style="font-family: Courier;") #{mes_letra}
+        div(class="row caja_control")
+            div(class="col-xs-4 col-sm-4 col-md-4 col-lg-4 treu_control")
+                span(class="campo_titulo_visual") Año: 
+                span(class="campo_titulo_visual_conten" style="font-family: Courier;") #{anno_format}
+        div(class="row caja_control")
+            div(class="col-xs-6 col-sm-4 col-md-4 col-lg-4")
+                input(class="etiqueta_checkradio" type="checkbox" id="NO_ADICIONALES" name="NO_ADICIONALES" value=""+no_adicionales checked=no_adicionales)
+                label(class="etiqueta_lab_checkradio" for="NO_ADICIONALES") No Incluir Datos Adicionales
+        button(id="submit" class="btn btn-md btn-primary btn-block" style="display: none;" onclick="ajax_submit('#my_form', 'temporal');")
+        div(class="row" style='margin-bottom: 15px;margin-top: 20px;')
+            div(class="divider py-1 bg-secondary")
+    div(class="d-flex flex-column") 
+        div(class="container" style="height: calc(100vh - 427px);overflow-y: auto;margin-bottom: 10px;")
+            div(class="table-responsive")
+                div(id='pantalla_calcular_analitica' style="width: 100%; height: 100%;font-size: 0.95em; font-family: 'Courier New', Courier, monospace;")
+div(class="mt-auto" class="botonera")
+    div(class="row")
+        div(class="col-xs-4 col-sm-3 col-md-3 col-lg-3")
+            button(class="btn btn-md btn-block" style=""+color_boton onclick="iniciar_ejecucion();") #{titulo_boton}
+        div(class="col-xs-4 col-sm-3 col-md-3 col-lg-3")
+            button(id="cancel" class="btn btn-md btn-secondary btn-block" onclick="$('#accion_cancelar2')[0].click();") Cancelar
+    a(style="display: none" href="" id="accion_cancelar" data-link)
+    a(style="display: none" href="/principal" id="accion_cancelar2" data-link)
+script. 
+    function visual_panta() {
+        getFileFromServer("./temporal/retorno.html", async function (text) {
+            refresh_div(text); 
+        });
+    }
+    function refresh_div(tex) {
+
+        var url;
+
+        url = "/calcular_analitica";
+
+        $.ajax({
+            type: 'GET',
+            url: url,
+            async: true,
+            success: function (response) {
+                $('#pantalla_calcular_analitica').html(tex);
+            },
+            error: function (xhr, status, err) {
+            }
+        });
+
+        return true;
+    }
+    function iniciar_ejecucion() {
+        $('#submit').click();
+        var ele = $("#mensajes_error").find('.erri');
+        if (ele.length == 0) {
+            iniciar_impresion();
+        }
+        visual_panta();
+    }
+    function iniciar_impresion() {
+        var no_adicionales = $('#NO_ADICIONALES').is(":checked");
+        var lista = new Array();
+        lista_campos_add(lista, "NO_ADICIONALES",no_adicionales);
+        var data = lista_campos_escribir_campos(lista);
+        treu_impresion_onshow();
+        $('#treu_impresion_encargo_trabajo').val('calcular_analitica');
+        $('#treu_impresion_encargo_trabajo_data').val(data);
+        $('#treu_impresion_retorno_previs').val('/calcular_analitica?no_adicionales='+no_adicionales);
+        treu_iniciar_salida_previsualizacion_pdf();
+    }
+
+    window.onload = function(e) {
+        const nodes = document.getElementsByTagName("PRI_IMA");
+        if (nodes.length==0) {
+            window.location="./frontend/index0.html";
+        }
+    }
