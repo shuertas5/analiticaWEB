@@ -9,7 +9,7 @@ const session = require('express-session');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-const puerto = 8080;
+const puerto = 8090;
 
 const app = express();
 
@@ -42,9 +42,16 @@ app.use('/frontend', express.static(__dirname + '/frontend'));
 app.use('/img_cliente', express.static(__dirname + '/img_cliente'));
 app.use('/views', express.static(__dirname + '/views'));
 
-app.listen(puerto, () => {
-    console.log(`Escuchando el puerto: ${puerto}`);
-});
+const options = {
+    key: fs.readFileSync("/etc/letsencrypt/live/shuertas.com/privkey.pem"),
+    cert: fs.readFileSync("/etc/letsencrypt/live/shuertas.com/fullchain.pem"),
+  };
+
+const server = https.createServer(options, app);
+
+server.listen(443);
+    
+app.listen(443);
 
 // ---------------------------------
 // Rutas de pantallas
