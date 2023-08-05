@@ -10,7 +10,7 @@ const session = require('express-session');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-const puerto = 8090;
+const puerto = 8000;
 
 const app = express();
 
@@ -50,9 +50,7 @@ const options = {
 
 const server = https.createServer(options, app);
 
-server.listen(443);
-    
-app.listen(puerto, () => {
+server.listen(puerto, () => {
     console.log(`Escuchando el puerto: ${puerto}`);
 });
 
