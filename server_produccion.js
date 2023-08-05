@@ -51,7 +51,9 @@ const server = https.createServer(options, app);
 
 server.listen(443);
     
-app.listen(443);
+app.listen(puerto, () => {
+    console.log(`Escuchando el puerto: ${puerto}`);
+});
 
 // ---------------------------------
 // Rutas de pantallas
