@@ -170,6 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     });
 
+    
     router();
 
 });
