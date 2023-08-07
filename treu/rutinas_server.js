@@ -1,5 +1,4 @@
 var fs = require("fs");
-var css = require('css');
 var formato = require('./formato.js');
 const fecha = require('./forfecha.js');
 const iconv = require('iconv-lite');
