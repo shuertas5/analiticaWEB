@@ -148,8 +148,6 @@ const router = async () => {
 
     const view = new match.route.view();
 
-    alert(url);
-
     document.querySelector('#app').innerHTML = await view.getHtml(url);
 
 };
