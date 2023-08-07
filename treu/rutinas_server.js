@@ -2,10 +2,11 @@ var fs = require("fs");
 var formato = require('./formato.js');
 const fecha = require('./forfecha.js');
 const iconv = require('iconv-lite');
+var css =require('css');
 
 function getStyle(file, className) {
     var text = fs.readFileSync(file);
-    var cssText = "";
+    var cssText = ""; 
     var obj = css.parse(text);
     var sheet = obj.stylesheet;
     var classes = sheet.rules;
