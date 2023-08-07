@@ -44,15 +44,15 @@ body
                             div(class="col-xs-12 col-sm-8 col-md-8 col-lg-8")
                                 button(style="margin-top: 15px;width: 100%;" id="submita" class="btn btn-md btn-primary" type="button" onclick="$('#submit').click();") Aceptar
     div(id="errores_visua")
-    a(style="display: none" href="../frontend/index0.html" id="accion_cancelar" onclick="ponerCookie();")
+    a(style="display: none" href="/frontend/index0.html" id="accion_cancelar" onclick="ponerCookie();")
 script(src="https://code.jquery.com/jquery-3.3.1.min.js")
-script(type="text/javascript" src="../treu/treu-widgets.js")
-script(type="text/javascript" src="../treu/rutinas_cliente.js")
-script(type="text/javascript" src="../treu/formato_cliente.js")
-script(type="text/javascript" src="../treu/lista_de_campos_rutinas.js")
+script(type="text/javascript" src="/treu/treu-widgets.js")
+script(type="text/javascript" src="/treu/rutinas_cliente.js")
+script(type="text/javascript" src="/treu/formato_cliente.js")
+script(type="text/javascript" src="/treu/lista_de_campos_rutinas.js")
 script window.onload = function() {comprobarCookie()}
 script.
-    $('#errores_visua').load("../frontend/mensajes_error.html");
+    $('#errores_visua').load("/frontend/mensajes_error.html");
 
     function ponerCookie() {
         var contra = document.getElementById('contrasena').value;
