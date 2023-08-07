@@ -46,13 +46,13 @@ body
     div(id="errores_visua")
     a(style="display: none" href="./frontend/index0.html" id="accion_cancelar" onclick="ponerCookie();")
 script(src="https://code.jquery.com/jquery-3.3.1.min.js")
-script(type="text/javascript" src="./treu/treu-widgets.js")
-script(type="text/javascript" src="./treu/rutinas_cliente.js")
-script(type="text/javascript" src="./treu/formato_cliente.js")
-script(type="text/javascript" src="./treu/lista_de_campos_rutinas.js")
+script(type="text/javascript" src="../treu/treu-widgets.js")
+script(type="text/javascript" src="../treu/rutinas_cliente.js")
+script(type="text/javascript" src="../treu/formato_cliente.js")
+script(type="text/javascript" src="../treu/lista_de_campos_rutinas.js")
 script window.onload = function() {comprobarCookie()}
 script.
-    $('#errores_visua').load("./frontend/mensajes_error.html");
+    $('#errores_visua').load("../frontend/mensajes_error.html");
 
     function ponerCookie() {
         var contra = document.getElementById('contrasena').value;
