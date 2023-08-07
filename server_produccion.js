@@ -51,7 +51,6 @@ const options = {
 const server = https.createServer(options, app);
 
 server.listen(puerto, () => {
-    //
     console.log(`Escuchando el puerto: ${puerto}`);
 });
 
