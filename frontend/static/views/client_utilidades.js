@@ -21,7 +21,6 @@ async function utilidades(funcion, parame) {
                 return resolve(response);
             },
             error: function (xhr, status, err) {
-                console.log(xhr.responseText);
             }
         });
 

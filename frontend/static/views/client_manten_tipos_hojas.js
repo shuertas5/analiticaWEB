@@ -24,7 +24,6 @@ export default class extends AbstractView {
                respuesta=response;
             },
             error: function (xhr, status, err) {
-                console.log(xhr.responseText);
             }
         });
  
