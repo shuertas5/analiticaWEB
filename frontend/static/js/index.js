@@ -22,8 +22,8 @@ import Reparto_Ppto_Hoja_Linea from "../views/client_reparto_ppto_hoja_linea.js"
 import Reparto_Ppto_Hoja_Linea_Detalle from "../views/client_reparto_ppto_hoja_linea_detalle.js";
 import Reparto_Ppto_Hojas from "../views/client_reparto_ppto_hojas.js";
 import Reparto_Ppto_Hojas_Detalle from "../views/client_reparto_ppto_hojas_detalle.js";
-import Reparto_Ppto_Global from "../views/client_reparto_ppto_global.js";
-import Reparto_Ppto_Global_Detalle from "../views/client_reparto_ppto_global_detalle.js";
+import Reparto_Ppto_Global from "/views/client_reparto_ppto_global.js";
+import Reparto_Ppto_Global_Detalle from "/views/client_reparto_ppto_global_detalle.js";
 import Correcciones_Analiticas from "../views/client_correcciones_analiticas.js";
 import Correcciones_Analiticas_Detalle from "../views/client_correcciones_analiticas_detalle.js";
 import Introducir_Valores_Adicionales from "../views/client_introducir_valores_adicionales.js";
