@@ -2,13 +2,16 @@ var fs = require("fs");
 var formato = require('./formato.js');
 const fecha = require('./forfecha.js');
 const iconv = require('iconv-lite');
-var csstree =require('css-tree');
+var csstree = require('css');
 
 function getStyle(file, className) {
-    var text = fs.readFileSync(file);
-    var cssText = ""; 
+    var textBuffer = fs.readFileSync(file);
+    var text = iconv.decode(textBuffer, 'utf-8'); // Convert buffer to string
+    if (text=="") return "";
+    var cssText = "";
     var obj = csstree.parse(text);
     var sheet = obj.stylesheet;
+    if (sheet==undefined) return "";
     var classes = sheet.rules;
     for (var x = 0; x < classes.length; x++) {
         if (classes[x].selectors[0] == className) {
