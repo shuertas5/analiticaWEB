@@ -17,7 +17,7 @@ import Mascaras_Cuentas from "../views/client_mascaras_cuentas.js";
 import Importar_Movimientos from "../views/client_importar_movimientos.js";
 import Sumar_Movimientos_Diario from "../views/client_sumar_movimientos_diario.js";
 import Importar_Imagenes from "../views/client_importar_imagenes.js";
-import Importar_Ficheros_Analitica from "../views/client_importar_ficheros_analitica.js";
+import Importar_Ficheros_Analitica from "/views/client_importar_ficheros_analitica.js";
 import Reparto_Ppto_Hoja_Linea from "../views/client_reparto_ppto_hoja_linea.js";
 import Reparto_Ppto_Hoja_Linea_Detalle from "../views/client_reparto_ppto_hoja_linea_detalle.js";
 import Reparto_Ppto_Hojas from "../views/client_reparto_ppto_hojas.js";
