@@ -34,9 +34,9 @@ div(class="d-flex flex-column" style="margin-top: 10px;")
     div(class="mt-auto" class="botonera")
         div(class="row")
             div(class="col-xs-4 col-sm-3 col-md-3 col-lg-3")
-                button(class="btn btn-md btn-block" style=""+color_boton onclick="click_mandar();$('#submit').click();") #{titulo_boton}
+                button(class="btn btn-md btn-block" style="width: 100%;"+color_boton onclick="click_mandar();$('#submit').click();") #{titulo_boton}
             div(class="col-xs-4 col-sm-3 col-md-3 col-lg-3")
-                button(id="cancel" class="btn btn-md btn-secondary btn-block" onclick="$('#accion_cancelar')[0].click();") Cancelar
+                button(id="cancel" class="btn btn-md btn-secondary btn-block" style="width: 100%;" onclick="$('#accion_cancelar')[0].click();") Cancelar
     a(style="display: none" href="/principal" id="accion_cancelar" data-link)
 script. 
     function cambio_select() {
