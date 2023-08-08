@@ -12,7 +12,6 @@
   "dependencies": {
     "ascii-encoding": "^1.1.4",
     "body-parser": "^1.20.1",
-    "bootstrap": "4.6",
     "browserify": "^17.0.0",
     "componentes-treux": "^0.0.8",
     "cookie-parser": "^1.4.6",
