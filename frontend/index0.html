@@ -26,7 +26,7 @@
         </header>
     </div>
     <div class="container" style="clear:left">
-        <section class="main row">
+        <section class="row">
             <aside class="col-xs-12 col-sm-4 col-md-3 col-lg-3" id="lateral">
                 <div style="padding: 10px 0px;height:100%;">
                     <div style="width: 100%;height: calc(100vh - 205px);overflow-y: auto;">
@@ -240,8 +240,8 @@
                             </ul>
                         </li>
                     </div>
-                    <div class="row" style="margin-top: 10px;">
-                        <button type="button" style="font-size: 1.2em;width: 43%;text-align: center;margin-left: 15px;"
+                    <div style="margin-top: 10px;">
+                        <button type="button" style="font-size: 1.2em;width: 43%;text-align: center;margin-left: 12px;"
                             class="btn btn-lg btn-secondary" onclick="ir_a_entrada();">Salir</button>
                         <button type="button" style="font-size: 1.2em;width: 43%; margin-left: 10px;text-align: center;"
                             class="btn btn-lg btn-secondary" onclick="ir_a_inicio_principal();">Inicio</button>
@@ -305,11 +305,12 @@
     function agrandar_pantalla() {
         $('#lateral').prop('style', 'display: none');
         $('#central').prop('class', 'col-xs-12 col-sm-12 col-md-12 col-md-12');
-        $('#central').prop('style', 'width: 100%;height: calc(100vh - 145px);')
+        $('#central').prop('style', 'width: 100%;height: calc(100vh - 145px);');
     }
     function restaurar_pantalla() {
         $('#lateral').prop('style', '');
         $('#central').prop('class', 'col-xs-12 col-sm-8 col-md-9 col-md-9');
+        $('#central').prop('style', '');
     }
 
     $('#errores_visua').load("./mensajes_error.html");

@@ -23,7 +23,7 @@ div(class="container")
             div(class="col-xs-4 col-sm-4 col-md-4 col-lg-4")
                 p(id="TITU_HOJA" class="repon_titulo")
             div(class="col-xs-4 col-sm-2 col-md-2 col-lg-2" style="margin-top: 25px;")
-                button(id="cancel" class="btn btn-md btn-secondary btn-block" onclick="$('#accion_salir')[0].click();") Cerrar
+                button(id="cancel" class="btn btn-md btn-secondary btn-block" style="width: 100%;" onclick="$('#accion_salir')[0].click();") Cerrar
             div(class="divider py-1 bg-secondary")
                 input(id="submit" type="submit" class="btn btn-md btn-primary btn-block" style="display: none;" onclick="ajax_submit('#my_form', 'temporal');")
     a(style="display: none" href="/principal" id="accion_salir" onclick="apagar_panta();" data-link)
