@@ -10,7 +10,7 @@ div(class="container")
         br
         div(class="row" style="margin-top: 15px;")
             div(class="col-xs-4 col-sm-3 col-md-3 col-lg-3")
-                button(class="btn btn-md btn-block" style=""+color_boton onclick="$('#submit').click();") #{titulo_boton}
+                button(class="btn btn-md btn-block" style="width: 100%;"+color_boton onclick="$('#submit').click();") #{titulo_boton}
         input(id="submit" class="btn btn-md btn-primary btn-block" style="display: none;" onclick="ajax_submit_fichero('#my_form', 'temporal');")
 div(class="d-flex flex-column" style="margin-top: 15px;") 
     div(class="container" style="height: calc(100vh - 295px);overflow-y: auto;margin-bottom: 10px;")
