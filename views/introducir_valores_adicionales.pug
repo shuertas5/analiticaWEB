@@ -11,7 +11,7 @@ div(class="container")
                 option(value="estadisticos" style="color:green;" selected= tipo_adicional == 'estadisticos') Dato Adicional Estadistico
                 option(value="acum_estadisticos" style="color:green;" selected= tipo_adicional == 'acum_estadisticos') Dato Acumulado Estadistico
         div(class="col-xs-4 col-sm-3 col-md-3 col-lg-3" style="margin-top: 25px;")
-            button(id="cancel" class="btn btn-md btn-secondary btn-block" onclick="$('#accion_cancelar2')[0].click();") Cerrar Pantalla
+            button(id="cancel" class="btn btn-md btn-secondary btn-block" style="width: 100%;"nonclick="$('#accion_cancelar2')[0].click();") Cerrar Pantalla
         treungc-texto(id="senal" value=tipo_adicional style="display: none;" ondatachange="cambio_seleccion()")
 div(class="d-flex flex-column") 
     div(class="container")
