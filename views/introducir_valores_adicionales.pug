@@ -64,9 +64,9 @@ div(class="d-flex flex-column")
                     option(value="intro" selected= campos.forma_intro == 'intro') Introducir Datos
                     option(value="actu" selected= campos.forma_intro == 'actu') Actualizar Datos
             div(class="col-xs-4 col-sm-3 col-md-3 col-lg-3" style="margin-top: 25px;")
-                button(class="btn btn-md btn-block" id='boton_iniciar' style=""+color_boton_iniciar onclick="iniciar_grabacion();" disabled) #{titulo_boton}
+                button(class="btn btn-md btn-block" id='boton_iniciar' style="width: 100%;"+color_boton_iniciar onclick="iniciar_grabacion();" disabled) #{titulo_boton}
             div(class="col-xs-4 col-sm-3 col-md-3 col-lg-3" style="margin-top: 25px;")
-                button(class="btn btn-md btn-block" id='boton_grabar' style=""+color_boton_grabar onclick="pulsacion_grabar();" disabled) Grabar Importe
+                button(class="btn btn-md btn-block" id='boton_grabar' style="width: 100%;"+color_boton_grabar onclick="pulsacion_grabar();" disabled) Grabar Importe
     a(style="display: none" href="/" id="accion_cancelar2" data-link)
 script. 
     function cambio_seleccion() {
