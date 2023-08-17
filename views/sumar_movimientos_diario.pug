@@ -8,7 +8,7 @@ div(class="container")
         div(class="row" style="margin-top: 15px;")
             div(class="col-xs-4 col-sm-3 col-md-3 col-lg-3")
                 input(type='hidden' name="oculto" value="o")
-                button(class="btn btn-md btn-block" style=""+color_boton onclick="$('#submit').click();") #{titulo_boton}
+                button(class="btn btn-md btn-block" style="width: 100%;"+color_boton onclick="$('#submit').click();") #{titulo_boton}
             input(id="submit" class="btn btn-md btn-primary btn-block" style="display: none;" onclick="ajax_submit('#my_form', 'temporal');")
     a(style="display: none" href="" id="accion_cancelar" onclick="visual_panta();" data-link)
 div(class="d-flex flex-column") 
