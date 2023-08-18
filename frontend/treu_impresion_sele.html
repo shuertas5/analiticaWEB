@@ -228,9 +228,11 @@
                     link.click();
                     link.remove();
                 } else {
-                    printJS({ printable: '../temporal/UsuarioTreu/ListadoTexto.pdf', type: 'pdf', showModal: true });
-                    $('#enlace_retorno').prop('href', $('#treu_impresion_retorno_previs').val());
-                    $('#enlace_retorno')[0].click();
+                    setTimeout(() => {
+                        printJS({ printable: '../temporal/UsuarioTreu/ListadoTexto.pdf', type: 'pdf', showModal: true });
+                        $('#enlace_retorno').prop('href', $('#treu_impresion_retorno_previs').val());
+                        $('#enlace_retorno')[0].click();
+                    }, 3000);
                 }
             }
         };
