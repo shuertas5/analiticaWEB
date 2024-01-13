@@ -2,11 +2,11 @@
    Rutina para Formatear Numeros
    ================================================================ */
 
-function form(format, numero, opcion) {
+   function form(format, numero, opcion) {
 
     var minimo, conespacios, blancos, relle, carelle, detras, paren, americano;
     var lon, contx, i, dec, num, forma2, forma, punto, car, ln, recortar, salida, interno;
-    var ib, a, loni, html;
+    var ib, a, loni;
 
     lon = format.length;
 
@@ -19,8 +19,6 @@ function form(format, numero, opcion) {
     americano = false;
     conespacios = true;
     recortar = false;
-    interno = false;
-    html = false;
 
     ln = opcion.length;
     for (i = 1; i <= ln; i++) {
@@ -36,8 +34,6 @@ function form(format, numero, opcion) {
         if (car == 'P') paren = true;
         if (car == 'A') americano = true;
         if (car == 'R') recortar = true;
-        if (car == 'i') interno = true;
-        if (car == 'H') html = true;
     }
 
     if (minimo == true) relle = false;
@@ -118,7 +114,12 @@ function form(format, numero, opcion) {
             }
         }
     }
-    if (ib < forma2.length) lleno = true;
+
+    recortado = "";
+    if (ib < forma2.length) {
+        lleno = true;
+        recortado = forma;
+    }
 
     a = 0;
     if (lleno == true) {
@@ -126,8 +127,17 @@ function form(format, numero, opcion) {
         for (i = 1; i <= lon; i++) {
             forma += '*';
         }
-        if (detras == true || paren == true) {
-            forma += ' ';
+        if (negativo == false) {
+            if (detras == true || paren == true) {
+                forma += ' ';
+                recortado += ' '
+            }
+        }
+        else {
+            if (detras == true || paren == true) {
+                forma += ' ';
+                recortado += '-'
+            }
         }
     } else {
         if (num < 0.001 && num > -0.001 && blancos == true) {
@@ -180,148 +190,17 @@ function form(format, numero, opcion) {
     }
 
     if (conespacios == true) {
-
         var ll = forma.length;
         for (i = 1; i <= lon - ll + a; i++) {
             forma = ' ' + forma;
         }
     }
 
-    if (recortar == 1 && forma.charAt(0) == '*' && interno == false) {
-        salida = checkeanumero(numero, format, americano, detras);
+    if (recortar == 1 && forma.charAt(0) == '*') {
+        salida = recortado;
     } else {
         salida = forma;
     }
 
-    if (html == true) {
-        salida = salida.replace(/\s/g, '&nbsp;');
-    }
-
     return salida;
-}
-
-function checkeanumero(numero, format, americano, detras) {
-
-    var checkea;
-    var longi, i, longipre, longipos, poscoma, precoma, postcoma;
-    var carsal, car;
-    var seleci, concoma, conmenos, salta;
-    var sel, opc;
-    var formatoampl;
-    var coma, punto;
-    var textox;
-    var care;
-
-    formatoampl = "##########";
-    formatoampl = formatoampl + format;
-
-    if (americano == false) {
-        opc = "i";
-    } else {
-        opc = "Ai";
-    }
-
-    if (detras == true) {
-        opc = opc + "D";
-    }
-
-    textox = form(formatoampl, numero, opc);
-
-    if (americano == false) {
-        coma = ',';
-        punto = '.';
-    } else {
-        coma = '.';
-        punto = ',';
-    }
-
-    longipre = 0;
-    for (i = 1; i <= format.length; i++) {
-        if (format.charAt(i - 1) != punto && format.charAt(i - 1) != coma)
-            longipre++;
-        if (format.charAt(i - 1) == coma)
-            break;
-    }
-
-    longipos = 0;
-    salta = false;
-    for (i = 1; i <= format.length; i++) {
-        if (format.charAt(i - 1) != punto && salta == true)
-            longipos++;
-        if (format.charAt(i - 1) == coma)
-            salta = true;
-    }
-
-    if (detras == 1) {
-        longipos++;
-    }
-
-    longi = longipre + longipos + 1;
-
-    poscoma = 0;
-    for (i = 1; i <= textox.length; i++) {
-        if (textox.charAt(i - 1) == punto) {
-            poscoma = i - 1;
-            break;
-        }
-        if (textox.charAt(i - 1) == coma) {
-            poscoma = i - 1;
-            break;
-        }
-    }
-    if (poscoma == 0) {
-        poscoma = textox.length;
-    }
-
-    precoma = 0;
-    for (i = 1; i <= textox.length; i++) {
-        if (textox.charAt(i - 1) != punto && textox.charAt(i - 1) != coma) {
-            precoma++;
-        } else if (textox.charAt(i - 1) == coma) {
-            break;
-        }
-    }
-
-    concoma = false;
-    for (i = 1; i <= textox.length; i++) {
-        if (textox.charAt(i - 1) == coma || textox.charAt(i - 1) == punto) {
-            concoma = true;
-            break;
-        }
-    }
-
-    conmenos = false;
-    for (i = 1; i <= textox.length; i++) {
-        if (textox.charAt(i - 1) == '-') {
-            conmenos = true;
-            break;
-        }
-    }
-
-    care = "";
-    checkea = "";
-    if (precoma > longipre) {
-        for (i = 1; i <= textox.length; i++) {
-            if ((i - 1) >= (precoma - longipre)) {
-                care = textox.charAt(i - 1);
-                checkea = checkea + care;
-            }
-        }
-        conmenos = false;
-    } else {
-        checkea = textox;
-    }
-
-    /*if (longipre == 1 && conmenos == true) {
-      strcpy(checkea, "");
-      for (i = 1; i <= strlen(textox); i++) {
-        if ((i - 1) >= 1) {
-      care[0] = textox[i - 1];
-      strcat(checkea, care);
-        }
-      }
-      // textox.delete(0, 1);
-    }*/
-
-    return checkea;
 }
